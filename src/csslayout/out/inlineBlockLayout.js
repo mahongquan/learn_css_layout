@@ -1,21 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Highlight from 'react-highlight';
-// <style>
-//         nav.elem {
-//             display: inline-block;
-//             vertical-align: top;
-//             width: 25%;
-//         }
-// 
-//         .column {
-//             display: inline-block;
-//             vertical-align: top;
-//             width: 75%;
-//         }
-//         </style>
-// 
-
 export default class inlineBlockLayout extends Component<Props> {
   render() {
     return (
@@ -34,7 +19,19 @@ export default class inlineBlockLayout extends Component<Props> {
 </li>
 </ul>
 </div>
+<style jsx="true">{`
+        nav.elem {
+            display: inline-block;
+            vertical-align: top;
+            width: 25%;
+        }
 
+        .column {
+            display: inline-block;
+            vertical-align: top;
+            width: 75%;
+        }
+        `}</style>
 <figure className="highlight"><Highlight className="css">{`nav {
   display: inline-block;
   vertical-align: top;

@@ -1,21 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Highlight from 'react-highlight';
-// <style>
-//   .box {
-//     float: left;
-//     width: 200px;
-//     height: 100px;
-//     margin: 1em;
-//   }
-// </style>
-// <style>
-//   .after-box {
-//     clear: left;
-//   }
-// </style>
-// 
-
 export default class clear extends Component<Props> {
   render() {
     return (
@@ -24,7 +9,14 @@ export default class clear extends Component<Props> {
 <p className="content">
   The <code>clear</code> property is important for controlling the behavior of floats. Compare these two examples:
 </p>
-
+<style jsx="true">{`
+  .box {
+    float: left;
+    width: 200px;
+    height: 100px;
+    margin: 1em;
+  }
+`}</style>
 <figure className="highlight"><Highlight className="html">{`
   &lt;div className="box"&gt;...&lt;/div&gt;
 &lt;section&gt;...&lt;/section&gt;
@@ -52,7 +44,11 @@ export default class clear extends Component<Props> {
 <span className="endlabel">&lt;/section&gt;</span>
 </section>
 </div>
-
+<style jsx="true">{`
+  .after-box {
+    clear: left;
+  }
+`}</style>
 <figure className="highlight"><Highlight className="css">{`.box {
   float: left;
   width: 200px;

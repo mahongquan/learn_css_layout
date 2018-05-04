@@ -1,53 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Highlight from 'react-highlight';
-// <style>
-//   .container {
-//     display: -webkit-flex;
-//     display: flex;
-//   }
-//   nav {
-//     width: 200px;
-//   }
-//   .flex-column {
-//     -webkit-flex: 1;
-//             flex: 1;
-//   }
-// </style>
-// <style>
-// .initial {
-//   -webkit-flex: initial;
-//           flex: initial;
-//   width: 200px;
-//   min-width: 100px;
-// }
-// .none {
-//   -webkit-flex: none;
-//           flex: none;
-//   width: 200px;
-// }
-// .flex1 {
-//   -webkit-flex: 1;
-//           flex: 1;
-// }
-// .flex2 {
-//   -webkit-flex: 2;
-//           flex: 2;
-// }
-// </style>
-// <style>
-// .vertical-container {
-//   height: 300px;
-//   display: -webkit-flex;
-//   display:         flex;
-//   -webkit-align-items: center;
-//           align-items: center;
-//   -webkit-justify-content: center;
-//           justify-content: center;
-// }
-// </style>
-// 
-
 export default class flexbox extends Component<Props> {
   render() {
     return (
@@ -63,7 +16,19 @@ export default class flexbox extends Component<Props> {
   There is a lot more you can do with flexbox; these are just a few examples to give you an idea:
 </p>
 <h2 className="content">Simple Layout using Flexbox</h2>
-
+<style jsx="true">{`
+  .container {
+    display: -webkit-flex;
+    display: flex;
+  }
+  nav {
+    width: 200px;
+  }
+  .flex-column {
+    -webkit-flex: 1;
+            flex: 1;
+  }
+`}</style>
 <figure className="highlight"><Highlight className="css">{`.container {
   display: -webkit-flex;
   display: flex;
@@ -121,7 +86,27 @@ nav {
 </div>
 </div>
 <h2 className="content">Fancy Layout using Flexbox</h2>
-
+<style jsx="true">{`
+.initial {
+  -webkit-flex: initial;
+          flex: initial;
+  width: 200px;
+  min-width: 100px;
+}
+.none {
+  -webkit-flex: none;
+          flex: none;
+  width: 200px;
+}
+.flex1 {
+  -webkit-flex: 1;
+          flex: 1;
+}
+.flex2 {
+  -webkit-flex: 2;
+          flex: 2;
+}
+`}</style>
 <figure className="highlight"><Highlight className="css">{`.container {
   display: -webkit-flex;
   display: flex;
@@ -176,7 +161,17 @@ nav {
 </section>
 </div>
 <h2 className="content">Centering using Flexbox</h2>
-
+<style jsx="true">{`
+.vertical-container {
+  height: 300px;
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+`}</style>
 <figure className="highlight"><Highlight className="css">{`.vertical-container {
   height: 300px;
   display: -webkit-flex;

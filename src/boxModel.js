@@ -32,23 +32,25 @@ export default class Root extends Component<Props> {
   </p>
   <figure className="highlight">
     <Highlight className='css'>
-      {`.simple {
-        width: 500px;
-        margin: 20px auto;
-        -webkit-box-sizing: content-box;
-           -moz-box-sizing: content-box;
-                box-sizing: content-box;  
-      }
+      {`
+.simple {
+  width: 500px;
+  margin: 20px auto;
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;  
+  }
 
-      .fancy {
-        width: 500px;
-        margin: 20px auto;
-        padding: 50px;
-        border-width: 10px;
-        -webkit-box-sizing: content-box;
-           -moz-box-sizing: content-box;
-                box-sizing: content-box;  
-      }`}
+.fancy {
+  width: 500px;
+  margin: 20px auto;
+  padding: 50px;
+  border-width: 10px;
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;  
+  }
+`}
     </Highlight>
   </figure>
   <div  style={styles.simple}  className="simple elem">

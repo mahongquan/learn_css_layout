@@ -1,21 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Highlight from 'react-highlight';
-// <style>
-//   .content img {
-//     float: right;
-//   }
-//   .clear {
-//     clear: both;
-//   }
-// </style>
-// <style>
-//   .clearfix {
-//     overflow: auto;
-//   }
-// </style>
-// 
-
 export default class clearfix extends Component<Props> {
   render() {
     return (
@@ -24,7 +9,14 @@ export default class clearfix extends Component<Props> {
 <p className="content">
   Here is a weird, bad thing that can sometimes happen when using floats:
 </p>
-
+<style jsx="true">{`
+  .content img {
+    float: right;
+  }
+  .clear {
+    clear: both;
+  }
+`}</style>
 <figure className="highlight"><Highlight className="css">{`img {
   float: right;
 }`}</Highlight></figure>
@@ -43,7 +35,11 @@ export default class clearfix extends Component<Props> {
 <p className="content">
   Let's try adding this new CSS:
 </p>
-
+<style jsx="true">{`
+  .clearfix {
+    overflow: auto;
+  }
+`}</style>
 <figure className="highlight"><Highlight className="css">{`.clearfix {
   overflow: auto;
 }`}</Highlight></figure>

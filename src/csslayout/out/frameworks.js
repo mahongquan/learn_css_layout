@@ -1,31 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Highlight from 'react-highlight';
-// <style>
-//   #logos {
-//     text-align: center;
-//     margin: 0 auto;
-//     padding: 0 50px;
-//     max-width: 1000px;
-//   }
-//   #logos img {
-//     margin: 5px;
-//     border: solid white 5px;
-//     vertical-align: middle;
-//     position: relative;
-//   }
-//   #logos img:hover {
-//     top: 1px;
-//   }
-//   #logos img:active {
-//     top: 2px;
-//   }
-//   #logos a:hover {
-//     background-color: transparent;
-//   }
-// </style>
-// 
-
 export default class frameworks extends Component<Props> {
   render() {
     return (
@@ -34,7 +9,29 @@ export default class frameworks extends Component<Props> {
 <p className="content">
   Because CSS layout is so tricky, there are CSS frameworks out there to help make it easier. Here are a few if you want to check them out. Using a framework is only a good idea if the framework really does what you need your site to do. They're no replacement for knowing how CSS works.
 </p>
-
+<style jsx="true">{`
+  #logos {
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 50px;
+    max-width: 1000px;
+  }
+  #logos img {
+    margin: 5px;
+    border: solid white 5px;
+    vertical-align: middle;
+    position: relative;
+  }
+  #logos img:hover {
+    top: 1px;
+  }
+  #logos img:active {
+    top: 2px;
+  }
+  #logos a:hover {
+    background-color: transparent;
+  }
+`}</style>
 <div id="logos">
 <a href="#"><img alt="blueprint" src=".//images/blueprint.jpg"/></a>
 <a href="#"><img alt="unsemantic" src=".//images/unsemantic.png"/></a>

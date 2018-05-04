@@ -1,24 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Highlight from 'react-highlight';
-// <style>
-//   .clearfix:after {
-//     content: ".";
-//     display: block;
-//     height: 0;
-//     clear: both;
-//     visibility: hidden;
-//   }
-//   nav {
-//     float: left;
-//     width: 200px;
-//   }
-//   section {
-//     margin-left: 200px;
-//   }
-// </style>
-// 
-
 export default class floatLayout extends Component<Props> {
   render() {
     return (
@@ -27,7 +9,22 @@ export default class floatLayout extends Component<Props> {
 <p className="content">
   It's very common to do entire layouts using <code>float</code>. Here is the same layout we did with <code>position</code> earlier, but using <code>float</code> instead.
 </p>
-
+<style jsx="true">{`
+  .clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  nav {
+    float: left;
+    width: 200px;
+  }
+  section {
+    margin-left: 200px;
+  }
+`}</style>
 <figure className="highlight"><Highlight className="css">{`nav {
   float: left;
   width: 200px;

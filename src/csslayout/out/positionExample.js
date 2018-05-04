@@ -1,35 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Highlight from 'react-highlight';
-// <style>
-//   .container {
-//     position: relative;
-//   }
-//   nav.elem {
-//     position: absolute;
-//     left: 0px;
-//     width: 200px;
-//   }
-//   section {
-//     /* position is static by default */
-//     margin-left: 200px;
-//   }
-//   footer.elem {
-//     position: fixed;
-//     bottom: 0;
-//     left: 0;
-//     height: 90px;
-//     background-color: white;
-//     width: 100%;
-//     margin: 0;
-//     z-index: 1;
-//   }
-//   body {
-//     margin-bottom: 120px;
-//   }
-// </style>
-// 
-
 export default class positionExample extends Component<Props> {
   render() {
     return (
@@ -38,7 +9,33 @@ export default class positionExample extends Component<Props> {
 <p className="content">
   This position stuff might make a little more sense in a practical example. Below is a realistic page layout.
 </p>
-
+<style jsx="true">{`
+  .container {
+    position: relative;
+  }
+  nav.elem {
+    position: absolute;
+    left: 0px;
+    width: 200px;
+  }
+  section {
+    /* position is static by default */
+    margin-left: 200px;
+  }
+  footer.elem {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 90px;
+    background-color: white;
+    width: 100%;
+    margin: 0;
+    z-index: 1;
+  }
+  body {
+    margin-bottom: 120px;
+  }
+`}</style>
 <figure className="highlight"><Highlight className="css">{`.container {
   position: relative;
 }

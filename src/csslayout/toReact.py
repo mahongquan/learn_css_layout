@@ -63,14 +63,14 @@ def changedir(f):
     routes.append('<Route path="/%s" component={%s} />' %(f,appname))
     
     file=open("out/"+appname+".js","w")
-    stylestr=""
-    styles=tranStyle(styles)
-    for style in styles:
-        stylestr=stylestr +str(style)+"\n"
-    lines=stylestr.split("\n")
-    stylestr=""
-    for l in lines:
-        stylestr += "// "+l+"\n"
+    # stylestr=""
+    # styles=tranStyle(styles)
+    # for style in styles:
+    #     stylestr=stylestr +str(style)+"\n"
+    # lines=stylestr.split("\n")
+    # stylestr=""
+    # for l in lines:
+    #     stylestr += "// "+l+"\n"
     outstr=str(div)
     outstr=outstr.replace('<a class="nav prev" href','<Link class="nav prev" to')
     outstr=outstr.replace('<a class="nav next" href','<Link class="nav next" to')
@@ -81,7 +81,6 @@ def changedir(f):
     outstr="""import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Highlight from 'react-highlight';
-%s
 export default class %s extends Component<Props> {
   render() {
     return (
@@ -89,7 +88,7 @@ export default class %s extends Component<Props> {
     );
   }
 }
-"""  % (stylestr,appname,outstr)
+"""  % (appname,outstr)
     file.write(outstr)
     file.close()
     return
@@ -135,14 +134,12 @@ def tranStyle(styles):
         r.append(tranStyleOne(s))
     return r
 def getstyles(soup):
-    r=[]
-    while True:
-        if soup.style != None:
-            i_tag = soup.style.extract()
-            r.append(i_tag)
-        else:
-            break
-    return r
+    styles=soup.find_all("style");
+    for pre in styles:
+        pre.attrs["jsx"]="true"
+        text=pre.text
+        pre.clear()
+        pre.append("""{`%s`}""" % text)
 def changeCode(soup):
     pres=soup.find_all("pre")
     for pre in pres:

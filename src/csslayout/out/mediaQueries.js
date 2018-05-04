@@ -1,24 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Highlight from 'react-highlight';
-// <style>
-//   @media screen and (min-width:600px) {
-//     nav.elem {
-//       float: left;
-//       width: 25%;
-//     }
-//     section {
-//       margin-left: 25%;
-//     }
-//   }
-//   @media screen and (max-width:599px) {
-//     nav li {
-//       display: inline;
-//     }
-//   }
-// </style>
-// 
-
 export default class mediaQueries extends Component<Props> {
   render() {
     return (
@@ -30,7 +12,22 @@ export default class mediaQueries extends Component<Props> {
 <p className="content">
   Media queries are the most powerful tool for doing this. Let's take our layout that uses percent widths and have it display in one column when the browser is too small to fit the menu in the sidebar:
 </p>
-
+<style jsx="true">{`
+  @media screen and (min-width:600px) {
+    nav.elem {
+      float: left;
+      width: 25%;
+    }
+    section {
+      margin-left: 25%;
+    }
+  }
+  @media screen and (max-width:599px) {
+    nav li {
+      display: inline;
+    }
+  }
+`}</style>
 <figure className="highlight"><Highlight className="css">{`@media screen and (min-width:600px) {
   nav {
     float: left;

@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Highlight from 'react-highlight';
-// <style>
-//   .content img {
-//     margin: 0 0 1em 1em;
-//     float: right;
-//   }
-// </style>
-// 
-
 export default class float extends Component<Props> {
   render() {
     return (
@@ -17,7 +9,12 @@ export default class float extends Component<Props> {
 <p className="content">
   Another CSS property used for layout is <code>float</code>. Float is intended for wrapping text around images, like this:
 </p>
-
+<style jsx="true">{`
+  .content img {
+    margin: 0 0 1em 1em;
+    float: right;
+  }
+`}</style>
 <figure className="highlight"><Highlight className="css">{`img {
   float: right;
   margin: 0 0 1em 1em;

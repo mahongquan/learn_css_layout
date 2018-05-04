@@ -1,28 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Highlight from 'react-highlight';
-// <style>
-//         .box {
-//             float: left;
-//             width: 200px;
-//             height: 100px;
-//             margin: 1em;
-//         }
-// 
-//         .after-box {
-//             clear: left;
-//         }
-//         </style>
-// <style>
-//     .box2 {
-//         display: inline-block;
-//         width: 200px;
-//         height: 100px;
-//         margin: 1em;
-//     }
-//     </style>
-// 
-
 export default class inlineBlock extends Component<Props> {
   render() {
     return (
@@ -34,7 +12,18 @@ export default class inlineBlock extends Component<Props> {
 <div className="content">
 <h2>The Hard Way (using float)</h2>
 </div>
+<style jsx="true">{`
+        .box {
+            float: left;
+            width: 200px;
+            height: 100px;
+            margin: 1em;
+        }
 
+        .after-box {
+            clear: left;
+        }
+        `}</style>
 <figure className="highlight"><Highlight className="css">{`.box {
   float: left;
   width: 200px;
@@ -136,7 +125,14 @@ export default class inlineBlock extends Component<Props> {
             You can achieve the same effect using the <code>inline-block</code> value of the <code>display</code> property.
         </p>
 </div>
-
+<style jsx="true">{`
+    .box2 {
+        display: inline-block;
+        width: 200px;
+        height: 100px;
+        margin: 1em;
+    }
+    `}</style>
 <figure className="highlight"><Highlight className="css">{`.box2 {
   display: inline-block;
   width: 200px;

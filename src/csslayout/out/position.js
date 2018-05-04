@@ -1,44 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Highlight from 'react-highlight';
-// <style>
-//   .relative1 {
-//     position: relative;
-//   }
-//   .relative2 {
-//     position: relative;
-//     top: -20px;
-//     left: 20px;
-//     background-color: white;
-//     width: 500px;
-//   }
-// </style>
-// <style>
-//   .fixed {
-//     position: fixed;
-//     bottom: 0;
-//     right: 0;
-//     width: 200px;
-//     background-color: white;
-//     z-index: 9999;
-//   }
-// </style>
-// <style>
-//   .relative {
-//     position: relative;
-//     width: 600px;
-//     height: 400px;
-//   }
-//   .absolute {
-//     position: absolute;
-//     top: 120px;
-//     right: 0;
-//     width: 300px;
-//     height: 200px;
-//   }
-// </style>
-// 
-
 export default class position extends Component<Props> {
   render() {
     return (
@@ -63,7 +25,18 @@ export default class position extends Component<Props> {
 <h2 className="content">
   relative
 </h2>
-
+<style jsx="true">{`
+  .relative1 {
+    position: relative;
+  }
+  .relative2 {
+    position: relative;
+    top: -20px;
+    left: 20px;
+    background-color: white;
+    width: 500px;
+  }
+`}</style>
 <figure className="highlight"><Highlight className="css">{`.relative1 {
   position: relative;
 }
@@ -91,7 +64,16 @@ export default class position extends Component<Props> {
 <h2 className="content">
   fixed
 </h2>
-
+<style jsx="true">{`
+  .fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    background-color: white;
+    z-index: 9999;
+  }
+`}</style>
 <div className="fixed elem elem-green">
 <span className="label">&lt;div className="fixed"&gt;</span>
 <p>
@@ -121,7 +103,20 @@ export default class position extends Component<Props> {
 <h2 className="content">
   absolute
 </h2>
-
+<style jsx="true">{`
+  .relative {
+    position: relative;
+    width: 600px;
+    height: 400px;
+  }
+  .absolute {
+    position: absolute;
+    top: 120px;
+    right: 0;
+    width: 300px;
+    height: 200px;
+  }
+`}</style>
 <p className="content">
 <code>absolute</code> is the trickiest position value. <code>absolute</code> behaves like <code>fixed</code> except relative to <em>the nearest positioned ancestor</em> instead of relative to the viewport. If an absolutely-positioned element has no positioned ancestors, it uses the document body, and still moves along with page scrolling. Remember, a "positioned" element is one whose position is anything except <code>static</code>.
 </p>

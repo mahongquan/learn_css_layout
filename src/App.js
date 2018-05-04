@@ -4,7 +4,7 @@ class Root extends Component<Props> {
     render() {
         // console.log(this.props);
         return (
-            <div>
+   <div>
        <div id="logo">
           <a href="/">
             <img src="./images/logo.png" />

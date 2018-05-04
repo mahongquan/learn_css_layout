@@ -1,33 +1,30 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Highlight from 'react-highlight';
-// <style>
-//   .simple {
-//     width: 500px;
-//     margin: 20px auto;
-//     -webkit-box-sizing: border-box;
-//        -moz-box-sizing: border-box;
-//             box-sizing: border-box;
-//   }
-// 
-//   .fancy {
-//     width: 500px;
-//     margin: 20px auto;
-//     padding: 50px;
-//     border: solid #6AC5AC 10px;
-//     -webkit-box-sizing: border-box;
-//        -moz-box-sizing: border-box;
-//             box-sizing: border-box;
-//   }
-// </style>
-// 
-
 export default class boxSizing extends Component<Props> {
   render() {
     return (
     <div id="container">
 <h1 className="content">box-sizing</h1>
+<style jsx="true">{`
+  .simple {
+    width: 500px;
+    margin: 20px auto;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
 
+  .fancy {
+    width: 500px;
+    margin: 20px auto;
+    padding: 50px;
+    border: solid #6AC5AC 10px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+`}</style>
 <p className="content">
   The original box model behavior was eventually considered unintuitive, so a new CSS property called <code>box-sizing</code> was created. When you set <code>box-sizing: border-box;</code> on an element, the padding and border of that element no longer increase its width. Here is the same example as the previous page, but with <code>box-sizing: border-box;</code> on both elements:
 </p>

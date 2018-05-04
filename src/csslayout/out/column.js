@@ -1,19 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Highlight from 'react-highlight';
-// <style>
-//   .three-column {
-//     padding: 1em;
-//     -moz-column-count: 3;
-//     -moz-column-gap: 1em;
-//     -webkit-column-count: 3;
-//     -webkit-column-gap: 1em;
-//     column-count: 3;
-//     column-gap: 1em;
-//   }
-// </style>
-// 
-
 export default class column extends Component<Props> {
   render() {
     return (
@@ -22,7 +9,17 @@ export default class column extends Component<Props> {
 <p className="content">
   There is a new set of CSS properties that let you easily make multi-column text. Have a look:
 </p>
-
+<style jsx="true">{`
+  .three-column {
+    padding: 1em;
+    -moz-column-count: 3;
+    -moz-column-gap: 1em;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 1em;
+    column-count: 3;
+    column-gap: 1em;
+  }
+`}</style>
 <figure className="highlight"><Highlight className="css">{`.three-column {
   padding: 1em;
   -moz-column-count: 3;

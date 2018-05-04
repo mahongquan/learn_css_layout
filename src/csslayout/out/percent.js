@@ -1,30 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Highlight from 'react-highlight';
-// <style>
-//   .clearfix:after {
-//     content: ".";
-//     display: block;
-//     height: 0;
-//     clear: both;
-//     visibility: hidden;
-//   }
-//   article img {
-//     float: right;
-//     width: 50%;
-//   }
-// </style>
-// <style>
-//   nav.elem {
-//     float: left;
-//     width: 25%;
-//   }
-//   section {
-//     margin-left: 25%;
-//   }
-// </style>
-// 
-
 export default class percent extends Component<Props> {
   render() {
     return (
@@ -33,7 +9,19 @@ export default class percent extends Component<Props> {
 <p className="content">
   Percent is a measurement unit relative to the containing block. It's great for images: here we make an image that is always 50% the width of its container. Try shrinking down the page to see what happens!
 </p>
-
+<style jsx="true">{`
+  .clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  article img {
+    float: right;
+    width: 50%;
+  }
+`}</style>
 <figure className="highlight"><Highlight className="css">{`article img {
   float: right;
   width: 50%;
@@ -52,7 +40,15 @@ export default class percent extends Component<Props> {
 <p className="content">
   You can use percent for layout, but this can require more work. In this example, the <code>nav</code> content starts to wrap in a displeasing way when the window is too narrow. It comes down to what works for your content.
 </p>
-
+<style jsx="true">{`
+  nav.elem {
+    float: left;
+    width: 25%;
+  }
+  section {
+    margin-left: 25%;
+  }
+`}</style>
 <figure className="highlight"><Highlight className="css">{`nav {
   float: left;
   width: 25%;

@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Highlight from 'react-highlight';
-// <style>
-//   #main {
-//     width: 600px;
-//     margin: 0 auto;
-//   }
-// </style>
-// 
-
 export default class marginAuto extends Component<Props> {
   render() {
     return (
     <div id="container">
 <h1 className="content">margin: auto;</h1>
-
+<style jsx="true">{`
+  #main {
+    width: 600px;
+    margin: 0 auto;
+  }
+`}</style>
 <figure className="highlight"><Highlight className="css">{`#main {
   width: 600px;
   margin: 0 auto; 
