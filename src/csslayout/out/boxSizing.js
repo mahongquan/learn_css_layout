@@ -71,7 +71,7 @@ export default class boxSizing extends Component<Props> {
   This ensures that all elements are always sized in this more intuitive way.
 </p>
 <p className="content">
-  Since <code>box-sizing</code> is pretty new, you should use the <code>-webkit-</code> and <code>-moz-</code> prefixes for now, as I have in these examples. This technique enables experimental features in specific browsers. Also, keep in mind that this one is <a href="#">IE8+</a>.
+  Since <code>box-sizing</code> is pretty new, you should use the <code>-webkit-</code> and <code>-moz-</code> prefixes for now, as I have in these examples. This technique enables experimental features in specific browsers. Also, keep in mind that this one is <a >IE8+</a>.
 </p>
 <div className="nav-wrapper">
 <Link className="nav prev" to="box-model.html">Previous</Link>

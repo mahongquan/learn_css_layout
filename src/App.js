@@ -5,9 +5,16 @@ class Root extends Component<Props> {
         // console.log(this.props);
         return (
    <div>
+   <style jsx="true">{`
+#about {
+    max-width: 550px;
+    margin: 0 auto 2em;
+    padding: 0 1rem;
+  }
+`}</style>
        <div id="logo">
           <a href="/">
-            <img src="./images/logo.png" />
+            <img src="./images/logo.png" alt="logo"/>
             <span>Learn CSS Layout</span>
           </a>
         </div>

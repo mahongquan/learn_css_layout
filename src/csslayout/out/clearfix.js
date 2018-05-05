@@ -23,7 +23,7 @@ export default class clearfix extends Component<Props> {
 <div className="content">
 <div className="elem">
 <span className="label">&lt;div&gt;</span>
-<img alt="An Image" src=".//images/ilta.png"/>
+<img alt="ilta" src=".//images/ilta.png"/>
 <p>
       Uh oh... this image is taller than the element containing it, and it's floated, so it's overflowing outside of its container!
     </p>
@@ -49,7 +49,7 @@ export default class clearfix extends Component<Props> {
 <div className="content">
 <div className="elem clearfix">
 <span className="label">&lt;div className="clearfix"&gt;</span>
-<img alt="An Image" src=".//images/ilta.png"/>
+<img alt="ilta" src=".//images/ilta.png"/>
 <p>
       Much better!
     </p>
@@ -63,7 +63,7 @@ export default class clearfix extends Component<Props> {
   zoom: 1;
 }`}</Highlight></figure>
 <p className="content">
-  There are exotic browsers that may require extra attention. <a href="#">The world of clearfixing is pretty scary</a>, but this simple solution will work for the vast majority of browsers today.
+  There are exotic browsers that may require extra attention. <a>The world of clearfixing is pretty scary</a>, but this simple solution will work for the vast majority of browsers today.
 </p>
 <div className="nav-wrapper">
 <Link className="nav prev" to="clear.html">Previous</Link>

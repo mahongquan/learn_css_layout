@@ -39,7 +39,7 @@ export default class column extends Component<Props> {
 </section>
 </div>
 <p className="content">
-  CSS columns are very new, so you need to use the prefixes, and it won't work <a href="#">through IE9 or in Opera Mini</a>. There are some more column-related properties, so <a href="#">click here to read more</a>. Otherwise, off to the next topic.
+  CSS columns are very new, so you need to use the prefixes, and it won't work <a >through IE9 or in Opera Mini</a>. There are some more column-related properties, so <a >click here to read more</a>. Otherwise, off to the next topic.
 </p>
 <div className="nav-wrapper">
 <Link className="nav prev" to="inline-block-layout.html">Previous</Link>

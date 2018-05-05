@@ -84,12 +84,12 @@ export default class mediaQueries extends Component<Props> {
 </section>
 </div>
 <p className="content">
-  Tada! Now our layout looks great even on mobile browsers. Here are <a href="http://mediaqueri.es/">some popular sites that use media queries this way</a>. There is a whole lot more you can detect than <code>min-width</code> and <code>max-width</code>: check out <a href="#">the MDN documentation</a> to learn more.
+  Tada! Now our layout looks great even on mobile browsers. Here are <a href="http://mediaqueri.es/">some popular sites that use media queries this way</a>. There is a whole lot more you can detect than <code>min-width</code> and <code>max-width</code>: check out <a >the MDN documentation</a> to learn more.
 </p>
 <div className="content">
 <h2>extra credit</h2>
 <p>
-    You can make your layout look even better on mobile using <a href="#">meta viewport</a>.
+    You can make your layout look even better on mobile using <a >meta viewport</a>.
   </p>
 </div>
 <div className="nav-wrapper">

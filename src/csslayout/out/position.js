@@ -98,7 +98,7 @@ export default class position extends Component<Props> {
   A fixed element does not leave a gap in the page where it would normally have been located.
 </p>
 <p className="content">
-  Mobile browsers have surprisingly shaky support for fixed. <a href="#">Learn more about the situation here</a>.
+  Mobile browsers have surprisingly shaky support for fixed. <a >Learn more about the situation here</a>.
 </p>
 <h2 className="content">
   absolute

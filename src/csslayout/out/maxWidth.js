@@ -22,7 +22,7 @@ export default class maxWidth extends Component<Props> {
     Using <code>max-width</code> instead of <code>width</code> in this situation will improve the browser's handling of small windows. This is important when making a site usable on mobile. Resize this page to check it out!
   </p>
 <p>
-    By the way, <code>max-width</code> is <a href="#">supported by all major browsers</a> including IE7+ so you shouldn't be afraid of using it.
+    By the way, <code>max-width</code> is <a >supported by all major browsers</a> including IE7+ so you shouldn't be afraid of using it.
   </p>
 <span className="endlabel">&lt;/div&gt;</span>
 </div>

@@ -180,7 +180,7 @@ export default class inlineBlock extends Component<Props> {
 </section>
 </div>
 <p className="content">
-        You have to do extra work for <a href="#">IE6 and IE7 support</a> of <code>inline-block</code>. Sometimes people talk about <code>inline-block</code> triggering something called <code>hasLayout</code>, though you only need to know about that to support old browsers. Follow the previous link about IE6 and IE7 support if you're curious to learn more. Otherwise, let's continue.
+        You have to do extra work for <a >IE6 and IE7 support</a> of <code>inline-block</code>. Sometimes people talk about <code>inline-block</code> triggering something called <code>hasLayout</code>, though you only need to know about that to support old browsers. Follow the previous link about IE6 and IE7 support if you're curious to learn more. Otherwise, let's continue.
     </p>
 <div className="nav-wrapper">
 <Link className="nav prev" to="media-queries.html">Previous</Link>

@@ -7,10 +7,10 @@ export default class flexbox extends Component<Props> {
     <div id="container">
 <h1 className="content">flexbox</h1>
 <p className="content">
-  The new <code>flexbox</code> layout mode is poised to redefine how we do layouts in CSS. Unfortunately the specification has changed a lot recently, so it's implemented differently in different browsers. Still, I'd like to share a couple examples so you know what's coming up. These examples currently only work <a href="#">some browsers</a> that use the <a href="#">latest version of the standard</a>.
+  The new <code>flexbox</code> layout mode is poised to redefine how we do layouts in CSS. Unfortunately the specification has changed a lot recently, so it's implemented differently in different browsers. Still, I'd like to share a couple examples so you know what's coming up. These examples currently only work <a >some browsers</a> that use the <a >latest version of the standard</a>.
 </p>
 <p className="content">
-  There are a lot of out-of-date flexbox resources around. If you want to learn more about flexbox, <a href="#">start here</a> to learn how to identify if a resource is current or not. I have written a <a href="#">detailed article using the latest syntax</a>.
+  There are a lot of out-of-date flexbox resources around. If you want to learn more about flexbox, <a >start here</a> to learn how to identify if a resource is current or not. I have written a <a >detailed article using the latest syntax</a>.
 </p>
 <p className="content">
   There is a lot more you can do with flexbox; these are just a few examples to give you an idea:

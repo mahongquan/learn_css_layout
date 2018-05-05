@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import Highlight from 'react-highlight';
 export default class frameworks extends Component<Props> {
   render() {
     return (
@@ -33,19 +32,19 @@ export default class frameworks extends Component<Props> {
   }
 `}</style>
 <div id="logos">
-<a href="#"><img alt="blueprint" src=".//images/blueprint.jpg"/></a>
-<a href="#"><img alt="unsemantic" src=".//images/unsemantic.png"/></a>
-<a href="#"><img alt="bluetrip" src=".//images/bluetrip.jpg"/></a>
-<a href="#"><img alt="bootstrap" src=".//images/bootstrap.jpg"/></a>
+<a ><img alt="blueprint" src="./images/blueprint.jpg"/></a>
+<a ><img alt="unsemantic" src="./images/unsemantic.png"/></a>
+<a ><img alt="bluetrip" src="./images/bluetrip.jpg"/></a>
+<a ><img alt="bootstrap" src="./images/bootstrap.jpg"/></a>
 <a href="http://susy.oddbird.net/"><img alt="susy" src=".//images/susy.jpg"/></a>
-<a href="#"><img alt="foundation" src=".//images/foundation.png"/></a>
-<a href="#"><img alt="kube" src=".//images/kube.png"/></a>
-<a href="#"><img alt="groundwork" src=".//images/groundwork.gif"/></a>
-<a href="#"><img alt="semantic ui" src=".//images/semantic_ui.png"/></a>
-<a href="http://purecss.io/"><img alt="Purecss" src=".//images/logo_pure.png"/></a>
+<a ><img alt="foundation" src="./images/foundation.png"/></a>
+<a ><img alt="kube" src="./images/kube.png"/></a>
+<a ><img alt="groundwork" src="./images/groundwork.gif"/></a>
+<a ><img alt="semantic ui" src="./images/semantic_ui.png"/></a>
+<a href="http://purecss.io/"><img alt="Purecss" src="./images/logo_pure.png"/></a>
 </div>
 <p className="content">
-  That's it! If you have any feedback on this site, please <a href="#">let me know on Twitter</a>!
+  That's it! If you have any feedback on this site, please <a >let me know on Twitter</a>!
 </p>
 <div className="nav-wrapper">
 <Link className="nav prev" to="flexbox.html">Previous</Link>

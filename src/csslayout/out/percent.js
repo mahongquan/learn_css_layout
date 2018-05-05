@@ -28,7 +28,7 @@ export default class percent extends Component<Props> {
 }`}</Highlight></figure>
 <article className="elem elem-green content clearfix">
 <span className="label">&lt;article className="clearfix"&gt;</span>
-<img alt="an image" src="images/ilta.png"/>
+<img alt="ilta" src="images/ilta.png"/>
 <p>
     You could even use <code>min-width</code> and <code>max-width</code> to limit how big or small the image can get!
   </p>

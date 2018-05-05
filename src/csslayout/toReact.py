@@ -56,8 +56,7 @@ def changedir(f):
     
 
     appname=getAppname(f)
-    if appname in ["index","display","noLayout","toc","about"]:
-        return 
+
     #print(appname)
     imports.append("import %s from './csslayout/out/%s';" %(appname,appname))
     routes.append('<Route path="/%s" component={%s} />' %(f,appname))
@@ -74,6 +73,9 @@ def changedir(f):
     outstr=str(div)
     outstr=outstr.replace('<a class="nav prev" href','<Link class="nav prev" to')
     outstr=outstr.replace('<a class="nav next" href','<Link class="nav next" to')
+    outstr=outstr.replace('<a class="nav start" href','<Link class="nav start" to')
+    outstr=outstr.replace('Get Started</a>','Get Started</Link>')
+
     outstr=outstr.replace('Previous</a>','Previous</Link>')
     outstr=outstr.replace('Next</a>','Next</Link>')
     outstr=outstr.replace("class","className")

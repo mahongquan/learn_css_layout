@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import { Provider } from 'react-redux';
-import AppNo from './AppNo';
-import AppIndex from './AppIndex';
-import AppDisplay from './AppDisplay';
-import App2 from './App2';
-import AppToc from './AppToc';
 import App from './App';
-
-import about from './about';
-import boxModel from './boxModel';
-import boxSizing from './boxSizing';
+import AppNo from './csslayout/out/noLayout';
+import AppIndex from './csslayout/out/index';
+import AppDisplay from './csslayout/out/display';
+import AppToc from './csslayout/out/toc';
+import about from './csslayout/out/about';
+import boxModel from './csslayout/out/boxModel';
+import boxSizing from './csslayout/out/boxSizing';
 import clear from './csslayout/out/clear';
 import clearfix from './csslayout/out/clearfix';
 import column from './csslayout/out/column';
@@ -19,26 +16,31 @@ import float from './csslayout/out/float';
 import frameworks from './csslayout/out/frameworks';
 import inlineBlockLayout from './csslayout/out/inlineBlockLayout';
 import inlineBlock from './csslayout/out/inlineBlock';
-import marginAuto from './marginAuto';
-import maxWidth from './maxWidth';
+import marginAuto from './csslayout/out/marginAuto';
+import maxWidth from './csslayout/out/maxWidth';
 import mediaQueries from './csslayout/out/mediaQueries';
 import percent from './csslayout/out/percent';
 import positionExample from './csslayout/out/positionExample';
-import position from './position';
-
-import {Router,Redirect, BrowserRouter,Route,Switch, Link} from 'react-router-dom'
-var { ipcRenderer } =require("electron");//
+import position from './csslayout/out/position';
+import {Router,Redirect,Route} from 'react-router-dom'
 import createHashHistory from "history/createHashHistory";
+let ipcRenderer;
+if(window.myremote)
+{
+    ipcRenderer  =window.myremote.electron.ipcRenderer;//
+}
 const history = createHashHistory({
   hashType: "slash" // the default
 })
 export default class Root extends Component<Props> {
   constructor(){
     super();
-    ipcRenderer.on("goback", ()=>{
-        console.log(history);
-        history.goBack();
-    });
+    if(ipcRenderer){
+      ipcRenderer.on("goback", ()=>{
+          console.log(history);
+          history.goBack();
+      });
+    }
   }
   render() {
     return (
@@ -68,6 +70,7 @@ export default class Root extends Component<Props> {
 <Route exact path="/inline-block.html" component={inlineBlock} />
 <Route exact path="/media-queries.html" component={mediaQueries} />
 <Route exact path="/percent.html" component={percent} />
+<Redirect exact path="/"  to="/" />
           </App>
         </Router>
     );

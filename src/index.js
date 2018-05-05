@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Browser from './Browser.jsx';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme.css';
+import App from './AppRoutes';
+import './css/style.css';
+import "./highlight.js/styles/dark.css";
+
 //import ContextMenuExample from './ContextMenuExample';
-ReactDOM.render(<Browser />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
