@@ -3,15 +3,17 @@
    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
+    <link rel="icon" type="image/png" href="%PUBLIC_URL%/images/logo.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <title>css layout</title>
     <script> 
-      window.myremote={
-        fs:require('fs'),
-        path:require("path"),
-        electron:require('electron'),
-      };
+      if(window.require){
+        window.myremote={
+          fs:require('fs'),
+          path:require("path"),
+          electron:require('electron'),
+        };
+      }
     </script>
   </head>
   <body>
