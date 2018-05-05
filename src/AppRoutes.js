@@ -22,7 +22,7 @@ import mediaQueries from './csslayout/out/mediaQueries';
 import percent from './csslayout/out/percent';
 import positionExample from './csslayout/out/positionExample';
 import position from './csslayout/out/position';
-import {Router,Redirect,Route} from 'react-router-dom'
+import {Router,Redirect,Route,Switch} from 'react-router-dom'
 import createHashHistory from "history/createHashHistory";
 let ipcRenderer;
 if(window.myremote)
@@ -46,31 +46,33 @@ export default class Root extends Component<Props> {
     return (
         <Router  history={history}>
           <App>
-            <Route exact path="/no-layout.html" component={AppNo} />
+          <Switch>
+            <Route exact path="/" component={AppIndex} />
             <Route exact path="/index.html" component={AppIndex} />
+            <Route exact path="/no-layout.html" component={AppNo} />
             <Route exact path="/toc.html" component={AppToc} />
             <Route exact path="/display.html" component={AppDisplay} />
-            <Route exact path="/" component={AppIndex} />
-<Route exact path="/about.html" component={about} />
-<Route exact path="/margin-auto.html" component={marginAuto} />
-<Route exact path="/max-width.html" component={maxWidth} />
-<Route exact path="/box-model.html" component={boxModel} />
-<Route exact path="/box-sizing.html" component={boxSizing} />
-<Route exact path="/position.html" component={position} />
-<Route exact path="/position-example.html" component={positionExample} />
-<Route exact path="/float.html" component={float} />
-<Route exact path="/clear.html" component={clear} />
-<Route exact path="/clearfix.html" component={clearfix} />
-<Route exact path="/column.html" component={column} />
-<Route exact path="/flexbox.html" component={flexbox} />
-<Route exact path="/float-layout.html" component={floatLayout} />
+            <Route exact path="/about.html" component={about} />
+            <Route exact path="/margin-auto.html" component={marginAuto} />
+            <Route exact path="/max-width.html" component={maxWidth} />
+            <Route exact path="/box-model.html" component={boxModel} />
+            <Route exact path="/box-sizing.html" component={boxSizing} />
+            <Route exact path="/position.html" component={position} />
+            <Route exact path="/position-example.html" component={positionExample} />
+            <Route exact path="/float.html" component={float} />
+            <Route exact path="/clear.html" component={clear} />
+            <Route exact path="/clearfix.html" component={clearfix} />
+            <Route exact path="/column.html" component={column} />
+            <Route exact path="/flexbox.html" component={flexbox} />
+            <Route exact path="/float-layout.html" component={floatLayout} />
 
-<Route exact path="/frameworks.html" component={frameworks} />
-<Route exact path="/inline-block-layout.html" component={inlineBlockLayout} />
-<Route exact path="/inline-block.html" component={inlineBlock} />
-<Route exact path="/media-queries.html" component={mediaQueries} />
-<Route exact path="/percent.html" component={percent} />
-<Redirect exact path="/"  to="/" />
+            <Route exact path="/frameworks.html" component={frameworks} />
+            <Route exact path="/inline-block-layout.html" component={inlineBlockLayout} />
+            <Route exact path="/inline-block.html" component={inlineBlock} />
+            <Route exact path="/media-queries.html" component={mediaQueries} />
+            <Route exact path="/percent.html" component={percent} />
+            <Redirect path="/"  to="/" />
+          </ Switch>
           </App>
         </Router>
     );
