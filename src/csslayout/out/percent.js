@@ -57,7 +57,7 @@ section {
   margin-left: 25%;
 }`}</Highlight></figure>
 <div className="container elem">
-<span className="label">&lt;div className="container"&gt;</span>
+<span className="label">&lt;div class="container"&gt;</span>
 <nav className="elem elem-red">
 <span className="label">&lt;nav&gt;</span>
 <ul>

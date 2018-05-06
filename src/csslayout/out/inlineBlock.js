@@ -35,84 +35,84 @@ export default class inlineBlock extends Component<Props> {
 }`}</Highlight></figure>
 <div className="content">
 <div className="box elem">
-<span className="label">&lt;div className="box"&gt;</span>
+<span className="label">&lt;div class="box"&gt;</span>
 <p>
                     I'm floating!
                 </p>
 <span className="endlabel">&lt;/div&gt;</span>
 </div>
 <div className="box elem">
-<span className="label">&lt;div className="box"&gt;</span>
+<span className="label">&lt;div class="box"&gt;</span>
 <p>
                     I'm floating!
                 </p>
 <span className="endlabel">&lt;/div&gt;</span>
 </div>
 <div className="box elem">
-<span className="label">&lt;div className="box"&gt;</span>
+<span className="label">&lt;div class="box"&gt;</span>
 <p>
                     I'm floating!
                 </p>
 <span className="endlabel">&lt;/div&gt;</span>
 </div>
 <div className="box elem">
-<span className="label">&lt;div className="box"&gt;</span>
+<span className="label">&lt;div class="box"&gt;</span>
 <p>
                     I'm floating!
                 </p>
 <span className="endlabel">&lt;/div&gt;</span>
 </div>
 <div className="box elem">
-<span className="label">&lt;div className="box"&gt;</span>
+<span className="label">&lt;div class="box"&gt;</span>
 <p>
                     I'm floating!
                 </p>
 <span className="endlabel">&lt;/div&gt;</span>
 </div>
 <div className="box elem">
-<span className="label">&lt;div className="box"&gt;</span>
+<span className="label">&lt;div class="box"&gt;</span>
 <p>
                     I'm floating!
                 </p>
 <span className="endlabel">&lt;/div&gt;</span>
 </div>
 <div className="box elem">
-<span className="label">&lt;div className="box"&gt;</span>
+<span className="label">&lt;div class="box"&gt;</span>
 <p>
                     I'm floating!
                 </p>
 <span className="endlabel">&lt;/div&gt;</span>
 </div>
 <div className="box elem">
-<span className="label">&lt;div className="box"&gt;</span>
+<span className="label">&lt;div class="box"&gt;</span>
 <p>
                     I'm floating!
                 </p>
 <span className="endlabel">&lt;/div&gt;</span>
 </div>
 <div className="box elem">
-<span className="label">&lt;div className="box"&gt;</span>
+<span className="label">&lt;div class="box"&gt;</span>
 <p>
                     I'm floating!
                 </p>
 <span className="endlabel">&lt;/div&gt;</span>
 </div>
 <div className="box elem">
-<span className="label">&lt;div className="box"&gt;</span>
+<span className="label">&lt;div class="box"&gt;</span>
 <p>
                     I'm floating!
                 </p>
 <span className="endlabel">&lt;/div&gt;</span>
 </div>
 <div className="box elem">
-<span className="label">&lt;div className="box"&gt;</span>
+<span className="label">&lt;div class="box"&gt;</span>
 <p>
                     I'm floating!
                 </p>
 <span className="endlabel">&lt;/div&gt;</span>
 </div>
 <section className="elem elem-green after-box">
-<span className="label">&lt;div className="after-box"&gt;</span>
+<span className="label">&lt;div class="after-box"&gt;</span>
 <p>
                     I'm using clear so I don't float next to the above boxes.
                 </p>
@@ -141,35 +141,35 @@ export default class inlineBlock extends Component<Props> {
 }`}</Highlight></figure>
 <div className="content">
 <div className="box2 elem">
-<span className="label">&lt;div className="box2"&gt;</span>
+<span className="label">&lt;div class="box2"&gt;</span>
 <p>I'm an inline block!</p>
 <span className="endlabel">&lt;/div&gt;</span>
 </div>
 <div className="box2 elem">
-<span className="label">&lt;div className="box2"&gt;</span>
+<span className="label">&lt;div class="box2"&gt;</span>
 <p>I'm an inline block!</p>
 <span className="endlabel">&lt;/div&gt;</span>
 </div>
 <div className="box2 elem">
-<span className="label">&lt;div className="box2"&gt;</span>
+<span className="label">&lt;div class="box2"&gt;</span>
 <p>I'm an inline block!</p>
 <span className="endlabel">&lt;/div&gt;</span>
 </div>
 <div className="box2 elem">
-<span className="label">&lt;div className="box2"&gt;</span>
+<span className="label">&lt;div class="box2"&gt;</span>
 <p>I'm an inline block!</p>
 <span className="endlabel">&lt;/div&gt;</span></div>
-<div className="box2 elem"><span className="label">&lt;div className="box2"&gt;</span>
+<div className="box2 elem"><span className="label">&lt;div class="box2"&gt;</span>
 <p>I'm an inline block!</p><span className="endlabel">&lt;/div&gt;</span></div>
-<div className="box2 elem"><span className="label">&lt;div className="box2"&gt;</span>
+<div className="box2 elem"><span className="label">&lt;div class="box2"&gt;</span>
 <p>I'm an inline block!</p><span className="endlabel">&lt;/div&gt;</span></div>
-<div className="box2 elem"><span className="label">&lt;div className="box2"&gt;</span>
+<div className="box2 elem"><span className="label">&lt;div class="box2"&gt;</span>
 <p>I'm an inline block!</p><span className="endlabel">&lt;/div&gt;</span></div>
-<div className="box2 elem"><span className="label">&lt;div className="box2"&gt;</span>
+<div className="box2 elem"><span className="label">&lt;div class="box2"&gt;</span>
 <p>I'm an inline block!</p><span className="endlabel">&lt;/div&gt;</span></div>
-<div className="box2 elem"><span className="label">&lt;div className="box2"&gt;</span>
+<div className="box2 elem"><span className="label">&lt;div class="box2"&gt;</span>
 <p>I'm an inline block!</p><span className="endlabel">&lt;/div&gt;</span></div>
-<div className="box2 elem"><span className="label">&lt;div className="box2"&gt;</span>
+<div className="box2 elem"><span className="label">&lt;div class="box2"&gt;</span>
 <p>I'm an inline block!</p><span className="endlabel">&lt;/div&gt;</span></div>
 <section className="elem elem-green">
 <span className="label">&lt;div&gt;</span>

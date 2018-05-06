@@ -16,7 +16,7 @@ export default class position extends Component<Props> {
   position: static;
 }`}</Highlight></figure>
 <div className="elem">
-<span className="label">&lt;div className="static"&gt;</span>
+<span className="label">&lt;div class="static"&gt;</span>
 <p>
 <code>static</code> is the default value. An element with <code>position: static;</code> is not positioned in any special way. A static element is said to be <em>not positioned</em> and an element with its position set to anything else is said to be <em>positioned</em>.
   </p>
@@ -48,14 +48,14 @@ export default class position extends Component<Props> {
   width: 500px;
 }`}</Highlight></figure>
 <div className="relative1 elem">
-<span className="label">&lt;div className="relative1"&gt;</span>
+<span className="label">&lt;div class="relative1"&gt;</span>
 <p>
 <code>relative</code> behaves the same as <code>static</code> unless you add some extra properties.
   </p>
 <span className="endlabel">&lt;/div&gt;</span>
 </div>
 <div className="relative2 elem elem-red">
-<span className="label">&lt;div className="relative2"&gt;</span>
+<span className="label">&lt;div class="relative2"&gt;</span>
 <p>
     Setting the <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.
   </p>
@@ -75,7 +75,7 @@ export default class position extends Component<Props> {
   }
 `}</style>
 <div className="fixed elem elem-green">
-<span className="label">&lt;div className="fixed"&gt;</span>
+<span className="label">&lt;div class="fixed"&gt;</span>
 <p>
     Hello! Don't pay attention to me yet.
   </p>
@@ -136,12 +136,12 @@ export default class position extends Component<Props> {
   height: 200px;
 }`}</Highlight></figure>
 <div className="relative elem">
-<span className="label">&lt;div className="relative"&gt;</span>
+<span className="label">&lt;div class="relative"&gt;</span>
 <p>
     This element is relatively-positioned. If this element was <code>position: static;</code> its absolutely-positioned child would escape and would be positioned relative to the document body.
   </p>
 <div className="absolute elem elem-red">
-<span className="label">&lt;div className="absolute"&gt;</span>
+<span className="label">&lt;div class="absolute"&gt;</span>
 <p>
       This element is absolutely-positioned. It's positioned relative to its parent.
     </p>

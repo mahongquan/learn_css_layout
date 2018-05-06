@@ -29,7 +29,7 @@ export default class clear extends Component<Props> {
 }`}</Highlight></figure>
 <div className="content">
 <div className="box elem">
-<span className="label">&lt;div className="box"&gt;</span>
+<span className="label">&lt;div class="box"&gt;</span>
 <p>
         I feel like I'm floating!
       </p>
@@ -59,7 +59,7 @@ export default class clear extends Component<Props> {
 }`}</Highlight></figure>
 <div className="content">
 <div className="box elem">
-<span className="label">&lt;div className="box"&gt;</span>
+<span className="label">&lt;div class="box"&gt;</span>
 <p>
       I feel like I'm floating!
     </p>

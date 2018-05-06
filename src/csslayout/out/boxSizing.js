@@ -46,14 +46,14 @@ export default class boxSizing extends Component<Props> {
           box-sizing: border-box;
 }`}</Highlight></figure>
 <div className="simple elem">
-<span className="label">&lt;div className="simple"&gt;</span>
+<span className="label">&lt;div class="simple"&gt;</span>
 <p>
     We're the same size now!
   </p>
 <span className="endlabel">&lt;/div&gt;</span>
 </div>
 <div className="fancy elem">
-<span className="label">&lt;div className="fancy"&gt;</span>
+<span className="label">&lt;div class="fancy"&gt;</span>
 <p>
     Hooray!
   </p>

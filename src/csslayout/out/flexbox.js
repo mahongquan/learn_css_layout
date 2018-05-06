@@ -41,7 +41,7 @@ nav {
           flex: 1;
 }`}</Highlight></figure>
 <div className="container elem">
-<span className="label">&lt;div className="container"&gt;</span>
+<span className="label">&lt;div class="container"&gt;</span>
 <nav className="elem elem-red">
 <span className="label">&lt;nav&gt;</span>
 <ul>
@@ -67,7 +67,7 @@ nav {
 <span className="endlabel">&lt;/nav&gt;</span>
 </nav>
 <div className="elem elem-red flex-column">
-<span className="label">&lt;div className="flex-column"&gt;</span>
+<span className="label">&lt;div class="flex-column"&gt;</span>
 <section className="elem elem-green">
 <span className="label">&lt;section&gt;</span>
 <p>
@@ -132,28 +132,28 @@ nav {
 }`}</Highlight></figure>
 <div className="container elem">
 <section className="elem elem-green initial">
-<span className="label">&lt;div className="initial"&gt;</span>
+<span className="label">&lt;div class="initial"&gt;</span>
 <p>
       I will be 200px when there is room, and I will shrink down to 100px if there is not room, but no smaller.
     </p>
 <span className="endlabel">&lt;/div&gt;</span>
 </section>
 <section className="elem elem-green none">
-<span className="label">&lt;div className="none"&gt;</span>
+<span className="label">&lt;div class="none"&gt;</span>
 <p>
       I will always be 200px, no matter what.
     </p>
 <span className="endlabel">&lt;/div&gt;</span>
 </section>
 <section className="elem elem-green flex1">
-<span className="label">&lt;div className="flex1"&gt;</span>
+<span className="label">&lt;div class="flex1"&gt;</span>
 <p>
       I will fill up 1/3 of the remaining width.
     </p>
 <span className="endlabel">&lt;/div&gt;</span>
 </section>
 <section className="elem elem-green flex2">
-<span className="label">&lt;div className="flex2"&gt;</span>
+<span className="label">&lt;div class="flex2"&gt;</span>
 <p>
       I will fill up 2/3 of the remaining width.
     </p>
@@ -182,7 +182,7 @@ nav {
           justify-content: center;
 }`}</Highlight></figure>
 <div className="vertical-container elem">
-<span className="label">&lt;div className="vertical-container"&gt;</span>
+<span className="label">&lt;div class="vertical-container"&gt;</span>
 <section className="elem elem-green">
 <span className="label">&lt;div&gt;</span>
 <p>

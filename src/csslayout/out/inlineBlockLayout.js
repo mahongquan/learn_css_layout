@@ -43,7 +43,7 @@ export default class inlineBlockLayout extends Component<Props> {
   width: 75%;
 }`}</Highlight></figure>
 <div className="container elem">
-<span className="label">&lt;div className="container"&gt;</span>
+<span className="label">&lt;div class="container"&gt;</span>
 <nav className="elem elem-red">
 <span className="label">&lt;nav&gt;</span>
 <ul>
@@ -69,7 +69,7 @@ export default class inlineBlockLayout extends Component<Props> {
 <span className="endlabel">&lt;/nav&gt;</span>
 </nav>
 <div className="elem elem-red column">
-<span className="label">&lt;div className="column"&gt;</span>
+<span className="label">&lt;div class="column"&gt;</span>
 <section className="elem elem-green">
 <span className="label">&lt;section&gt;</span>
 <p>

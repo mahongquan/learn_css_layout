@@ -48,7 +48,7 @@ export default class clearfix extends Component<Props> {
 </p>
 <div className="content">
 <div className="elem clearfix">
-<span className="label">&lt;div className="clearfix"&gt;</span>
+<span className="label">&lt;div class="clearfix"&gt;</span>
 <img alt="ilta" src=".//images/ilta.png"/>
 <p>
       Much better!

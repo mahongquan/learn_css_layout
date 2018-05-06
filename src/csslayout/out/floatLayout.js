@@ -33,7 +33,7 @@ section {
   margin-left: 200px;
 }`}</Highlight></figure>
 <div className="clearfix elem">
-<span className="label">&lt;div className="clearfix"&gt;</span>
+<span className="label">&lt;div class="clearfix"&gt;</span>
 <nav className="elem elem-red">
 <span className="label">&lt;nav&gt;</span>
 <ul>

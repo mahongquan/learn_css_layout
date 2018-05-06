@@ -40,14 +40,14 @@ export default class boxModel extends Component<Props> {
   border-width: 10px;
 }`}</Highlight></figure>
 <div className="simple elem">
-<span className="label">&lt;div className="simple"&gt;</span>
+<span className="label">&lt;div class="simple"&gt;</span>
 <p>
     I'm smaller...
   </p>
 <span className="endlabel">&lt;/div&gt;</span>
 </div>
 <div className="fancy elem">
-<span className="label">&lt;div className="fancy"&gt;</span>
+<span className="label">&lt;div class="fancy"&gt;</span>
 <p>
     And I'm bigger!
   </p>
