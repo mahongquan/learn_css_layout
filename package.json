@@ -2,7 +2,6 @@
   "name": "electron-quick-start",
   "version": "1.0.0",
   "homepage": ".",
-
   "description": "learn css layout",
   "main": "main.js",
   "scripts": {
@@ -22,11 +21,12 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "~1.8.4",
+    "react-router-dom": "^4.2.2",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-highlight": "^0.12.0",
     "react-scripts": "^1.1.4"
   },
   "dependencies": {
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-highlight": "^0.12.0"
   }
 }

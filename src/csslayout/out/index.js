@@ -11,13 +11,13 @@ export default class index extends Component<Props> {
     padding: 0 1rem;
   }
 #translations {
-  text-align: center;
   max-width: 400px;
   margin: 0 auto 1em;
+  display:block;
 }
 #translations span {
   margin: 0 .2em;
-  white-space: nowrap;
+  white-space:normal;
 }
 `}</style>
 <div id="about">
@@ -31,22 +31,22 @@ export default class index extends Component<Props> {
 <div className="nav-wrapper">
 <Link className="nav start" to="./no-layout.html">Get Started</Link>
 </div>
-<div id="translations" style={{display: "flex",maxWidth:"400px"}}>
+<div id="translations">
 <span><a href="http://learnlayout.com">english</a></span>
-<span><a href="http://es.learnlayout.com">espaÃ±ol</a></span>
-<span><a href="http://fr.learnlayout.com">franÃ§ais</a></span>
+<span><a href="http://es.learnlayout.com">español</a></span>
+<span><a href="http://fr.learnlayout.com">français</a></span>
 <span><a href="http://de.learnlayout.com">deutsch</a></span>
 <span><a href="http://nl.learnlayout.com">dutch</a></span>
 <span><a href="http://it.learnlayout.com">italiano</a></span>
-<span><a href="http://pt-br.learnlayout.com">portuguÃªs (brasil)</a></span>
-<span><a href="http://pt-pt.learnlayout.com">portuguÃªs (portuguÃªs)</a></span>
-<span><a href="http://ru.learnlayout.com">ÑÑÑÑÐºÐ¸Ð¹</a></span>
-<span><a href="http://fa.learnlayout.com">ÙØ§Ø±Ø³Û</a></span>
-<span><a href="http://ar.learnlayout.com">Ø¹Ø±Ø¨Ù</a></span>
-<span><a href="http://zh.learnlayout.com">ä¸­æ</a></span>
-<span><a href="http://zh-tw.learnlayout.com">æ­£é«ä¸­æ</a></span>
-<span><a href="http://ko.learnlayout.com">íêµ­ì´</a></span>
-<span><a href="http://ja.learnlayout.com">æ¥æ¬èª</a></span>
+<span><a href="http://pt-br.learnlayout.com">português(brasil)</a></span>
+<span><a href="http://pt-pt.learnlayout.com">português(português)</a></span>
+<span><a href="http://ru.learnlayout.com">русский</a></span>
+<span><a href="http://fa.learnlayout.com">فارسی</a></span>
+<span><a href="http://ar.learnlayout.com">عربى</a></span>
+<span><a href="http://zh.learnlayout.com">中文</a></span>
+<span><a href="http://zh-tw.learnlayout.com">正體中文</a></span>
+<span><a href="http://ko.learnlayout.com">한국어</a></span>
+<span><a href="http://ja.learnlayout.com">日本語</a></span>
 </div>
 </div>
     );

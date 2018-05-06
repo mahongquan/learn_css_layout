@@ -18,9 +18,8 @@ export default class clear extends Component<Props> {
   }
 `}</style>
 <figure className="highlight"><Highlight className="html">{`
-  &lt;div className="box"&gt;...&lt;/div&gt;
-&lt;section&gt;...&lt;/section&gt;
-
+<div class="box">...</div>
+<section>...</section>
 `}</Highlight></figure>
 <figure className="highlight"><Highlight className="css">{`.box {
   float: left;
