@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import TranLinks from './TranLinks';
 export default class index extends Component<Props> {
   render() {
     return (
@@ -10,15 +11,6 @@ export default class index extends Component<Props> {
     margin: 0 auto 2em;
     padding: 0 1rem;
   }
-#translations {
-  max-width: 400px;
-  margin: 0 auto 1em;
-  display:block;
-}
-#translations span {
-  margin: 0 .2em;
-  white-space:normal;
-}
 `}</style>
 <div id="about">
 <p>
@@ -31,23 +23,7 @@ export default class index extends Component<Props> {
 <div className="nav-wrapper">
 <Link className="nav start" to="./no-layout.html">Get Started</Link>
 </div>
-<div id="translations">
-<span><a href="http://learnlayout.com">english</a></span>
-<span><a href="http://es.learnlayout.com">español</a></span>
-<span><a href="http://fr.learnlayout.com">français</a></span>
-<span><a href="http://de.learnlayout.com">deutsch</a></span>
-<span><a href="http://nl.learnlayout.com">dutch</a></span>
-<span><a href="http://it.learnlayout.com">italiano</a></span>
-<span><a href="http://pt-br.learnlayout.com">português(brasil)</a></span>
-<span><a href="http://pt-pt.learnlayout.com">português(português)</a></span>
-<span><a href="http://ru.learnlayout.com">русский</a></span>
-<span><a href="http://fa.learnlayout.com">فارسی</a></span>
-<span><a href="http://ar.learnlayout.com">عربى</a></span>
-<span><a href="http://zh.learnlayout.com">中文</a></span>
-<span><a href="http://zh-tw.learnlayout.com">正體中文</a></span>
-<span><a href="http://ko.learnlayout.com">한국어</a></span>
-<span><a href="http://ja.learnlayout.com">日本語</a></span>
-</div>
+<TranLinks />
 </div>
     );
   }

@@ -49,6 +49,7 @@ export default class boxModel extends Component<Props> {
 <div className="fancy elem">
 <span className="label">&lt;div class="fancy"&gt;</span>
 <p>
+
     And I'm bigger!
   </p>
 <span className="endlabel">&lt;/div&gt;</span>

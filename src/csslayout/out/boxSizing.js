@@ -26,6 +26,7 @@ export default class boxSizing extends Component<Props> {
   }
 `}</style>
 <p className="content">
+
   The original box model behavior was eventually considered unintuitive, so a new CSS property called <code>box-sizing</code> was created. When you set <code>box-sizing: border-box;</code> on an element, the padding and border of that element no longer increase its width. Here is the same example as the previous page, but with <code>box-sizing: border-box;</code> on both elements:
 </p>
 <figure className="highlight"><Highlight className="css">{`.simple {
@@ -49,6 +50,7 @@ export default class boxSizing extends Component<Props> {
 <span className="label">&lt;div class="simple"&gt;</span>
 <p>
     We're the same size now!
+    
   </p>
 <span className="endlabel">&lt;/div&gt;</span>
 </div>

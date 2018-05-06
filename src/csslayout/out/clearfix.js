@@ -23,7 +23,7 @@ export default class clearfix extends Component<Props> {
 <div className="content">
 <div className="elem">
 <span className="label">&lt;div&gt;</span>
-<img alt="ilta" src=".//images/ilta.png"/>
+<img alt="ilta" src="./images/ilta.png"/>
 <p>
       Uh oh... this image is taller than the element containing it, and it's floated, so it's overflowing outside of its container!
     </p>
@@ -49,7 +49,7 @@ export default class clearfix extends Component<Props> {
 <div className="content">
 <div className="elem clearfix">
 <span className="label">&lt;div class="clearfix"&gt;</span>
-<img alt="ilta" src=".//images/ilta.png"/>
+<img alt="ilta" src="./images/ilta.png"/>
 <p>
       Much better!
     </p>

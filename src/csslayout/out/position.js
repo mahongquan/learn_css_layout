@@ -57,6 +57,7 @@ export default class position extends Component<Props> {
 <div className="relative2 elem elem-red">
 <span className="label">&lt;div class="relative2"&gt;</span>
 <p>
+
     Setting the <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.
   </p>
 <span className="endlabel">&lt;/div&gt;</span>

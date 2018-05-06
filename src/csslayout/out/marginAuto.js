@@ -19,6 +19,7 @@ export default class marginAuto extends Component<Props> {
 <div className="elem" id="main">
 <span className="label">&lt;div id="main"&gt;</span>
 <p>
+
     Setting the <code>width</code> of a block-level element will prevent it from stretching out to the edges of its container to the left and right. Then, you can set the left and right margins to <code>auto</code> to horizontally center that element within its container. The element will take up the width you specify, then the remaining space will be split evenly between the two margins.
   </p>
 <p>

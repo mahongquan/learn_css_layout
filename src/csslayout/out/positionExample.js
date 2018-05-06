@@ -88,6 +88,7 @@ body {
 <section className="elem elem-green">
 <span className="label">&lt;section&gt;</span>
 <p>
+
       The <code>margin-left</code> style for <code>section</code>s makes sure there is room for the <code>nav</code>. Otherwise the absolute and static elements would overlap
     </p>
 <span className="endlabel">&lt;/section&gt;</span>

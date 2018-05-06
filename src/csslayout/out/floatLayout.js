@@ -61,6 +61,7 @@ section {
 <section className="elem elem-green">
 <span className="label">&lt;section&gt;</span>
 <p>
+
       This example works just like the last one. Notice we put a <code>clearfix</code> on the container. It's not needed in this example, but it would be if the <code>nav</code> was longer than the non-floated content.
     </p>
 <span className="endlabel">&lt;/section&gt;</span>

@@ -31,6 +31,7 @@ export default class clear extends Component<Props> {
 <div className="box elem">
 <span className="label">&lt;div class="box"&gt;</span>
 <p>
+
         I feel like I'm floating!
       </p>
 <span className="endlabel">&lt;/div&gt;</span>
