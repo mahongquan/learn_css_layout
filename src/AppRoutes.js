@@ -23,57 +23,71 @@ import percent from './percent';
 import position_example from './position_example';
 import position from './position';
 import toc from './toc';
-import {Router,Redirect, BrowserRouter,Route,Switch, Link} from 'react-router-dom'
-import createHashHistory from "history/createHashHistory";
+import {
+  Router,
+  Redirect,
+  BrowserRouter,
+  Route,
+  Switch,
+  Link,
+} from 'react-router-dom';
+import createHashHistory from 'history/createHashHistory';
 let ipcRenderer;
-if(window.require){
-  ipcRenderer =require("electron").ipcRenderer;//
+if (window.require) {
+  ipcRenderer = require('electron').ipcRenderer; //
 }
 const history = createHashHistory({
-  hashType: "slash" // the default
-})
+  hashType: 'slash', // the default
+});
 export default class Root extends Component<Props> {
-  constructor(){
+  constructor() {
     super();
-    if(ipcRenderer){
-      ipcRenderer.on("goback", ()=>{
-          console.log(history);
-          history.goBack();
+    if (ipcRenderer) {
+      ipcRenderer.on('goback', () => {
+        console.log(history);
+        history.goBack();
       });
     }
   }
   render() {
     return (
-        <Router  history={history}>
-            <App>
-             <Switch>
-           <Route exact path="/about.html" component={about} />
-<Route exact path="/box-model.html" component={box_model} />
-<Route exact path="/box-sizing.html" component={box_sizing} />
-<Route exact path="/clear.html" component={clear} />
-<Route exact path="/clearfix.html" component={clearfix} />
-<Route exact path="/column.html" component={column} />
-<Route exact path="/display.html" component={display} />
-<Route exact path="/flexbox.html" component={flexbox} />
-<Route exact path="/float-layout.html" component={float_layout} />
-<Route exact path="/float.html" component={float} />
-<Route exact path="/frameworks.html" component={frameworks} />
-<Route exact path="/index.html" component={index} />
-<Route exact path="/inline-block-layout.html" component={inline_block_layout} />
-<Route exact path="/inline-block.html" component={inline_block} />
-<Route exact path="/margin-auto.html" component={margin_auto} />
-<Route exact path="/max-width.html" component={max_width} />
-<Route exact path="/media-queries.html" component={media_queries} />
-<Route exact path="/no-layout.html" component={no_layout} />
-<Route exact path="/percent.html" component={percent} />
-<Route exact path="/position-example.html" component={position_example} />
-<Route exact path="/position.html" component={position} />
-<Route exact path="/toc.html" component={toc} />
-              <Redirect exact path="/"  to="/index.html" />
-              </Switch>
-           </App>
-        </Router>
+      <Router history={history}>
+        <App>
+          <Switch>
+            <Route exact path="/about.html" component={about} />
+            <Route exact path="/box-model.html" component={box_model} />
+            <Route exact path="/box-sizing.html" component={box_sizing} />
+            <Route exact path="/clear.html" component={clear} />
+            <Route exact path="/clearfix.html" component={clearfix} />
+            <Route exact path="/column.html" component={column} />
+            <Route exact path="/display.html" component={display} />
+            <Route exact path="/flexbox.html" component={flexbox} />
+            <Route exact path="/float-layout.html" component={float_layout} />
+            <Route exact path="/float.html" component={float} />
+            <Route exact path="/frameworks.html" component={frameworks} />
+            <Route exact path="/index.html" component={index} />
+            <Route
+              exact
+              path="/inline-block-layout.html"
+              component={inline_block_layout}
+            />
+            <Route exact path="/inline-block.html" component={inline_block} />
+            <Route exact path="/margin-auto.html" component={margin_auto} />
+            <Route exact path="/max-width.html" component={max_width} />
+            <Route exact path="/media-queries.html" component={media_queries} />
+            <Route exact path="/no-layout.html" component={no_layout} />
+            <Route exact path="/percent.html" component={percent} />
+            <Route
+              exact
+              path="/position-example.html"
+              component={position_example}
+            />
+            <Route exact path="/position.html" component={position} />
+            <Route exact path="/toc.html" component={toc} />
+            <Redirect exact path="/" to="/index.html" />
+          </Switch>
+        </App>
+      </Router>
     );
   }
 }
-
