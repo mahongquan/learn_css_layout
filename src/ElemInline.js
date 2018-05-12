@@ -1,4 +1,11 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+const Label = styled.span`
+  position: static;
+  background-color: #6AC5AC;
+  color: #414142;
+  line-height: 1em;
+`;
 export default class ElemInline extends Component<Props> {
   render() {
     return (
@@ -6,15 +13,9 @@ export default class ElemInline extends Component<Props> {
           border: "solid  #6AC5AC 3px",
           position: "relative"
         }}>
-          <span style={{
-            position: "static",
-            backgroundColor: "#6AC5AC",
-            color: "#414142"}} >&lt;span &gt;</span>
+          <Label >&lt;span &gt;</Label>
           {this.props.children}
-          <span style={{
-            position: "static",
-            backgroundColor: "#6AC5AC",
-            color: "#414142"}}>&lt;/span&gt;</span>
+          <Label >&lt;/span&gt;</Label>
         </span>);  
   }
 }

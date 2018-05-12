@@ -42,7 +42,7 @@ nav {
           flex: 1;
 }`}</Highlight></figure>
 <Elem className="container">
-  <Elem nav className="elem-red">
+  <Elem nav red>
     <ul>
     <li>
     <a href="flexbox.html">Home</a>
@@ -64,13 +64,13 @@ nav {
     </li>
     </ul>
   </Elem>
-  <Elem className="elem-red flex-column">
-    <Elem section className="elem-green">
+  <Elem red className="flex-column">
+    <Elem green section >
       <p>
         Flexbox is so easy!
       </p>
     </Elem>
-    <Elem section className="elem-green ipsum">
+    <Elem section green className="ipsum">
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
         </p>
