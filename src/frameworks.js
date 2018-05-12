@@ -8,8 +8,8 @@ export default class frameworks extends Component<Props> {
         <h1 className="content">css frameworks</h1>
         <p className="content">
           Because CSS layout is so tricky, there are CSS frameworks out there to
-          help make it easier. Here are a few if you want to check them out.
-          Using a framework is only a good idea if the framework really does
+          help make it easier. Here are button few if you want to check them out.
+          Using button framework is only button good idea if the framework really does
           what you need your site to do. They&apos;re no replacement for knowing
           how CSS works.
         </p>
@@ -32,45 +32,45 @@ export default class frameworks extends Component<Props> {
           #logos img:active {
             top: 2px;
           }
-          #logos a:hover {
+          #logos button:hover {
             background-color: transparent;
           }
         `}</style>
         <div id="logos">
-          <a href="#">
+          <button href="#">
             <img alt="blueprint" src="./images/blueprint.jpg" />
-          </a>
-          <a href="#">
+          </button>
+          <button href="#">
             <img alt="unsemantic" src="./images/unsemantic.png" />
-          </a>
-          <a href="#">
+          </button>
+          <button href="#">
             <img alt="bluetrip" src="./images/bluetrip.jpg" />
-          </a>
-          <a href="#">
+          </button>
+          <button href="#">
             <img alt="bootstrap" src="./images/bootstrap.jpg" />
-          </a>
-          <a href="http://susy.oddbird.net/">
+          </button>
+          <button href="http://susy.oddbird.net/">
             <img alt="susy" src="./images/susy.jpg" />
-          </a>
-          <a href="#">
+          </button>
+          <button href="#">
             <img alt="foundation" src="./images/foundation.png" />
-          </a>
-          <a href="#">
+          </button>
+          <button href="#">
             <img alt="kube" src="./images/kube.png" />
-          </a>
-          <a href="#">
+          </button>
+          <button href="#">
             <img alt="groundwork" src="./images/groundwork.gif" />
-          </a>
-          <a href="#">
+          </button>
+          <button href="#">
             <img alt="semantic ui" src="./images/semantic_ui.png" />
-          </a>
-          <a href="http://purecss.io/">
+          </button>
+          <button href="http://purecss.io/">
             <img alt="Purecss" src="./images/logo_pure.png" />
-          </a>
+          </button>
         </div>
         <p className="content">
           That&apos;s it! If you have any feedback on this site, please{' '}
-          <a href="#">let me know on Twitter</a>!
+          <button href="#">let me know on Twitter</button>!
         </p>
         <div className="nav-wrapper">
           <Link to="flexbox.html" className="nav prev">

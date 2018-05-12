@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import cloneDeep from 'lodash.clonedeep';
 import styled from 'styled-components';
 const Label = styled.span`
   position: absolute;
@@ -22,9 +21,6 @@ const EndLabel = Label.extend`
 //   position: relative;
 // `;
 export default class Elem extends Component<Props> {
-  constructor() {
-    super();
-  }
   render() {
     let idstr, cls_str;
     let StartLabel1, EndLabel1;

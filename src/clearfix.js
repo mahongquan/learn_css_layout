@@ -28,7 +28,7 @@ export default class clearfix extends Component<Props> {
         </figure>
         <div className="content">
           <Elem>
-            <img alt="An Image" src="./images/ilta.png" />
+            <img alt="ilta" src="./images/ilta.png" />
             <p>
               Uh oh... this image is taller than the element containing it, and
               it&apos;s floated, so it&apos;s overflowing outside of its
@@ -53,7 +53,7 @@ export default class clearfix extends Component<Props> {
         <p className="content">Now let's see what happens:</p>
         <div className="content">
           <Elem style={{ overflow: 'hidden' }}>
-            <img alt="An Image" src="./images/ilta.png" />
+            <img alt="ilta" src="./images/ilta.png" />
             <p>Much better!</p>
           </Elem>
         </div>

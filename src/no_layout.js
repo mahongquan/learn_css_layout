@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Highlight from 'react-highlight';
 export default class no_layout extends Component<Props> {
   render() {
     return (

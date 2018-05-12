@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Highlight from 'react-highlight';
 import Elem from './Elem';
 import ElemInline from './ElemInline';
 export default class display extends Component<Props> {

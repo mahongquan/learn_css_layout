@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Provider } from 'react-redux';
 import App from './App';
 import about from './about';
 import box_model from './box_model';
@@ -26,10 +25,8 @@ import toc from './toc';
 import {
   Router,
   Redirect,
-  BrowserRouter,
   Route,
-  Switch,
-  Link,
+  Switch
 } from 'react-router-dom';
 import createHashHistory from 'history/createHashHistory';
 let ipcRenderer;

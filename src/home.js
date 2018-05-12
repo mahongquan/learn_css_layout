@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Highlight from 'react-highlight';
-import Elem from './Elem';
 import TranLinks from './TranLinks';
 export default class index extends Component<Props> {
   render() {
