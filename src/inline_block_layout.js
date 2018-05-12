@@ -44,9 +44,7 @@ export default class inline_block_layout extends Component<Props> {
   width: 75%;
 }`}</Highlight></figure>
         <Elem className="container">
-            <span className="label">&lt;div class=&quot;container&quot;&gt;</span>
-            <nav className="elem elem-red">
-                <span className="label">&lt;nav&gt;</span>
+            <Elem nav className="elem elem-red">
                 <ul>
                     <li>
                         <a href="inline-block-layout.html">Home</a>
@@ -67,24 +65,19 @@ export default class inline_block_layout extends Component<Props> {
                         <a href="inline-block-layout.html">Contact</a>
                     </li>
                 </ul>
-                <span className="endlabel">&lt;/nav&gt;</span>
-            </nav>
-            <div className="elem elem-red column">
-                <span className="label">&lt;div class=&quot;column&quot;&gt;</span>
-                <section className="elem elem-green">
-                    <span className="label">&lt;section&gt;</span>
+            </Elem>
+            <Elem red className="column">
+                <Elem green section>
                     <p>
                         Tada!
                     </p>
-                    <span className="endlabel">&lt;/section&gt;</span>
-                </section>
-                <Elem section className=" elem-green ipsum">
+                </Elem>
+                <Elem green section className="ipsum">
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
                     </p>
                 </Elem>
-                <span className="endlabel">&lt;/div&gt;</span>
-            </div>
+            </Elem>
         </Elem>
         <div className="nav-wrapper">
             <Link to="inline-block.html" className="nav prev">Previous</Link>

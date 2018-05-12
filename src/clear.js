@@ -35,7 +35,7 @@ export default class clear extends Component<Props> {
         I feel like I&apos;m floating!
       </p>
   </Elem>
-<Elem section className="elem-green">
+<Elem section green>
   <p>
       In this case, the <code>section</code> element is actually after the <code>div</code>. However, since the <code>div</code> is floated to the left, this is what happens: the text in the <code>section</code> is floated around the <code>div</code> and the <code>section</code> surrounds the whole thing. What if we wanted the <code>section</code> to actually appear after the floated element?
     </p>
@@ -61,7 +61,7 @@ export default class clear extends Component<Props> {
       I feel like I&apos;m floating!
     </p>
 </Elem>
-<Elem section className="elem-green after-box">
+<Elem section green className="after-box">
     <p>
       Using <code>clear</code> we have now moved this section down below the floated <code>div</code>. You use the value <code>left</code> to clear elements floated to the left. You can also clear <code>right</code> and <code>both</code>.
     </p>

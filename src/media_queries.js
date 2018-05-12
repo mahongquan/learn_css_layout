@@ -15,7 +15,7 @@ export default class media_queries extends Component<Props> {
 </p>
 <style jsx="true">{`
   @media screen and (min-width:600px) {
-    nav.elem {
+    nav {
       float: left;
       width: 25%;
     }
@@ -43,9 +43,8 @@ export default class media_queries extends Component<Props> {
     display: inline;
   }
 }`}</Highlight></figure>
-<Elem className="container elem">
-  <nav className="elem elem-red">
-  <span className="label">&lt;nav&gt;</span>
+<Elem className="container">
+  <Elem nav red>
   <ul>
   <li>
   <a href="percent.html">Home</a>
@@ -66,16 +65,13 @@ export default class media_queries extends Component<Props> {
   <a href="percent.html">Contact</a>
   </li>
   </ul>
-  <span className="endlabel">&lt;/nav&gt;</span>
-  </nav>
-<section className="elem elem-green">
-<span className="label">&lt;section&gt;</span>
+  </Elem>
+<Elem section green>
 <p>
       Now when you resize your browser it&apos;s even cooler than ever!
     </p>
-<span className="endlabel">&lt;/section&gt;</span>
-</section>
-<Elem section className=" elem-green ipsum">
+</Elem>
+<Elem section green className=" ipsum">
 <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
     </p>

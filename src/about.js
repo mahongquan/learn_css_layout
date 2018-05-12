@@ -24,9 +24,9 @@ export default class about extends Component<Props> {
   }
 `}</style>
 <div id="credits">
-<a href="#"><img alt="Greg Smith" src="#"/></a>
-<a href="#"><img alt="Isaac Durazo" src="#"/></a>
-<a href="#"><img alt="Bocoup" src=".//images/bob.png"/></a>
+  <a ><img alt="Greg Smith" src="./images/author1.jpeg"/></a>
+  <a ><img alt="Isaac Durazo" src="./images/author2.jpeg" /></a>
+  <a ><img alt="Bocoup" src="./images/bob.png"/></a>
 </div>
 <div className="content">
   Written and built by <a href="#">Greg Smith</a>. Design by <a href="#">Isaac Durazo</a>. We work at <a href="#">Bocoup</a>.

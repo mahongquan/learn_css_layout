@@ -4,6 +4,22 @@ import Highlight from 'react-highlight';
 import Elem from './Elem';
 export default class inline_block extends Component<Props> {
   render() {
+    var box1=(<Elem className="box">
+                <p>
+                    I&apos;m floating!
+                </p>
+            </Elem>);
+    var box2=(<Elem className="box2">
+                <p>
+                    I am  inline box!
+                </p>
+            </Elem>);
+    var boxes=[];
+    var boxes2=[];
+    for(var i=0;i<9;i++){
+        boxes.push(box1);
+        boxes2.push(box2);
+    }
     return (<React.Fragment>
     
         <h1 className="content">inline-block</h1>
@@ -35,88 +51,12 @@ export default class inline_block extends Component<Props> {
   clear: left;
 }`}</Highlight></figure>
         <div className="content">
-            <Elem className="box">
-                <p>
-                    I&apos;m floating!
-                </p>
-            </Elem>
-            <div className="box elem">
-                <span className="label">&lt;div class=&quot;box&quot;&gt;</span>
-                <p>
-                    I&apos;m floating!
-                </p>
-                <span className="endlabel">&lt;/div&gt;</span>
-            </div>
-            <div className="box elem">
-                <span className="label">&lt;div class=&quot;box&quot;&gt;</span>
-                <p>
-                    I&apos;m floating!
-                </p>
-                <span className="endlabel">&lt;/div&gt;</span>
-            </div>
-            <div className="box elem">
-                <span className="label">&lt;div class=&quot;box&quot;&gt;</span>
-                <p>
-                    I&apos;m floating!
-                </p>
-                <span className="endlabel">&lt;/div&gt;</span>
-            </div>
-            <div className="box elem">
-                <span className="label">&lt;div class=&quot;box&quot;&gt;</span>
-                <p>
-                    I&apos;m floating!
-                </p>
-                <span className="endlabel">&lt;/div&gt;</span>
-            </div>
-            <div className="box elem">
-                <span className="label">&lt;div class=&quot;box&quot;&gt;</span>
-                <p>
-                    I&apos;m floating!
-                </p>
-                <span className="endlabel">&lt;/div&gt;</span>
-            </div>
-            <div className="box elem">
-                <span className="label">&lt;div class=&quot;box&quot;&gt;</span>
-                <p>
-                    I&apos;m floating!
-                </p>
-                <span className="endlabel">&lt;/div&gt;</span>
-            </div>
-            <div className="box elem">
-                <span className="label">&lt;div class=&quot;box&quot;&gt;</span>
-                <p>
-                    I&apos;m floating!
-                </p>
-                <span className="endlabel">&lt;/div&gt;</span>
-            </div>
-            <div className="box elem">
-                <span className="label">&lt;div class=&quot;box&quot;&gt;</span>
-                <p>
-                    I&apos;m floating!
-                </p>
-                <span className="endlabel">&lt;/div&gt;</span>
-            </div>
-            <div className="box elem">
-                <span className="label">&lt;div class=&quot;box&quot;&gt;</span>
-                <p>
-                    I&apos;m floating!
-                </p>
-                <span className="endlabel">&lt;/div&gt;</span>
-            </div>
-            <div className="box elem">
-                <span className="label">&lt;div class=&quot;box&quot;&gt;</span>
-                <p>
-                    I&apos;m floating!
-                </p>
-                <span className="endlabel">&lt;/div&gt;</span>
-            </div>
-            <section className="elem elem-green after-box">
-                <span className="label">&lt;div class=&quot;after-box&quot;&gt;</span>
+           {boxes}
+            <Elem section green className="after-box">
                 <p>
                     I&apos;m using clear so I don&apos;t float next to the above boxes.
                 </p>
-                <span className="endlabel">&lt;/div&gt;</span>
-            </section>
+            </Elem>
     </div>
     <div className="content">
         <h2>The Easy Way (using inline-block)</h2>
@@ -139,44 +79,12 @@ export default class inline_block extends Component<Props> {
   margin: 1em;
 }`}</Highlight></figure>
     <div className="content">
-        <div className="box2 elem">
-            <span className="label">&lt;div class=&quot;box2&quot;&gt;</span>
-            <p>I&apos;m an inline block!</p>
-            <span className="endlabel">&lt;/div&gt;</span>
-        </div>
-        <div className="box2 elem">
-            <span className="label">&lt;div class=&quot;box2&quot;&gt;</span>
-            <p>I&apos;m an inline block!</p>
-            <span className="endlabel">&lt;/div&gt;</span>
-        </div>
-        <div className="box2 elem">
-            <span className="label">&lt;div class=&quot;box2&quot;&gt;</span>
-            <p>I&apos;m an inline block!</p>
-            <span className="endlabel">&lt;/div&gt;</span>
-        </div>
-        <div className="box2 elem">
-            <span className="label">&lt;div class=&quot;box2&quot;&gt;</span>
-            <p>I&apos;m an inline block!</p>
-            <span className="endlabel">&lt;/div&gt;</span></div>
-        <div className="box2 elem"><span className="label">&lt;div class=&quot;box2&quot;&gt;</span>
-            <p>I&apos;m an inline block!</p><span className="endlabel">&lt;/div&gt;</span></div>
-        <div className="box2 elem"><span className="label">&lt;div class=&quot;box2&quot;&gt;</span>
-            <p>I&apos;m an inline block!</p><span className="endlabel">&lt;/div&gt;</span></div>
-        <div className="box2 elem"><span className="label">&lt;div class=&quot;box2&quot;&gt;</span>
-            <p>I&apos;m an inline block!</p><span className="endlabel">&lt;/div&gt;</span></div>
-        <div className="box2 elem"><span className="label">&lt;div class=&quot;box2&quot;&gt;</span>
-            <p>I&apos;m an inline block!</p><span className="endlabel">&lt;/div&gt;</span></div>
-        <div className="box2 elem"><span className="label">&lt;div class=&quot;box2&quot;&gt;</span>
-            <p>I&apos;m an inline block!</p><span className="endlabel">&lt;/div&gt;</span></div>
-        <div className="box2 elem"><span className="label">&lt;div class=&quot;box2&quot;&gt;</span>
-            <p>I&apos;m an inline block!</p><span className="endlabel">&lt;/div&gt;</span></div>
-        <section className="elem elem-green">
-            <span className="label">&lt;div&gt;</span>
+        {boxes2}
+        <Elem green section>
             <p>
                 I don&apos;t have to use <code>clear</code> in this case. Nice!
             </p>
-            <span className="endlabel">&lt;/div&gt;</span>
-        </section>
+        </Elem>
     </div>
     <p className="content">
         You have to do extra work for <a href="#">IE6 and IE7 support</a> of <code>inline-block</code>. Sometimes people talk about <code>inline-block</code> triggering something called <code>hasLayout</code>, though you only need to know about that to support old browsers. Follow the previous link about IE6 and IE7 support if you&apos;re curious to learn more. Otherwise, let&apos;s continue.

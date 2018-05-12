@@ -27,7 +27,7 @@ export default class percent extends Component<Props> {
   float: right;
   width: 50%;
 }`}</Highlight></figure>
-<Elem article className="elem-green content clearfix">
+<Elem article green className="content clearfix">
 <img alt="an image" src="images/ilta.png"/>
 <p>
     You could even use <code>min-width</code> and <code>max-width</code> to limit how big or small the image can get!
@@ -39,15 +39,6 @@ export default class percent extends Component<Props> {
 <p className="content">
   You can use percent for layout, but this can require more work. In this example, the <code>nav</code> content starts to wrap in a displeasing way when the window is too narrow. It comes down to what works for your content.
 </p>
-<style jsx="true">{`
-  nav.elem {
-    float: left;
-    width: 25%;
-  }
-  section {
-    margin-left: 25%;
-  }
-`}</style>
 <figure className="highlight"><Highlight>{`nav {
   float: left;
   width: 25%;
@@ -56,8 +47,7 @@ section {
   margin-left: 25%;
 }`}</Highlight></figure>
 <Elem className="container">
-<nav className="elem elem-red">
-<span className="label">&lt;nav&gt;</span>
+<Elem nav red style={{ float:"left",width:"25%"}}>
 <ul>
 <li>
 <a href="percent.html">Home</a>
@@ -78,16 +68,13 @@ section {
 <a href="percent.html">Contact</a>
 </li>
 </ul>
-<span className="endlabel">&lt;/nav&gt;</span>
-</nav>
-<section className="elem elem-green">
-<span className="label">&lt;section&gt;</span>
+</Elem>
+<Elem section green  style={{ marginLeft:"25%"}}>
 <p>
       When this layout is too narrow, the <code>nav</code> gets squished. Worse, you can&apos;t use <code>min-width</code> on the nav to fix it, because the right column wouldn&apos;t respect it.
     </p>
-<span className="endlabel">&lt;/section&gt;</span>
-</section>
-  <Elem section className=" elem-green ipsum">
+</Elem>
+  <Elem section green className="ipsum"   style={{ marginLeft:"25%"}}>
   <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
       </p>

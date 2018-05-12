@@ -4,13 +4,14 @@ import Highlight from 'react-highlight';
 import Elem from './Elem';
 export default class position_example extends Component<Props> {
   render() {
-    return (<React.Fragment>
-    
+    return (
+<React.Fragment>
 <h1 className="content">position example</h1>
 <p className="content">
   This position stuff might make a little more sense in a practical example. Below is a realistic page layout.
 </p>
-<figure className="highlight"><Highlight>{`.container {
+<figure className="highlight"><Highlight>{`
+#container1 {
   position: relative;
 }
 nav {
@@ -33,9 +34,10 @@ footer {
 body {
   margin-bottom: 120px;
 }`}</Highlight></figure>
-<Elem id="container" style={{position: "relative"}}>
+<Elem id="container1">
   <Elem nav red 
-  style={{position: "absolute",
+  style={{
+    position: "absolute",
   left: "0px",
   width: "200px"}}>
     <ul>

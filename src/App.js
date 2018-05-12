@@ -130,20 +130,6 @@ a:active {
   margin-left: .2em;
 }
 
-#translations {
-  text-align: center;
-  max-width: 400px;
-  margin: 0 auto 1em;
-}
-
-#translations span {
-  margin: 0 .2em;
-  white-space: nowrap;
-}
-
-#translator {
-  text-align: center;
-}
 
 #container {
   padding: 1em;
@@ -171,59 +157,6 @@ h1.content {
   line-height: 1.2em;
   font-size: 16px;
   direction: ltr;
-}
-.elem {
-  border: solid  #6AC5AC 3px;
-  position: relative;
-}
-
-.elem p {
-  padding: 0 1em;
-}
-
-.elem-inline .label, .elem-inline .endlabel {
-  position: static;
-}
-
-.label, .endlabel {
-  position: absolute;
-  background-color: #6AC5AC;
-  color: #414142;
-  line-height: 1em;
-}
-
-.label {
-  top: 0;
-  left: 0;
-  padding: 0 3px 3px 0;
-}
-
-.endlabel {
-  right: 0;
-  bottom: 0;
-  padding: 3px 0 0 3px;
-}
-
-.elem-orange {
-  border: solid #FDC72F 3px;
-}
-.elem-orange > .label, .elem-orange > .endlabel{
-  background-color: #FDC72F;
-}
-
-.elem-red {
-  border: solid #D64078 3px;
-}
-.elem-red > .label, .elem-red > .endlabel{
-  color: white;
-  background-color: #D64078;
-}
-
-.elem-green {
-  border: solid #96C02E 3px;
-}
-.elem-green > .label, .elem-green > .endlabel{
-  background-color: #96C02E;
 }
 
 a.nav:before {
@@ -296,48 +229,6 @@ a.nav:active {
 footer {
   text-align: center;
 }
-
-#share {
-  z-index: -9999;
-  margin: 0 auto;
-  width: 390px;
-  text-align: center;
-  overflow: hidden;
-}
-
-#share li {
-  margin: 0;
-  list-style: none;
-  float: left;
-}
-
-#share > li:not(first-child){
-  margin-left: 10px;
-}
-
-#share #license {
-
-}
-
-#advertisements {
-  clear: both;
-  margin: 0 auto;
-  width: 370px;
-  text-align: center;
-}
-
-#advertisements span {
-  font-size: 10px;
-  font-style: italic;
-  margin: 0;
-}
-
-#advertisements div {
-  font-size: 13px;
-  text-align: left;
-}
-
-
 @media screen and (min-width:601px) {
 
   #menu {
@@ -403,12 +294,6 @@ footer {
   }
 
 }
-
-#about {
-    max-width: 550px;
-    margin: 0 auto 2em;
-    padding: 0 1rem;
-  }
 `}</style>
        <div id="logo">
           <a href="/">

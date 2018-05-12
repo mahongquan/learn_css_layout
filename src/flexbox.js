@@ -122,36 +122,28 @@ nav {
   -webkit-flex: 2;
           flex: 2;
 }`}</Highlight></figure>
-<div className="container elem">
-<section className="elem elem-green initial">
-<span className="label">&lt;div class=&quot;initial&quot;&gt;</span>
+<Elem className="container">
+<Elem section green className="initial">
 <p>
       I will be 200px when there is room, and I will shrink down to 100px if there is not room, but no smaller.
     </p>
-<span className="endlabel">&lt;/div&gt;</span>
-</section>
-<section className="elem elem-green none">
-<span className="label">&lt;div class=&quot;none&quot;&gt;</span>
+</Elem>
+<Elem green section className="none">
 <p>
       I will always be 200px, no matter what.
     </p>
-<span className="endlabel">&lt;/div&gt;</span>
-</section>
-<section className="elem elem-green flex1">
-<span className="label">&lt;div class=&quot;flex1&quot;&gt;</span>
+</Elem>
+<Elem green  section className="flex1">
 <p>
       I will fill up 1/3 of the remaining width.
     </p>
-<span className="endlabel">&lt;/div&gt;</span>
-</section>
-<section className="elem elem-green flex2">
-<span className="label">&lt;div class=&quot;flex2&quot;&gt;</span>
+</Elem>
+<Elem green section className="flex2">
 <p>
       I will fill up 2/3 of the remaining width.
     </p>
-<span className="endlabel">&lt;/div&gt;</span>
-</section>
-</div>
+</Elem>
+</Elem>
 <h2 className="content">Centering using Flexbox</h2>
 <style jsx="true">{`
 .vertical-container {
@@ -173,17 +165,13 @@ nav {
   -webkit-justify-content: center;
           justify-content: center;
 }`}</Highlight></figure>
-<div className="vertical-container elem">
-<span className="label">&lt;div class=&quot;vertical-container&quot;&gt;</span>
-<section className="elem elem-green">
-<span className="label">&lt;div&gt;</span>
+<Elem className="vertical-container">
+<Elem section green>
 <p>
       Finally, it&apos;s easy to vertically center something in CSS!
     </p>
-<span className="endlabel">&lt;/div&gt;</span>
-</section>
-<span className="endlabel">&lt;/div&gt;</span>
-</div>
+</Elem>
+</Elem>
 <div className="nav-wrapper">
 <Link to="column.html" className="nav prev">Previous</Link>
 <Link to="frameworks.html" className="nav next">Next</Link>
