@@ -1,33 +1,33 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
 import App from './App';
-import AppNo from './csslayout/out/noLayout';
-import AppIndex from './csslayout/out/index';
-import AppDisplay from './csslayout/out/display';
-import AppToc from './csslayout/out/toc';
-import about from './csslayout/out/about';
-import boxModel from './csslayout/out/boxModel';
-import boxSizing from './csslayout/out/boxSizing';
-import clear from './csslayout/out/clear';
-import clearfix from './csslayout/out/clearfix';
-import column from './csslayout/out/column';
-import flexbox from './csslayout/out/flexbox';
-import floatLayout from './csslayout/out/floatLayout';
-import float from './csslayout/out/float';
-import frameworks from './csslayout/out/frameworks';
-import inlineBlockLayout from './csslayout/out/inlineBlockLayout';
-import inlineBlock from './csslayout/out/inlineBlock';
-import marginAuto from './csslayout/out/marginAuto';
-import maxWidth from './csslayout/out/maxWidth';
-import mediaQueries from './csslayout/out/mediaQueries';
-import percent from './csslayout/out/percent';
-import positionExample from './csslayout/out/positionExample';
-import position from './csslayout/out/position';
-import {Router,Redirect,Route,Switch} from 'react-router-dom'
+import about from './about';
+import box_model from './box_model';
+import box_sizing from './box_sizing';
+import clear from './clear';
+import clearfix from './clearfix';
+import column from './column';
+import display from './display';
+import flexbox from './flexbox';
+import float_layout from './float_layout';
+import float from './float';
+import frameworks from './frameworks';
+import index from './home';
+import inline_block_layout from './inline_block_layout';
+import inline_block from './inline_block';
+import margin_auto from './margin_auto';
+import max_width from './max_width';
+import media_queries from './media_queries';
+import no_layout from './no_layout';
+import percent from './percent';
+import position_example from './position_example';
+import position from './position';
+import toc from './toc';
+import {Router,Redirect, BrowserRouter,Route,Switch, Link} from 'react-router-dom'
 import createHashHistory from "history/createHashHistory";
 let ipcRenderer;
-if(window.myremote)
-{
-    ipcRenderer  =window.myremote.electron.ipcRenderer;//
+if(window.require){
+  ipcRenderer =require("electron").ipcRenderer;//
 }
 const history = createHashHistory({
   hashType: "slash" // the default
@@ -45,35 +45,33 @@ export default class Root extends Component<Props> {
   render() {
     return (
         <Router  history={history}>
-          <App>
-          <Switch>
-            <Route exact path="/" component={AppIndex} />
-            <Route exact path="/index.html" component={AppIndex} />
-            <Route exact path="/no-layout.html" component={AppNo} />
-            <Route exact path="/toc.html" component={AppToc} />
-            <Route exact path="/display.html" component={AppDisplay} />
-            <Route exact path="/about.html" component={about} />
-            <Route exact path="/margin-auto.html" component={marginAuto} />
-            <Route exact path="/max-width.html" component={maxWidth} />
-            <Route exact path="/box-model.html" component={boxModel} />
-            <Route exact path="/box-sizing.html" component={boxSizing} />
-            <Route exact path="/position.html" component={position} />
-            <Route exact path="/position-example.html" component={positionExample} />
-            <Route exact path="/float.html" component={float} />
-            <Route exact path="/clear.html" component={clear} />
-            <Route exact path="/clearfix.html" component={clearfix} />
-            <Route exact path="/column.html" component={column} />
-            <Route exact path="/flexbox.html" component={flexbox} />
-            <Route exact path="/float-layout.html" component={floatLayout} />
-
-            <Route exact path="/frameworks.html" component={frameworks} />
-            <Route exact path="/inline-block-layout.html" component={inlineBlockLayout} />
-            <Route exact path="/inline-block.html" component={inlineBlock} />
-            <Route exact path="/media-queries.html" component={mediaQueries} />
-            <Route exact path="/percent.html" component={percent} />
-            <Redirect path="/"  to="/" />
-          </ Switch>
-          </App>
+            <App>
+             <Switch>
+           <Route exact path="/about.html" component={about} />
+<Route exact path="/box-model.html" component={box_model} />
+<Route exact path="/box-sizing.html" component={box_sizing} />
+<Route exact path="/clear.html" component={clear} />
+<Route exact path="/clearfix.html" component={clearfix} />
+<Route exact path="/column.html" component={column} />
+<Route exact path="/display.html" component={display} />
+<Route exact path="/flexbox.html" component={flexbox} />
+<Route exact path="/float-layout.html" component={float_layout} />
+<Route exact path="/float.html" component={float} />
+<Route exact path="/frameworks.html" component={frameworks} />
+<Route exact path="/index.html" component={index} />
+<Route exact path="/inline-block-layout.html" component={inline_block_layout} />
+<Route exact path="/inline-block.html" component={inline_block} />
+<Route exact path="/margin-auto.html" component={margin_auto} />
+<Route exact path="/max-width.html" component={max_width} />
+<Route exact path="/media-queries.html" component={media_queries} />
+<Route exact path="/no-layout.html" component={no_layout} />
+<Route exact path="/percent.html" component={percent} />
+<Route exact path="/position-example.html" component={position_example} />
+<Route exact path="/position.html" component={position} />
+<Route exact path="/toc.html" component={toc} />
+              <Redirect exact path="/"  to="/index.html" />
+              </Switch>
+           </App>
         </Router>
     );
   }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
+import styled from 'styled-components';
+
 const styles = {
     simple: {
         width: "500px",
@@ -33,7 +35,7 @@ export default class Root extends Component<Props> {
   <figure className="highlight">
     <Highlight className='css'>
       {`
-.simple {
+#simple {
   width: 500px;
   margin: 20px auto;
   -webkit-box-sizing: content-box;
@@ -41,7 +43,7 @@ export default class Root extends Component<Props> {
           box-sizing: content-box;  
   }
 
-.fancy {
+#fancy {
   width: 500px;
   margin: 20px auto;
   padding: 50px;
@@ -53,20 +55,16 @@ export default class Root extends Component<Props> {
 `}
     </Highlight>
   </figure>
-  <div  style={styles.simple}  className="simple elem">
-  <span className="label">&lt;div class="simple"&gt;</span>
+  <Elem  style={styles.simple}  id="simple">
 <p>
     I'm smaller...
   </p>
-<span className="endlabel">&lt;/div&gt;</span>
-  </div>
-  <div style={styles.fancy} className="fancy elem">
- <span className="label">&lt;div class="fancy"&gt;</span>
+  </Elem>
+  <Elem style={styles.fancy} id="fancy">
 <p>
     And I'm bigger!
   </p>
-<span className="endlabel">&lt;/div&gt;</span>
-  </div>
+  </Elem>
   <p className="content">
     For generations, the solution to this problem has been extra math. CSS authors have always just written a smaller width value than what they wanted, subtracting out the padding and border. Thankfully, you don't have to do that anymore...
   </p>

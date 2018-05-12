@@ -204,10 +204,10 @@ h1.content {
   padding: 3px 0 0 3px;
 }
 
-.elem-green {
+.elem-orange {
   border: solid #FDC72F 3px;
 }
-.elem-green > .label, .elem-green > .endlabel{
+.elem-orange > .label, .elem-orange > .endlabel{
   background-color: #FDC72F;
 }
 
@@ -219,10 +219,10 @@ h1.content {
   background-color: #D64078;
 }
 
-.elem-orange {
+.elem-green {
   border: solid #96C02E 3px;
 }
-.elem-orange > .label, .elem-orange > .endlabel{
+.elem-green > .label, .elem-green > .endlabel{
   background-color: #96C02E;
 }
 
@@ -421,7 +421,7 @@ footer {
           <Link to="/toc.html">Table of Contents</Link>
         </div>
 
-        <div>
+        <div id="container">
           {this.props.children}
         </div>
     </div>
