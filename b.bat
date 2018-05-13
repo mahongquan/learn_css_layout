@@ -1,0 +1,1 @@
+babel  --plugins mytransform src --out-dir lib
