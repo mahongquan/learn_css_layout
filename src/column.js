@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
-import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
+import Elem from './Elem';
 export default class column extends Component<Props> {
   render() {
     return (
@@ -53,9 +52,9 @@ export default class column extends Component<Props> {
         </div>
         <p className="content">
           CSS columns are very new, so you need to use the prefixes, and it
-          won&apos;t work <a href="#">through IE9 or in Opera Mini</a>. There
+          won&apos;t work <a href="http://caniuse.com/#search=column">through IE9 or in Opera Mini</a>. There
           are some more column-related properties, so{' '}
-          <a href="#">click here to read more</a>. Otherwise, off to the next
+          <a href="http://www.quirksmode.org/css/multicolumn.html">click here to read more</a>. Otherwise, off to the next
           topic.
         </p>
 

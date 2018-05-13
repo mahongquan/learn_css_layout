@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
+import {NavWrapper,LinkPrev} from './Elem';
+
 const pages=["index.html","no-layout.html","display.html","margin-auto.html","max-width.html","box-model.html","box-sizing.html","position.html","position-example.html","float.html","clear.html","clearfix.html","float-layout.html","percent.html","media-queries.html","inline-block.html","inline-block-layout.html","column.html","flexbox.html","frameworks.html","about.html"]
 class Root extends Component<Props> {
   getPrevNext=()=>{

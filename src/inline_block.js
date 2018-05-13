@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
-import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
+import Elem from './Elem';
 export default class inline_block extends Component<Props> {
   render() {
     var box1 = (
@@ -84,7 +83,7 @@ export default class inline_block extends Component<Props> {
           </Elem>
         </div>
         <p className="content">
-          You have to do extra work for <a href="#">IE6 and IE7 support</a> of{' '}
+          You have to do extra work for <a href="http://blog.mozilla.org/webdev/2009/02/20/cross-browser-inline-block/">IE6 and IE7 support</a> of{' '}
           <code>inline-block</code>. Sometimes people talk about{' '}
           <code>inline-block</code> triggering something called{' '}
           <code>hasLayout</code>, though you only need to know about that to

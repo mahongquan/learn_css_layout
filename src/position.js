@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
-import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
+import Elem from './Elem';
 export default class position extends Component<Props> {
   render() {
     return (
@@ -108,7 +107,7 @@ export default class position extends Component<Props> {
         </p>
         <p className="content">
           Mobile browsers have surprisingly shaky support for fixed.{' '}
-          <a href="#">Learn more about the situation here</a>.
+          <a href="http://bradfrostweb.com/blog/mobile/fixed-position/">Learn more about the situation here</a>.
         </p>
         <h2 className="content">absolute</h2>
         <p className="content">

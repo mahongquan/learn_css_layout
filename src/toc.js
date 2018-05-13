@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import Elem,{NavWrapper,LinkNav,LinkToc} from './Elem';
+import {LinkToc} from './Elem';
 
 export default class toc extends Component<Props> {
   render() {

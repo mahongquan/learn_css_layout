@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
 
 export default class no_layout extends Component<Props> {
   render() {

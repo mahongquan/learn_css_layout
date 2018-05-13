@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
-import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
+import Elem from './Elem';
 export default class clear extends Component<Props> {
   render() {
     return (

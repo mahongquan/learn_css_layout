@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
-import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
+import Elem  from './Elem';
 export default class flexbox extends Component<Props> {
   render() {
     return (
@@ -13,14 +12,14 @@ export default class flexbox extends Component<Props> {
           recently, so it&apos;s implemented differently in different browsers.
           Still, I&apos;d like to share a couple examples so you know
           what&apos;s coming up. These examples currently only work{' '}
-          <a href="#">some browsers</a> that use the{' '}
-          <a href="#">latest version of the standard</a>.
+          <a href="http://caniuse.com/flexbox">some browsers</a> that use the{' '}
+          <a href="http://www.w3.org/TR/css3-flexbox/">latest version of the standard</a>.
         </p>
         <p className="content">
           There are a lot of out-of-date flexbox resources around. If you want
-          to learn more about flexbox, <a href="#">start here</a> to learn how
+          to learn more about flexbox, <a href="http://css-tricks.com/old-flexbox-and-new-flexbox/">start here</a> to learn how
           to identify if a resource is current or not. I have written a{' '}
-          <a href="#">detailed article using the latest syntax</a>.
+          <a href="http://weblog.bocoup.com/dive-into-flexbox/">detailed article using the latest syntax</a>.
         </p>
         <p className="content">
           There is a lot more you can do with flexbox; these are just a few

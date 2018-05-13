@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {A} from './Elem';
 export default class TranLinks extends Component<Props> {
   render() {
     return (
@@ -14,49 +15,49 @@ export default class TranLinks extends Component<Props> {
           }
         `}</style>
         <span>
-          <a href="http://learnlayout.com">english</a>
+          <A href="http://learnlayout.com">english</A>
         </span>
         <span>
-          <a href="http://es.learnlayout.com">español</a>
+          <A href="http://es.learnlayout.com">español</A>
         </span>
         <span>
-          <a href="http://fr.learnlayout.com">français</a>
+          <A href="http://fr.learnlayout.com">français</A>
         </span>
         <span>
-          <a href="http://de.learnlayout.com">deutsch</a>
+          <A href="http://de.learnlayout.com">deutsch</A>
         </span>
         <span>
-          <a href="http://nl.learnlayout.com">dutch</a>
+          <A href="http://nl.learnlayout.com">dutch</A>
         </span>
         <span>
-          <a href="http://it.learnlayout.com">italiano</a>
+          <A href="http://it.learnlayout.com">italiano</A>
         </span>
         <span>
-          <a href="http://ru.learnlayout.com">русский</a>
+          <A href="http://ru.learnlayout.com">русский</A>
         </span>
         <span>
-          <a href="http://fa.learnlayout.com">فارسی</a>
+          <A href="http://fa.learnlayout.com">فارسی</A>
         </span>
         <span>
-          <a href="http://ar.learnlayout.com">عربى</a>
+          <A href="http://ar.learnlayout.com">عربى</A>
         </span>
         <span>
-          <a href="http://zh.learnlayout.com">中文</a>
+          <A href="http://zh.learnlayout.com">中文</A>
         </span>
         <span>
-          <a href="http://zh-tw.learnlayout.com">正體中文</a>
+          <A href="http://zh-tw.learnlayout.com">正體中文</A>
         </span>
         <span>
-          <a href="http://ko.learnlayout.com">한국어</a>
+          <A href="http://ko.learnlayout.com">한국어</A>
         </span>
         <span>
-          <a href="http://ja.learnlayout.com">日本語</a>
+          <A href="http://ja.learnlayout.com">日本語</A>
         </span>
         <span>
-          <a href="http://pt-br.learnlayout.com">português(brasil)</a>
+          <A href="http://pt-br.learnlayout.com">português(brasil)</A>
         </span>
         <span>
-          <a href="http://pt-pt.learnlayout.com">português(português)</a>
+          <A href="http://pt-pt.learnlayout.com">português(português)</A>
         </span>
       </div>
     );

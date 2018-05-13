@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
+import Elem from './Elem';
 import ElemInline from './ElemInline';
 export default class display extends Component<Props> {
   render() {
@@ -62,7 +61,7 @@ export default class display extends Component<Props> {
           <p>
             There are plenty of more exotic display values, such as{' '}
             <code>list-item</code> and <code>table</code>.{' '}
-            <a href="#">Here is an exhaustive list</a>. We&apos;ll discuss{' '}
+            <a href="https://developer.mozilla.org/en-US/docs/CSS/display">Here is an exhaustive list</a>. We&apos;ll discuss{' '}
             <code>inline-block</code> and <code>flex</code> later on.
           </p>
           <h2>extra credit</h2>

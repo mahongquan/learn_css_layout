@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import TranLinks from './TranLinks';
 import styled from 'styled-components';
-import Elem,{NavWrapper,LinkNext,LinkNav} from './Elem';
 const About = styled.div`
             max-width: 550px;
             margin: 0 auto 2em;

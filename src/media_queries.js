@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
 import Elem from './Elem';
 export default class media_queries extends Component<Props> {
@@ -100,13 +99,13 @@ export default class media_queries extends Component<Props> {
             some popular sites that use media queries this way
           </a>. There is a whole lot more you can detect than{' '}
           <code>min-width</code> and <code>max-width</code>: check out{' '}
-          <a href="#">the MDN documentation</a> to learn more.
+          <a href="https://developer.mozilla.org/en-US/docs/CSS/Media_queries">the MDN documentation</a> to learn more.
         </p>
         <div className="content">
           <h2>extra credit</h2>
           <p>
             You can make your layout look even better on mobile using{' '}
-            <a href="#">meta viewport</a>.
+            <a href="http://dev.opera.com/articles/view/an-introduction-to-meta-viewport-and-viewport/">meta viewport</a>.
           </p>
         </div>
        

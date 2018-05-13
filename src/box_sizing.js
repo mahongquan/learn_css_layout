@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
 import Elem from './Elem';
 export default class box_sizing extends Component<Props> {
@@ -80,7 +79,7 @@ export default class box_sizing extends Component<Props> {
           <code>-webkit-</code> and <code>-moz-</code> prefixes for now, as I
           have in these examples. This technique enables experimental features
           in specific browsers. Also, keep in mind that this one is{' '}
-          <a href="#">IE8+</a>.
+          <a href="http://caniuse.com/#search=box-sizing">IE8+</a>.
         </p>
       </React.Fragment>
     );

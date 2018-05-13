@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import Highlight from 'react-highlight';
-import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
 export default class frameworks extends Component<Props> {
   render() {
     return (
@@ -38,40 +35,20 @@ export default class frameworks extends Component<Props> {
           }
         `}</style>
         <div id="logos">
-          <button href="#">
-            <img alt="blueprint" src="./images/blueprint.jpg" />
-          </button>
-          <button href="#">
-            <img alt="unsemantic" src="./images/unsemantic.png" />
-          </button>
-          <button href="#">
-            <img alt="bluetrip" src="./images/bluetrip.jpg" />
-          </button>
-          <button href="#">
-            <img alt="bootstrap" src="./images/bootstrap.jpg" />
-          </button>
-          <button href="http://susy.oddbird.net/">
-            <img alt="susy" src="./images/susy.jpg" />
-          </button>
-          <button href="#">
-            <img alt="foundation" src="./images/foundation.png" />
-          </button>
-          <button href="#">
-            <img alt="kube" src="./images/kube.png" />
-          </button>
-          <button href="#">
-            <img alt="groundwork" src="./images/groundwork.gif" />
-          </button>
-          <button href="#">
-            <img alt="semantic ui" src="./images/semantic_ui.png" />
-          </button>
-          <button href="http://purecss.io/">
-            <img alt="Purecss" src="./images/logo_pure.png" />
-          </button>
+  <a href="http://www.blueprintcss.org/"><img src="/images/blueprint.jpg" alt="blueprint" /></a>
+  <a href="http://www.unsemantic.com"><img src="/images/unsemantic.png" alt="unsemantic" /></a>
+  <a href="http://bluetrip.org/"><img src="/images/bluetrip.jpg" alt="bluetrip" /></a>
+  <a href="http://twitter.github.com/bootstrap/"><img src="/images/bootstrap.jpg" alt="bootstrap" /></a>
+  <a href="http://susy.oddbird.net/"><img src="/images/susy.jpg" alt="susy" /></a>
+  <a href="http://foundation.zurb.com/"><img src="/images/foundation.png" alt="foundation" /></a>
+  <a href="http://imperavi.com/kube/"><img src="/images/kube.png" alt="kube" /></a>
+  <a href="http://groundworkcss.github.com/"><img src="/images/groundwork.gif" alt="groundwork" /></a>
+  <a href="http://semantic-ui.com"><img src="/images/semantic_ui.png" alt="semantic ui" /></a>
+  <a href="http://purecss.io/"><img src="/images/logo_pure.png" alt="Purecss" /></a>
         </div>
         <p className="content">
           That&apos;s it! If you have any feedback on this site, please{' '}
-          <button href="#">let me know on Twitter</button>!
+          <a href="https://twitter.com/intent/tweet?source=webclient&text=%40_gsmith">let me know on Twitter</a>!
         </p>
 
       </React.Fragment>

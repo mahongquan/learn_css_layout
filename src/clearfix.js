@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
-import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
+import Elem from './Elem';
 export default class clearfix extends Component<Props> {
   render() {
     return (
@@ -71,7 +70,7 @@ export default class clearfix extends Component<Props> {
         </figure>
         <p className="content">
           There are exotic browsers that may require extra attention.{' '}
-          <a href="#">The world of clearfixing is pretty scary</a>, but this
+          <a href="http://stackoverflow.com/questions/211383/which-method-of-clearfix-is-best">The world of clearfixing is pretty scary</a>, but this
           simple solution will work for the vast majority of browsers today.
         </p>
 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
 import Elem from './Elem';
 export default class box_model extends Component<Props> {

@@ -22,15 +22,16 @@ export default class about extends Component<Props> {
   }
 `}</style>
 <div id="credits">
-<a ><img alt="Greg Smith" src="./images/author1.jpeg"/></a>
-<a ><img alt="Isaac Durazo" src="./images/author2.jpeg" /></a>
-<a ><img alt="Bocoup" src="./images/bob.png"/></a>
+<a href="http://incompl.com" ><img alt="Greg Smith" src="./images/author1.jpeg"/></a>
+<a href="http://www.isaacdurazo.com/"><img alt="Isaac Durazo" src="./images/author2.jpeg" /></a>
+<a href="http://bocoup.com"><img alt="Bocoup" src="./images/bob.png"/></a>
 </div>
 <div className="content">
-  Written and built by <a href="#">Greg Smith</a>. Design by <a href="#">Isaac Durazo</a>. We work at <a href="#">Bocoup</a>.
+  Written and built by <a href="http://incompl.com">Greg Smith</a>. Design by <a href="http://www.isaacdurazo.com/">Isaac Durazo</a>. We work at <a href="http://bocoup.com">Bocoup</a>.
 </div>
+
 <div className="content">
-<a href="#">
+  <a href="https://github.com/incompl/csslayoutsite/issues">
     Issues / Feedback
   </a>
 </div>
