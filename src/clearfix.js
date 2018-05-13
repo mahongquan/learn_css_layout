@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
-import Elem from './Elem';
+import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
 export default class clearfix extends Component<Props> {
   render() {
     return (
@@ -74,15 +74,7 @@ export default class clearfix extends Component<Props> {
           <a href="#">The world of clearfixing is pretty scary</a>, but this
           simple solution will work for the vast majority of browsers today.
         </p>
-        <div className="nav-wrapper">
-          <Link to="clear.html" className="nav prev">
-            Previous
-          </Link>
-          <Link to="float-layout.html" className="nav next">
-            Next
-          </Link>
-        </div>
-        <footer>11 / 19</footer>
+
       </React.Fragment>
     );
   }

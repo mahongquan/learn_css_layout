@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Elem from './Elem';
+import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
 import ElemInline from './ElemInline';
 export default class display extends Component<Props> {
   render() {
@@ -74,15 +74,7 @@ export default class display extends Component<Props> {
             is making inline <code>li</code> elements for horizontal menus.
           </p>
         </div>
-        <div className="nav-wrapper">
-          <Link to="no-layout.html" className="nav prev">
-            Previous
-          </Link>
-          <Link to="margin-auto.html" className="nav next">
-            Next
-          </Link>
-        </div>
-        <footer>2 / 19</footer>
+
       </React.Fragment>
     );
   }

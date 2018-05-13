@@ -60,15 +60,6 @@ export default class box_model extends Component<Props> {
           wanted, subtracting out the padding and border. Thankfully, you
           don&apos;t have to do that anymore...
         </p>
-        <div className="nav-wrapper">
-          <Link to="max-width.html" className="nav prev">
-            Previous
-          </Link>
-          <Link to="box-sizing.html" className="nav next">
-            Next
-          </Link>
-        </div>
-        <footer>5 / 19</footer>
       </React.Fragment>
     );
   }

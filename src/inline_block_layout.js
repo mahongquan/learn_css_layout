@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
-import Elem from './Elem';
+import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
 export default class inline_block_layout extends Component<Props> {
   render() {
     return (
@@ -97,15 +97,7 @@ export default class inline_block_layout extends Component<Props> {
             </Elem>
           </Elem>
         </Elem>
-        <div className="nav-wrapper">
-          <Link to="inline-block.html" className="nav prev">
-            Previous
-          </Link>
-          <Link to="column.html" className="nav next">
-            Next
-          </Link>
-        </div>
-        <footer>16 / 19</footer>
+
       </React.Fragment>
     );
   }

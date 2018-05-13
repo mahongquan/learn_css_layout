@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
+import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
 export default class frameworks extends Component<Props> {
   render() {
     return (
@@ -72,15 +73,7 @@ export default class frameworks extends Component<Props> {
           That&apos;s it! If you have any feedback on this site, please{' '}
           <button href="#">let me know on Twitter</button>!
         </p>
-        <div className="nav-wrapper">
-          <Link to="flexbox.html" className="nav prev">
-            Previous
-          </Link>
-          <Link to="about.html" className="nav next">
-            Next
-          </Link>
-        </div>
-        <footer>19 / 19</footer>
+
       </React.Fragment>
     );
   }

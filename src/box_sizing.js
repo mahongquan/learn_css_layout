@@ -82,15 +82,6 @@ export default class box_sizing extends Component<Props> {
           in specific browsers. Also, keep in mind that this one is{' '}
           <a href="#">IE8+</a>.
         </p>
-        <div className="nav-wrapper">
-          <Link to="box-model.html" className="nav prev">
-            Previous
-          </Link>
-          <Link to="position.html" className="nav next">
-            Next
-          </Link>
-        </div>
-        <footer>6 / 19</footer>
       </React.Fragment>
     );
   }

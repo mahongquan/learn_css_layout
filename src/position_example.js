@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
-import Elem from './Elem';
+import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
 export default class position_example extends Component<Props> {
   render() {
     return (
@@ -122,15 +122,6 @@ body {
           coming pages we&apos;ll discuss other layout techniques that have
           different pros and cons.
         </p>
-        <div className="nav-wrapper">
-          <Link to="position.html" className="nav prev">
-            Previous
-          </Link>
-          <Link to="float.html" className="nav next">
-            Next
-          </Link>
-        </div>
-        <footer>8 / 19</footer>
       </React.Fragment>
     );
   }

@@ -109,15 +109,7 @@ export default class media_queries extends Component<Props> {
             <a href="#">meta viewport</a>.
           </p>
         </div>
-        <div className="nav-wrapper">
-          <Link to="percent.html" className="nav prev">
-            Previous
-          </Link>
-          <Link to="inline-block.html" className="nav next">
-            Next
-          </Link>
-        </div>
-        <footer>14 / 19</footer>
+       
       </React.Fragment>
     );
   }

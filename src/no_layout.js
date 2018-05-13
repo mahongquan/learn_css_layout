@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
+
 export default class no_layout extends Component<Props> {
   render() {
     return (
@@ -18,18 +20,6 @@ export default class no_layout extends Component<Props> {
           Before we fix this problem, let&apos;s make sure we&apos;re clear on
           the very important <code>display</code> property.
         </p>
-
-        <div className="nav-wrapper">
-          <Link to="index.html" className="nav prev">
-            Previous
-          </Link>
-
-          <Link to="display.html" className="nav next">
-            Next
-          </Link>
-        </div>
-
-        <footer>1 / 19</footer>
       </React.Fragment>
     );
   }

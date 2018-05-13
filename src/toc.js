@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Elem,{NavWrapper,LinkNav,LinkToc} from './Elem';
+
 export default class toc extends Component<Props> {
   render() {
     return (
@@ -21,36 +23,6 @@ export default class toc extends Component<Props> {
             margin-bottom: 0.5em;
           }
 
-          #toc li a {
-            display: block;
-            text-align: center;
-            padding: 0.5em;
-            color: #fff;
-            background-color: #d64078;
-            border: solid #b03060 1px;
-            border-bottom: solid #b03060 4px;
-            text-shadow: 0px 2px 0 #b03060;
-            border-radius: 0.3em;
-            position: relative;
-            -webkit-transition: all 0.1s ease-out; /* Safari 3.2+, Chrome */
-            -moz-transition: all 0.1s ease-out; /* Firefox 4-15 */
-            -o-transition: all 0.1s ease-out; /* Opera 10.5â12.00 */
-            transition: all 0.1s ease-out; /* Firefox 16+, Opera 12.50+ */
-          }
-
-          #toc li a:hover {
-            text-decoration: none;
-            background-color: #c63b6f;
-          }
-
-          #toc li a:active {
-            border-bottom: solid #b03060 1px;
-            top: 4px;
-            -webkit-transition: all 0 ease-out; /* Safari 3.2+, Chrome */
-            -moz-transition: all 0 ease-out; /* Firefox 4-15 */
-            -o-transition: all 0 ease-out; /* Opera 10.5â12.00 */
-            transition: all 0 ease-out; /* Firefox 16+, Opera 12.50+ */
-          }
 
           @media screen and (min-width: 601px) {
             #toc {
@@ -70,66 +42,66 @@ export default class toc extends Component<Props> {
             <li>
               <ul>
                 <li>
-                  <Link to="no-layout.html">no layout</Link>
+                  <LinkToc to="no-layout.html">no layout</LinkToc>
                 </li>
                 <li>
-                  <Link to="display.html">
+                  <LinkToc to="display.html">
                     the &quot;display&quot; property
-                  </Link>
+                  </LinkToc>
                 </li>
                 <li>
-                  <Link to="margin-auto.html">margin: auto;</Link>
+                  <LinkToc to="margin-auto.html">margin: auto;</LinkToc>
                 </li>
                 <li>
-                  <Link to="max-width.html">max-width</Link>
+                  <LinkToc to="max-width.html">max-width</LinkToc>
                 </li>
                 <li>
-                  <Link to="box-model.html">the box model</Link>
+                  <LinkToc to="box-model.html">the box model</LinkToc>
                 </li>
                 <li>
-                  <Link to="box-sizing.html">box-sizing</Link>
+                  <LinkToc to="box-sizing.html">box-sizing</LinkToc>
                 </li>
                 <li>
-                  <Link to="position.html">position</Link>
+                  <LinkToc to="position.html">position</LinkToc>
                 </li>
                 <li>
-                  <Link to="position-example.html">position example</Link>
+                  <LinkToc to="position-example.html">position example</LinkToc>
                 </li>
                 <li>
-                  <Link to="float.html">float</Link>
+                  <LinkToc to="float.html">float</LinkToc>
                 </li>
                 <li>
-                  <Link to="clear.html">clear</Link>
+                  <LinkToc to="clear.html">clear</LinkToc>
                 </li>
                 <li>
-                  <Link to="clearfix.html">the clearfix hack</Link>
+                  <LinkToc to="clearfix.html">the clearfix hack</LinkToc>
                 </li>
                 <li>
-                  <Link to="float-layout.html">float layout example</Link>
+                  <LinkToc to="float-layout.html">float layout example</LinkToc>
                 </li>
                 <li>
-                  <Link to="percent.html">percent width</Link>
+                  <LinkToc to="percent.html">percent width</LinkToc>
                 </li>
                 <li>
-                  <Link to="media-queries.html">media queries</Link>
+                  <LinkToc to="media-queries.html">media queries</LinkToc>
                 </li>
                 <li>
-                  <Link to="inline-block.html">inline-block</Link>
+                  <LinkToc to="inline-block.html">inline-block</LinkToc>
                 </li>
                 <li>
-                  <Link to="inline-block-layout.html">inline-block layout</Link>
+                  <LinkToc to="inline-block-layout.html">inline-block layout</LinkToc>
                 </li>
                 <li>
-                  <Link to="column.html">column</Link>
+                  <LinkToc to="column.html">column</LinkToc>
                 </li>
                 <li>
-                  <Link to="flexbox.html">flexbox</Link>
+                  <LinkToc to="flexbox.html">flexbox</LinkToc>
                 </li>
                 <li>
-                  <Link to="frameworks.html">css frameworks</Link>
+                  <LinkToc to="frameworks.html">css frameworks</LinkToc>
                 </li>
                 <li>
-                  <Link to="about.html">about this site</Link>
+                  <LinkToc to="about.html">about this site</LinkToc>
                 </li>
               </ul>
             </li>

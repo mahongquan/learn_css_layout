@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
-import Elem from './Elem';
+import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
 export default class inline_block extends Component<Props> {
   render() {
     var box1 = (
-      <Elem className="box">
-        <p>I&apos;m floating!</p>
+      <Elem id="box" style={{ float: "left",
+            width: "200px",
+            height: "100px",
+            margin: "1em"}}>
+        <p>I'm floating!</p>
       </Elem>
     );
     var box2 = (
-      <Elem className="box2">
+      <Elem className="box2" style={{display: "inline-block",
+            width: "200px",
+            height: "100px",
+            margin: "1em"}}>
         <p>I am inline box!</p>
       </Elem>
     );
@@ -34,18 +40,6 @@ export default class inline_block extends Component<Props> {
         <div className="content">
           <h2>The Hard Way (using float)</h2>
         </div>
-        <style jsx="true">{`
-          .box {
-            float: left;
-            width: 200px;
-            height: 100px;
-            margin: 1em;
-          }
-
-          .after-box {
-            clear: left;
-          }
-        `}</style>
         <figure className="highlight">
           <Highlight>{`.box {
   float: left;
@@ -59,7 +53,7 @@ export default class inline_block extends Component<Props> {
         </figure>
         <div className="content">
           {boxes}
-          <Elem section green className="after-box">
+          <Elem section green style={{clear: "left"}}>
             <p>
               I&apos;m using clear so I don&apos;t float next to the above
               boxes.
@@ -73,14 +67,6 @@ export default class inline_block extends Component<Props> {
             value of the <code>display</code> property.
           </p>
         </div>
-        <style jsx="true">{`
-          .box2 {
-            display: inline-block;
-            width: 200px;
-            height: 100px;
-            margin: 1em;
-          }
-        `}</style>
         <figure className="highlight">
           <Highlight>{`.box2 {
   display: inline-block;
@@ -93,7 +79,7 @@ export default class inline_block extends Component<Props> {
           {boxes2}
           <Elem green section>
             <p>
-              I don&apos;t have to use <code>clear</code> in this case. Nice!
+              I don't have to use <code>clear</code> in this case. Nice!
             </p>
           </Elem>
         </div>
@@ -106,15 +92,7 @@ export default class inline_block extends Component<Props> {
           support if you&apos;re curious to learn more. Otherwise, let&apos;s
           continue.
         </p>
-        <div className="nav-wrapper">
-          <Link to="media-queries.html" className="nav prev">
-            Previous
-          </Link>
-          <Link to="inline-block-layout.html" className="nav next">
-            Next
-          </Link>
-        </div>
-        <footer>15 / 19</footer>
+
       </React.Fragment>
     );
   }

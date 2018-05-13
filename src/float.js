@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
+import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
 export default class float extends Component<Props> {
   render() {
     return (
@@ -23,7 +24,7 @@ export default class float extends Component<Props> {
 }`}</Highlight>
         </figure>
         <p className="content ipsum">
-          <img alt="An Image" src="./images/ilta.png" />
+          <img alt="ilta" src="./images/ilta.png" />
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
           imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae
           scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices
@@ -36,15 +37,7 @@ export default class float extends Component<Props> {
           non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo
           purus. Mauris quis diam velit.
         </p>
-        <div className="nav-wrapper">
-          <Link to="position-example.html" className="nav prev">
-            Previous
-          </Link>
-          <Link to="clear.html" className="nav next">
-            Next
-          </Link>
-        </div>
-        <footer>9 / 19</footer>
+
       </React.Fragment>
     );
   }

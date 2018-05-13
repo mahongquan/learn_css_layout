@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
-import Elem from './Elem';
+import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
 export default class clear extends Component<Props> {
   render() {
     return (
@@ -79,15 +79,7 @@ export default class clear extends Component<Props> {
             </p>
           </Elem>
         </div>
-        <div className="nav-wrapper">
-          <Link to="float.html" className="nav prev">
-            Previous
-          </Link>
-          <Link to="clearfix.html" className="nav next">
-            Next
-          </Link>
-        </div>
-        <footer>10 / 19</footer>
+
       </React.Fragment>
     );
   }

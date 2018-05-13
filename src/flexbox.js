@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
-import Elem from './Elem';
+import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
 export default class flexbox extends Component<Props> {
   render() {
     return (
@@ -192,15 +192,7 @@ nav {
             </p>
           </Elem>
         </Elem>
-        <div className="nav-wrapper">
-          <Link to="column.html" className="nav prev">
-            Previous
-          </Link>
-          <Link to="frameworks.html" className="nav next">
-            Next
-          </Link>
-        </div>
-        <footer>18 / 19</footer>
+
       </React.Fragment>
     );
   }

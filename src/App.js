@@ -1,8 +1,49 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
+const pages=["index.html","no-layout.html","display.html","margin-auto.html","max-width.html","box-model.html","box-sizing.html","position.html","position-example.html","float.html","clear.html","clearfix.html","float-layout.html","percent.html","media-queries.html","inline-block.html","inline-block-layout.html","column.html","flexbox.html","frameworks.html","about.html"]
 class Root extends Component<Props> {
+  getPrevNext=()=>{
+    let prev,next,at;
+    for(var i=0;i<pages.length;i++){
+       if(this.props.history.location.pathname.indexOf(pages[i])>=0){
+         prev=i-1;
+         next=i+1;
+         if(prev>=0){
+            prev=pages[prev];
+         }
+         else{
+            prev=undefined;
+         }
+         if(next<pages.length){
+            next=pages[next];
+         }
+         else{
+            next=undefined;
+         }
+         at=i;
+         break;
+       }
+    }
+    return [prev,next,at]
+  }
   render() {
-    // console.log(this.props);
+    //console.log(this.props.location);
+    var arr1=this.getPrevNext();
+    let prev=arr1[0];
+    let next=arr1[1];
+    let i=arr1[2]+1;
+    if(prev){
+      prev=<LinkPrev to={prev}>Previous</LinkPrev>
+    }
+    if(next){
+      next=<LinkPrev to={next}>Next</LinkPrev>
+    }
+    let nav;
+    if(prev || next){
+      nav=<React.Fragment><NavWrapper>{prev}{next}</NavWrapper>
+      <footer>{i} / 21</footer></React.Fragment>
+    }
     return (
       <div>
         <style jsx="true">{`
@@ -66,23 +107,7 @@ class Root extends Component<Props> {
             font-weight: normal;
           }
 
-          a:link {
-            color: #d64078;
-            text-decoration: none;
-          }
-
-          a:visited {
-            color: #d64078;
-          }
-
-          a:hover {
-            text-decoration: underline;
-          }
-
-          a:active {
-            background-color: black;
-            color: white;
-          }
+         
 
           #menu {
             background-color: whiteSmoke;
@@ -159,74 +184,6 @@ class Root extends Component<Props> {
             font-size: 16px;
             direction: ltr;
           }
-
-          a.nav:before {
-            height: 5px;
-            width: 100%;
-            background: white;
-            position: absolute;
-            content: '';
-            top: -6px;
-            left: 0;
-          }
-
-          a.nav {
-            background-color: #d64078;
-            color: white;
-            border-radius: 0.3em;
-            padding: 0.2em 0;
-            position: relative;
-            margin: 0 1.5em;
-            width: 10em;
-            display: inline-block;
-            text-decoration: none;
-            border: solid #b03060 1px;
-            border-bottom: solid #b03060 4px;
-            text-shadow: 0px 2px 0 #b03060;
-            -webkit-transition: all 0.1s ease-out; /* Safari 3.2+, Chrome */
-            -moz-transition: all 0.1s ease-out; /* Firefox 4-15 */
-            -o-transition: all 0.1s ease-out; /* Opera 10.5â12.00 */
-            transition: all 0.1s ease-out; /* Firefox 16+, Opera 12.50+ */
-          }
-
-          a.nav.prev {
-            margin-left: 0;
-          }
-
-          a.nav.next {
-            margin-right: 0;
-          }
-
-          a.nav:hover {
-            background-color: #c63b6f;
-          }
-
-          a.nav:active {
-            border-bottom: solid #b03060 1px;
-            top: 4px;
-            -webkit-transition: all 0 ease-out; /* Safari 3.2+, Chrome */
-            -moz-transition: all 0 ease-out; /* Firefox 4-15 */
-            -o-transition: all 0 ease-out; /* Opera 10.5â12.00 */
-            transition: all 0 ease-out; /* Firefox 16+, Opera 12.50+ */
-          }
-
-          .nav-wrapper {
-            text-align: center;
-            padding: 1em 0;
-            clear: both;
-          }
-
-          .prev {
-            left: 1em;
-            background-color: gray;
-            text-shadow: 2px 2px 0 gray;
-            border: none;
-          }
-
-          .next {
-            right: 1em;
-          }
-
           footer {
             text-align: center;
           }
@@ -305,6 +262,7 @@ class Root extends Component<Props> {
         </div>
 
         <div id="container">{this.props.children}</div>
+        {nav}
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
-import Elem from './Elem';
+import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
 export default class margin_auto extends Component<Props> {
   render() {
     return (
@@ -35,15 +35,7 @@ export default class margin_auto extends Component<Props> {
             situation...
           </p>
         </Elem>
-        <div className="nav-wrapper">
-          <Link to="display.html" className="nav prev">
-            Previous
-          </Link>
-          <Link to="max-width.html" className="nav next">
-            Next
-          </Link>
-        </div>
-        <footer>3 / 19</footer>
+
       </React.Fragment>
     );
   }

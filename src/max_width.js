@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
-import Elem from './Elem';
+import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
 export default class max_width extends Component<Props> {
   render() {
     return (
@@ -32,15 +32,7 @@ export default class max_width extends Component<Props> {
             you shouldn&apos;t be afraid of using it.
           </p>
         </Elem>
-        <div className="nav-wrapper">
-          <Link to="margin-auto.html" className="nav prev">
-            Previous
-          </Link>
-          <Link to="box-model.html" className="nav next">
-            Next
-          </Link>
-        </div>
-        <footer>4 / 19</footer>
+
       </React.Fragment>
     );
   }

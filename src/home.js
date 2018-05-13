@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import TranLinks from './TranLinks';
+import styled from 'styled-components';
+import Elem,{NavWrapper,LinkNext,LinkNav} from './Elem';
+const About = styled.div`
+            max-width: 550px;
+            margin: 0 auto 2em;
+            padding: 0 1rem;
+`;
+
 export default class index extends Component<Props> {
   render() {
     return (
       <React.Fragment>
-        <style jsx="true">{`
-          #about {
-            max-width: 550px;
-            margin: 0 auto 2em;
-            padding: 0 1rem;
-          }
-        `}</style>
-        <div id="about">
+
+        <About >
           <p>
             This site teaches the CSS fundamentals that are used in any
             website&apos;s layout.
@@ -26,15 +27,9 @@ export default class index extends Component<Props> {
             Otherwise, let&apos;s see if we can save you some fury on your next
             project.
           </p>
-        </div>
+        </About>
 
-        <div className="nav-wrapper">
-          <Link to="./no-layout.html" className="nav start">
-            Get Started
-          </Link>
-        </div>
-
-        <TranLinks />
+      <TranLinks />
       </React.Fragment>
     );
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
-import Elem from './Elem';
+import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
 export default class column extends Component<Props> {
   render() {
     return (
@@ -58,15 +58,7 @@ export default class column extends Component<Props> {
           <a href="#">click here to read more</a>. Otherwise, off to the next
           topic.
         </p>
-        <div className="nav-wrapper">
-          <Link to="inline-block-layout.html" className="nav prev">
-            Previous
-          </Link>
-          <Link to="flexbox.html" className="nav next">
-            Next
-          </Link>
-        </div>
-        <footer>17 / 19</footer>
+
       </React.Fragment>
     );
   }

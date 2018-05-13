@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
-import Elem from './Elem';
+import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
 export default class percent extends Component<Props> {
   render() {
     return (
@@ -104,15 +104,7 @@ section {
             </p>
           </Elem>
         </Elem>
-        <div className="nav-wrapper">
-          <Link to="float-layout.html" className="nav prev">
-            Previous
-          </Link>
-          <Link to="media-queries.html" className="nav next">
-            Next
-          </Link>
-        </div>
-        <footer>13 / 19</footer>
+  
       </React.Fragment>
     );
   }

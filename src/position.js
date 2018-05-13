@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Highlight from 'react-highlight';
-import Elem from './Elem';
+import Elem,{NavWrapper,LinkNav,LinkPrev,LinkNext,LinkToc} from './Elem';
 export default class position extends Component<Props> {
   render() {
     return (
@@ -170,15 +170,6 @@ export default class position extends Component<Props> {
           layouts. On the next page we&apos;ll use <code>position</code> in a
           more practical example.
         </p>
-        <div className="nav-wrapper">
-          <Link to="box-sizing.html" className="nav prev">
-            Previous
-          </Link>
-          <Link to="position-example.html" className="nav next">
-            Next
-          </Link>
-        </div>
-        <footer>7 / 19</footer>
       </React.Fragment>
     );
   }
