@@ -48,6 +48,14 @@ class Root extends Component<Props> {
     return (
       <div>
         <style jsx="true">{`
+          html {
+            font-size: 1rem;
+            overflow-wrap: break-word;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-variant-ligatures: none;
+                    font-variant-ligatures: none;
+          }
           body {
             margin: 0;
             padding: 0 0 1em 0;
@@ -56,19 +64,6 @@ class Root extends Component<Props> {
             color: #414142;
             font-family: Arial;
             background-color: #ededed;
-          }
-
-          body.rtl {
-            direction: rtl;
-          }
-
-          body.rtl code {
-            display: inline-block;
-            direction: ltr;
-          }
-
-          body.rtl pre code {
-            display: block;
           }
 
           * {
@@ -264,6 +259,7 @@ class Root extends Component<Props> {
 
         <div id="container">{this.props.children}</div>
         {nav}
+        <div style={{minHeight:"100px"}}/>
       </div>
     );
   }

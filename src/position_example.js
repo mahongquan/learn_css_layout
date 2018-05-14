@@ -121,6 +121,7 @@ body {
           coming pages we&apos;ll discuss other layout techniques that have
           different pros and cons.
         </p>
+        
       </React.Fragment>
     );
   }

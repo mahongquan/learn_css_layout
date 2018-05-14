@@ -26,19 +26,6 @@ export default class inline_block_layout extends Component<Props> {
             </li>
           </ul>
         </div>
-        <style jsx="true">{`
-          nav.elem {
-            display: inline-block;
-            vertical-align: top;
-            width: 25%;
-          }
-
-          .column {
-            display: inline-block;
-            vertical-align: top;
-            width: 75%;
-          }
-        `}</style>
         <figure className="highlight">
           <Highlight>{`nav {
   display: inline-block;
@@ -52,7 +39,11 @@ export default class inline_block_layout extends Component<Props> {
 }`}</Highlight>
         </figure>
         <Elem className="container">
-          <Elem nav className="elem elem-red">
+          <Elem nav red style={{
+            display: "inline-block",
+            verticalAlign: "top",
+            width: "25%"
+          }}>
             <ul>
               <li>
                 <a href="inline-block-layout.html">Home</a>
@@ -74,7 +65,10 @@ export default class inline_block_layout extends Component<Props> {
               </li>
             </ul>
           </Elem>
-          <Elem red className="column">
+          <Elem red style={{
+            display: "inline-block",
+            verticalAlign: "top",
+            width: "75%" }}>
             <Elem green section>
               <p>Tada!</p>
             </Elem>

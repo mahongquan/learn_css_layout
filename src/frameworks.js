@@ -35,16 +35,16 @@ export default class frameworks extends Component<Props> {
           }
         `}</style>
         <div id="logos">
-  <a href="http://www.blueprintcss.org/"><img src="/images/blueprint.jpg" alt="blueprint" /></a>
-  <a href="http://www.unsemantic.com"><img src="/images/unsemantic.png" alt="unsemantic" /></a>
-  <a href="http://bluetrip.org/"><img src="/images/bluetrip.jpg" alt="bluetrip" /></a>
-  <a href="http://twitter.github.com/bootstrap/"><img src="/images/bootstrap.jpg" alt="bootstrap" /></a>
-  <a href="http://susy.oddbird.net/"><img src="/images/susy.jpg" alt="susy" /></a>
-  <a href="http://foundation.zurb.com/"><img src="/images/foundation.png" alt="foundation" /></a>
-  <a href="http://imperavi.com/kube/"><img src="/images/kube.png" alt="kube" /></a>
-  <a href="http://groundworkcss.github.com/"><img src="/images/groundwork.gif" alt="groundwork" /></a>
-  <a href="http://semantic-ui.com"><img src="/images/semantic_ui.png" alt="semantic ui" /></a>
-  <a href="http://purecss.io/"><img src="/images/logo_pure.png" alt="Purecss" /></a>
+  <a href="http://www.blueprintcss.org/"><img src="./images/blueprint.jpg" alt="blueprint" /></a>
+  <a href="http://www.unsemantic.com"><img src="./images/unsemantic.png" alt="unsemantic" /></a>
+  <a href="http://bluetrip.org/"><img src="./images/bluetrip.jpg" alt="bluetrip" /></a>
+  <a href="http://twitter.github.com/bootstrap/"><img src="./images/bootstrap.jpg" alt="bootstrap" /></a>
+  <a href="http://susy.oddbird.net/"><img src="./images/susy.jpg" alt="susy" /></a>
+  <a href="http://foundation.zurb.com/"><img src="./images/foundation.png" alt="foundation" /></a>
+  <a href="http://imperavi.com/kube/"><img src="./images/kube.png" alt="kube" /></a>
+  <a href="http://groundworkcss.github.com/"><img src="./images/groundwork.gif" alt="groundwork" /></a>
+  <a href="http://semantic-ui.com"><img src="./images/semantic_ui.png" alt="semantic ui" /></a>
+  <a href="http://purecss.io/"><img src="./images/logo_pure.png" alt="Purecss" /></a>
         </div>
         <p className="content">
           That&apos;s it! If you have any feedback on this site, please{' '}

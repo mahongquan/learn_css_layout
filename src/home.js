@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
 import TranLinks from './TranLinks';
-import styled from 'styled-components';
-const About = styled.div`
-            max-width: 550px;
-            margin: 0 auto 2em;
-            padding: 0 1rem;
-`;
+import Elem,{About} from './Elem';
 
 export default class index extends Component<Props> {
   render() {
     return (
       <React.Fragment>
-
         <About >
           <p>
             This site teaches the CSS fundamentals that are used in any
@@ -27,7 +21,6 @@ export default class index extends Component<Props> {
             project.
           </p>
         </About>
-
       <TranLinks />
       </React.Fragment>
     );

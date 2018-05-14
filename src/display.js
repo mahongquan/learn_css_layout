@@ -5,6 +5,7 @@ export default class display extends Component<Props> {
   render() {
     return (
       <React.Fragment>
+
         <h1 className="content">the &quot;display&quot; property</h1>
         <p className="content">
           <code>display</code> is CSS&apos;s most important property for
@@ -73,7 +74,6 @@ export default class display extends Component<Props> {
             is making inline <code>li</code> elements for horizontal menus.
           </p>
         </div>
-
       </React.Fragment>
     );
   }

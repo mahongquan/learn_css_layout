@@ -1,13 +1,28 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+export const About = styled.div`
+            max-width: 550px;
+            margin: 0 auto 2em;
+            padding: 0 1rem;
+`;
+export const LinkStyle = styled(Link)`
+          :link {
+            color: #d64078;
+            text-decoration: none;
+          }
+          :hover {
+            text-decoration: none;
+            background-color: #c63b6f;
+          }
+`;
 export const LinkToc = styled(Link)`
          width: 15em;
             display: inline-block;
             text-decoration: none;
             text-align: center;
             padding: 0.5em;
-            color: #fff;
+            color: white;
             background-color: #d64078;
             border: solid #b03060 1px;
             border-bottom: solid #b03060 4px;
@@ -18,8 +33,8 @@ export const LinkToc = styled(Link)`
             -moz-transition: all 0.1s ease-out; /* Firefox 4-15 */
             -o-transition: all 0.1s ease-out; /* Opera 10.5â12.00 */
             transition: all 0.1s ease-out; /* Firefox 16+, Opera 12.50+ */
-:link {
-            color: #d64078;
+          :link {
+            color: white;
             text-decoration: none;
           }
           :hover {
@@ -69,6 +84,10 @@ export const A = styled.a`
             color: white;
           }
 `;
+export const LinkNav2 =function(props){
+  console.log(arguments);
+  return <button style={{padding:"0 0 0 0",margin:"0 10px 0 10px"}}><LinkStyle to={props.to}>{props.children}</LinkStyle></button>
+}
 export const LinkNav = styled(Link)`
            background-color: #d64078;
             color: white;
@@ -117,11 +136,11 @@ export const LinkNav = styled(Link)`
             left: 0;
           }
 `;
-export const LinkPrev = LinkToc.extend`
- margin-left: 2em;
- margin-right:2em;
- width: 10em;
-`;
+export const LinkPrev = LinkNav;//.extend`
+//  margin-left: 2em;
+//  margin-right:2em;
+//  width: 10em;
+// `;
 export const LinkNext = LinkPrev;
 
 const StartLabel = styled.span`
@@ -179,8 +198,13 @@ export default class Elem extends Component<Props> {
     }
     let Element = styled(ComStr)`
       border: solid ${borderColor} 3px;
+      padding:0 0 0 0;
+      margin:0 0 0 0;
       position: relative;
     `;
+    if(this.props.css){
+      Element=Element.extend`${this.props.css}`
+    }
     return (
       <Element
         id={this.props.id}
@@ -188,7 +212,7 @@ export default class Elem extends Component<Props> {
         className={this.props.className}
       >
         <StartLabel color={borderColor}>
-          &lt;{ComStr} {idstr} {cls_str}&gt;
+          &lt;{ComStr} {idstr} {cls_str} {this.props.title}&gt;
         </StartLabel>
         {this.props.children}
         <EndLabel  color={borderColor}>&lt;/{ComStr}&gt;</EndLabel>

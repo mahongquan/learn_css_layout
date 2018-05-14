@@ -1,60 +1,110 @@
 import React, { Component } from 'react';
 import Highlight from 'react-highlight';
 import Elem from './Elem';
+import AceEditor from 'react-ace';
+import 'brace/theme/github';
 export default class inline_block extends Component<Props> {
-  render() {
-    var box1 = (
-      <Elem id="box" style={{ float: "left",
-            width: "200px",
-            height: "100px",
-            margin: "1em"}}>
+    constructor(){
+      super();
+      this.arr1=[];
+      for (var i = 0; i < 2; i++) {
+        this.arr1.push(i);
+      }
+      this.state= {
+        style_box:
+`float: left;
+width: 200px;
+height: 100px;
+margin: 1em;`,
+        mode:"text",
+        after_box:"clear:left;"
+      }
+    }
+    onChange=(newValue)=>{
+        this.setState({
+            style_box:newValue
+        });
+    }
+    onChange_after=(newValue)=>{
+        this.setState({
+            after_box:newValue
+        });
+    }
+    box1=(key)=>{
+      return (
+      <Elem key={key} title="box" css={this.state.style_box}>
         <p>I'm floating!</p>
       </Elem>
-    );
-    var box2 = (
-      <Elem className="box2" style={{display: "inline-block",
-            width: "200px",
-            height: "100px",
-            margin: "1em"}}>
-        <p>I am inline box!</p>
-      </Elem>
-    );
-    var boxes = [];
-    var boxes2 = [];
-    for (var i = 0; i < 9; i++) {
-      boxes.push(box1);
-      boxes2.push(box2);
+      );
     }
+    box2=(key)=>{
+      return  (
+        <Elem key={key} title="box2" style={{
+              display: "inline-block",
+              width: "200px",
+              height: "100px",
+              margin: "1em"}}>
+          <p>I am inline box!</p>
+        </Elem>
+      );
+    }
+  render() {
+
+    var boxes = this.arr1.map((one,key)=>{
+       return this.box1(key);
+    });
+    var boxes2 = this.arr1.map((one,key)=>{
+       return this.box2(key);
+    });
     return (
       <React.Fragment>
         <h1 className="content">inline-block</h1>
         <p className="content">
           You can create a grid of boxes that fills the browser width and wraps
           nicely. This has been possible for a long time using{' '}
-          <code>float</code>, but now with <code>inline-block</code> it&apos;s
+          <code>float</code>, but now with <code>inline-block</code> it's
           even easier. <code>inline-block</code> elements are like{' '}
           <code>inline</code> elements but they can have a width and height.
-          Let&apos;s look at examples of both approaches.
+          Let's look at examples of both approaches.
         </p>
         <div className="content">
           <h2>The Hard Way (using float)</h2>
         </div>
         <figure className="highlight">
-          <Highlight>{`.box {
-  float: left;
-  width: 200px;
-  height: 100px;
-  margin: 1em;
-}
-.after-box {
-  clear: left;
-}`}</Highlight>
+        <div style={{
+          display:"flex" //,justifyContent:"center"
+        }}>
+         <div style={{display:"flex",flexDirection:"column"}}>
+            <label>style of box</label>
+            <AceEditor ref="editor"
+                    style={{width:"200px",height:"100px"}}
+                    mode={this.state.mode}
+                    theme="github"
+                    value={this.state.style_box}
+                    onChange={this.onChange}
+                    name="UNIQUE_ID_OF_DIV"
+                    editorProps={{$blockScrolling: true}}
+                    />
+          </div>
+          <div style={{display:"flex",flexDirection:"column"}}>
+                <label>style of after box</label>
+                <AceEditor ref="editor"
+                style={{width:"200px",height:"100px"}}
+                mode={this.state.mode}
+                theme="github"
+                value={this.state.after_box}
+                onChange={this.onChange_after}
+                name="UNIQUE_ID_OF_DIV"
+                editorProps={{$blockScrolling: true}}
+                />
+            </div>
+        </div>
         </figure>
         <div className="content">
           {boxes}
-          <Elem section green style={{clear: "left"}}>
+          <Elem section green css={this.state.after_box}>
             <p>
-              I&apos;m using clear so I don&apos;t float next to the above
+              I'm using clear so I don't float next to the above
               boxes.
             </p>
           </Elem>
@@ -88,7 +138,7 @@ export default class inline_block extends Component<Props> {
           <code>inline-block</code> triggering something called{' '}
           <code>hasLayout</code>, though you only need to know about that to
           support old browsers. Follow the previous link about IE6 and IE7
-          support if you&apos;re curious to learn more. Otherwise, let&apos;s
+          support if you're curious to learn more. Otherwise, let's
           continue.
         </p>
 
