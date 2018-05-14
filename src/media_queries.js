@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Highlight from 'react-highlight';
 import Elem,{A}from './Elem';
 import AceEditor from 'react-ace';
 import 'brace/mode/css';

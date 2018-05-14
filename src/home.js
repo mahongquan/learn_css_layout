@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import TranLinks from './TranLinks';
-import Elem,{About,TagCss} from './Elem';
+import {About} from './Elem';
 
 export default class index extends Component<Props> {
   render() {
     return (
       <React.Fragment>
-
         <About >
           <p>
             This site teaches the CSS fundamentals that are used in any

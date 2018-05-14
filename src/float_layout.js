@@ -22,7 +22,7 @@ section {
 }`}</Highlight>
         </figure>
         <Elem className="clearfix">
-          <Elem color="nav" color="blue" style={{ float: "left",
+          <Elem tag="nav" color="blue" style={{ float: "left",
             width: "200px"}}>
             <ul>
               <li>

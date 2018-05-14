@@ -1,6 +1,36 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+export const Example = styled.div`
+  /* all declarations will be prefixed */
+  padding: 2em 1em;
+  background: papayawhip;
+
+  /* pseudo selectors work as well */
+  &:hover {
+    background: palevioletred;
+  }
+
+  /* media queries are no problem */
+  @media (max-width: 600px) {
+    background: tomato;
+
+    /* nested rules work as expected */
+    &:hover {
+      background: yellow;
+    }
+  }
+
+  > p {
+    /* descendant-selectors work as well, but are more of an escape hatch */
+    text-decoration: underline;
+  }
+
+  /* Contextual selectors work as well */
+  html.test & {
+    display: none;
+  }
+`;
 export const About = styled.div`
             max-width: 550px;
             margin: 0 auto 2em;
@@ -110,10 +140,6 @@ export const LinkNav = styled(Link)`
             text-decoration: none;
           }
 
-          :visited {
-            color: #d64078;
-          }
-
           :hover {
             background-color: #c63b6f;
           }
@@ -161,13 +187,14 @@ const EndLabel = styled.span`
 `;
 export  class Div extends Component<Props> {
   render() {
-    let Element = styled('div')`${this.props.css}`;
+    const {css,children,...other}=this.props;
+    let Element = styled('div')`${css}`;
     return (
-      <Element className={this.props.className}>{this.props.children}</Element>
+      <Element {...other}>{children}</Element>
     );
   }
 }
-export  class TagCss extends Component<Props> {
+export  class Tag extends Component<Props> {
   render() {
     const {tag,css,children,...other}=this.props;
     let Element = styled(tag)`${css}`;
@@ -193,10 +220,18 @@ export default class Elem extends Component<Props> {
     if(css){
       Element=Element.extend`${css}`
     }
+    let idstr,cls_str;
+    if (this.props.id) {
+      idstr = `id="${this.props.id}"`;
+    }
+    //
+    if (this.props.className) {
+      cls_str = `class="${this.props.className}"`;
+    }
     return (
       <Element {...other}>
         <StartLabel color={color}>
-          &lt;{tag} {title}&gt;
+          &lt;{tag} {title}  {idstr} {cls_str}&gt;
         </StartLabel>
         {children}
         <EndLabel  color={color}>&lt;/{tag}&gt;</EndLabel>
