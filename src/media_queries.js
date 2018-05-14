@@ -53,7 +53,7 @@ export default class media_queries extends Component<Props> {
                     />
 </figure>
         <Elem className="container" css={this.state.style_container}>
-          <Elem nav red >
+          <Elem tag="nav" color="blue" >
             <ul>
               <li>
                 <A href="percent.html">Home</A>
@@ -75,12 +75,12 @@ export default class media_queries extends Component<Props> {
               </li>
             </ul>
           </Elem>
-          <Elem section green >
+          <Elem tag="section" color="green" >
             <p>
               Now when you resize your browser it&apos;s even cooler than ever!
             </p>
           </Elem>
-          <Elem section green className=" ipsum" >
+          <Elem tag="section" color="green" className=" ipsum" >
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
               imperdiet, nulla et dictum interdum, nisi lorem egestas odio,

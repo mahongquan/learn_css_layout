@@ -53,7 +53,7 @@ nav {
 }`}</Highlight>
         </figure>
         <Elem className="container">
-          <Elem nav red>
+          <Elem tag="nav" color="#D64078">
             <ul>
               <li>
                 <a href="flexbox.html">Home</a>
@@ -75,11 +75,11 @@ nav {
               </li>
             </ul>
           </Elem>
-          <Elem red className="flex-column">
-            <Elem green section>
+          <Elem color="#D64078" className="flex-column">
+            <Elem color="green" tag="section">
               <p>Flexbox is so easy!</p>
             </Elem>
-            <Elem section green className="ipsum">
+            <Elem tag="section" color="#96C02E" className="ipsum">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Phasellus imperdiet, nulla et dictum interdum, nisi lorem
@@ -145,19 +145,19 @@ nav {
 }`}</Highlight>
         </figure>
         <Elem className="container">
-          <Elem section green className="initial">
+          <Elem tag="section" color="green" className="initial">
             <p>
               I will be 200px when there is room, and I will shrink down to
               100px if there is not room, but no smaller.
             </p>
           </Elem>
-          <Elem green section className="none">
+          <Elem color="green" tag="section" className="none">
             <p>I will always be 200px, no matter what.</p>
           </Elem>
-          <Elem green section className="flex1">
+          <Elem color="green" tag="section" className="flex1">
             <p>I will fill up 1/3 of the remaining width.</p>
           </Elem>
-          <Elem green section className="flex2">
+          <Elem color="green" tag="section" className="flex2">
             <p>I will fill up 2/3 of the remaining width.</p>
           </Elem>
         </Elem>
@@ -185,7 +185,7 @@ nav {
 }`}</Highlight>
         </figure>
         <Elem className="vertical-container">
-          <Elem section green>
+          <Elem tag="section" color="green">
             <p>
               Finally, it&apos;s easy to vertically center something in CSS!
             </p>

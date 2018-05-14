@@ -5,9 +5,50 @@
     <title>css layout</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" href="./images/logo.png" />
-    <link rel="stylesheet" href="../../node_modules/highlight.js/styles/dark.css">
+<!--     <link rel="stylesheet" href="../../node_modules/highlight.js/styles/dark.css"> -->
   </head>
   <body>
+    <script type="text/javascript">
+      (function(){
+        const fs= require('fs');
+        const path=require('path');
+        // console.log(path);
+        function fileExist(p){
+            if(fs.existsSync(p)){
+              return true;
+            }
+            return false;
+        }
+        function link(where) {
+          // body...
+          var thelink=document.createElement('link');
+          thelink.setAttribute("rel","stylesheet");
+          var file1=path.join(where,"node_modules/highlight.js/styles/dark.css")
+          thelink.setAttribute("href",file1);
+          document.head.appendChild(thelink);
+        }
+        function setlinks(){
+          let where="..";
+          let p1;
+          p1=path.join(path.resolve(__dirname),"../../node_modules");
+          // console.log(p1);
+          if(fs.existsSync(p1)){
+            where="../..";
+            link(where);
+            return;
+          }
+          p1=path.join(path.resolve(__dirname),"../node_modules");
+          // console.log(p1);
+          if(fs.existsSync(p1)){
+            where="..";
+            link(where);
+            return;
+          }
+          //var d=document.getElement("head");
+        }
+        setlinks();
+      }());
+    </script>
     <div id="root"></div> 
     <script type="text/javascript" src="./boot.js"></script>
   </body>

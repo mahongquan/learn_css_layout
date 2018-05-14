@@ -12,7 +12,8 @@ export default class float_layout extends Component<Props> {
           using <code>float</code> instead.
         </p>
         <figure className="highlight">
-          <Highlight>{`nav {
+          <Highlight>{`
+nav {
   float: left;
   width: 200px;
 }
@@ -21,7 +22,7 @@ section {
 }`}</Highlight>
         </figure>
         <Elem className="clearfix">
-          <Elem nav red style={{ float: "left",
+          <Elem color="nav" color="blue" style={{ float: "left",
             width: "200px"}}>
             <ul>
               <li>
@@ -44,7 +45,7 @@ section {
               </li>
             </ul>
           </Elem>
-          <Elem section green style={{marginLeft:"200px"}}>
+          <Elem tag="section"  style={{marginLeft:"200px"}}>
             <p>
               This example works just like the last one. Notice we put a{' '}
               <code>clearfix</code> on the container. It&apos;s not needed in
@@ -52,7 +53,7 @@ section {
               than the non-floated content.
             </p>
           </Elem>
-          <Elem section green className="ipsum"  style={{marginLeft:"200px"}}>
+          <Elem tag="section"  className="ipsum"  style={{marginLeft:"200px"}}>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
               imperdiet, nulla et dictum interdum, nisi lorem egestas odio,

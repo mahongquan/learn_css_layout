@@ -94,7 +94,7 @@ export const LinkNav = styled(Link)`
             border-radius: 0.3em;
             padding: 0.2em 0;
             position: relative;
-            margin: 0 1.5em;
+            margin: 1em 1.5em 1em 1em;
             width: 10em;
             display: inline-block;
             text-decoration: none;
@@ -149,7 +149,6 @@ const StartLabel = styled.span`
   line-height: 1em;
   top: 0;
   left: 0;
-
   background-color:${props => props.color};
 `;
 const EndLabel = styled.span`
@@ -159,7 +158,6 @@ const EndLabel = styled.span`
   background-color:${props => props.color};
   right: 0;
   bottom: 0;
-
 `;
 export  class Div extends Component<Props> {
   render() {
@@ -180,60 +178,28 @@ export  class TagCss extends Component<Props> {
 }
 
 export default class Elem extends Component<Props> {
+  static defaultProps={
+    color:"#6AC5AC",
+    tag:"div",
+  }
   render() {
-    let idstr, cls_str;
-    let borderColor='#6AC5AC';
-    if (this.props.green) {
-      borderColor = '#96C02E';
-    }
-    else if (this.props.orange) {
-      borderColor = '#FDC72F';
-    }
-    else if (this.props.red) {
-      borderColor = '#D64078';
-    }
-    ////////////
-    if (this.props.id) {
-      idstr = `id="${this.props.id}"`;
-    }
-    //
-    if (this.props.className) {
-      cls_str = `class="${this.props.className}"`;
-    }
-    //
-    let ComStr = 'div';
-    if (this.props.article) {
-      ComStr = 'article';
-    }
-    else if (this.props.nav) {
-      ComStr = 'nav';
-    }
-    else if (this.props.footer) {
-      ComStr = 'footer';
-    }
-    else if (this.props.section) {
-      ComStr = 'section';
-    }
-    let Element = styled(ComStr)`
-      border: solid ${borderColor} 3px;
+    const {tag,css,title,color,children,...other}=this.props;
+    let Element = styled(tag)`
+      border: solid ${color} 3px;
       padding:0 0 0 0;
       margin:0 0 0 0;
       position: relative;
     `;
-    if(this.props.css){
-      Element=Element.extend`${this.props.css}`
+    if(css){
+      Element=Element.extend`${css}`
     }
     return (
-      <Element
-        id={this.props.id}
-        style={this.props.style}
-        className={this.props.className}
-      >
-        <StartLabel color={borderColor}>
-          &lt;{ComStr} {idstr} {cls_str} {this.props.title}&gt;
+      <Element {...other}>
+        <StartLabel color={color}>
+          &lt;{tag} {title}&gt;
         </StartLabel>
-        {this.props.children}
-        <EndLabel  color={borderColor}>&lt;/{ComStr}&gt;</EndLabel>
+        {children}
+        <EndLabel  color={color}>&lt;/{tag}&gt;</EndLabel>
       </Element>
     );
   }
