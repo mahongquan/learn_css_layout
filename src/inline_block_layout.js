@@ -27,12 +27,13 @@ export default class inline_block_layout extends Component<Props> {
           </ul>
         </div>
         <figure className="highlight">
-          <Highlight>{`nav {
+          <Highlight>{`
+nav {
   display: inline-block;
   vertical-align: top;
   width: 25%;
 }
-.column {
+#column {
   display: inline-block;
   vertical-align: top;
   width: 75%;
@@ -65,7 +66,7 @@ export default class inline_block_layout extends Component<Props> {
               </li>
             </ul>
           </Elem>
-          <Elem red style={{
+          <Elem red id="column" style={{
             display: "inline-block",
             verticalAlign: "top",
             width: "75%" }}>

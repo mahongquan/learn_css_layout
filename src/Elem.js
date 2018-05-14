@@ -161,6 +161,24 @@ const EndLabel = styled.span`
   bottom: 0;
 
 `;
+export  class Div extends Component<Props> {
+  render() {
+    let Element = styled('div')`${this.props.css}`;
+    return (
+      <Element className={this.props.className}>{this.props.children}</Element>
+    );
+  }
+}
+export  class TagCss extends Component<Props> {
+  render() {
+    const {tag,css,children,...other}=this.props;
+    let Element = styled(tag)`${css}`;
+    return (
+      <Element {...other}>{this.props.children}</Element>
+    );
+  }
+}
+
 export default class Elem extends Component<Props> {
   render() {
     let idstr, cls_str;

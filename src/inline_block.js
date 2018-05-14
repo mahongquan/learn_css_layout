@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Highlight from 'react-highlight';
-import Elem from './Elem';
+import Elem,{Div} from './Elem';
 import AceEditor from 'react-ace';
+import 'brace/mode/css';
 import 'brace/theme/github';
 export default class inline_block extends Component<Props> {
     constructor(){
@@ -12,11 +13,24 @@ export default class inline_block extends Component<Props> {
       }
       this.state= {
         style_box:
-`float: left;
-width: 200px;
-height: 100px;
-margin: 1em;`,
-        mode:"text",
+`.box {
+    float: left;
+    width: 200px;
+    height: 100px;
+    margin: 1em;
+}
+.after-box {
+    clear: left;
+}`,
+        style_box2:
+`.box2 {
+    display:inline-block;
+    width: 200px;
+    height: 100px;
+    margin: 1em;
+}`,
+
+        mode:"css",
         after_box:"clear:left;"
       }
     }
@@ -25,6 +39,12 @@ margin: 1em;`,
             style_box:newValue
         });
     }
+    onChange2=(newValue)=>{
+        this.setState({
+            style_box2:newValue
+        });
+    }
+
     onChange_after=(newValue)=>{
         this.setState({
             after_box:newValue
@@ -32,18 +52,14 @@ margin: 1em;`,
     }
     box1=(key)=>{
       return (
-      <Elem key={key} title="box" css={this.state.style_box}>
+      <Elem key={key} className="box" css={this.state.style_box}>
         <p>I'm floating!</p>
       </Elem>
       );
     }
     box2=(key)=>{
       return  (
-        <Elem key={key} title="box2" style={{
-              display: "inline-block",
-              width: "200px",
-              height: "100px",
-              margin: "1em"}}>
+        <Elem key={key} className="box2" >
           <p>I am inline box!</p>
         </Elem>
       );
@@ -71,44 +87,24 @@ margin: 1em;`,
           <h2>The Hard Way (using float)</h2>
         </div>
         <figure className="highlight">
-        <div style={{
-          display:"flex" //,justifyContent:"center"
-        }}>
-         <div style={{display:"flex",flexDirection:"column"}}>
-            <label>style of box</label>
             <AceEditor ref="editor"
-                    style={{width:"200px",height:"100px"}}
+                    style={{width:"200px",height:"150px",border:"solid gray 5px"}}
                     mode={this.state.mode}
                     theme="github"
                     value={this.state.style_box}
                     onChange={this.onChange}
                     name="UNIQUE_ID_OF_DIV"
-                    editorProps={{$blockScrolling: true}}
-                    />
-          </div>
-          <div style={{display:"flex",flexDirection:"column"}}>
-                <label>style of after box</label>
-                <AceEditor ref="editor"
-                style={{width:"200px",height:"100px"}}
-                mode={this.state.mode}
-                theme="github"
-                value={this.state.after_box}
-                onChange={this.onChange_after}
-                name="UNIQUE_ID_OF_DIV"
-                editorProps={{$blockScrolling: true}}
-                />
-            </div>
-        </div>
+                    editorProps={{$blockScrolling: true}} />
         </figure>
-        <div className="content">
+        <Div className="content" css={this.state.style_box}>
           {boxes}
-          <Elem section green css={this.state.after_box}>
+          <Elem section green className="after-box">
             <p>
               I'm using clear so I don't float next to the above
               boxes.
             </p>
           </Elem>
-        </div>
+        </Div>
         <div className="content">
           <h2>The Easy Way (using inline-block)</h2>
           <p>
@@ -117,21 +113,23 @@ margin: 1em;`,
           </p>
         </div>
         <figure className="highlight">
-          <Highlight>{`.box2 {
-  display: inline-block;
-  width: 200px;
-  height: 100px;
-  margin: 1em;
-}`}</Highlight>
+            <AceEditor ref="editor"
+                    style={{width:"300px",height:"100px",border:"solid gray 5px"}}
+                    mode={this.state.mode}
+                    theme="github"
+                    value={this.state.style_box2}
+                    onChange={this.onChange2}
+                    name="UNIQUE_ID_OF_DIV"
+                    editorProps={{$blockScrolling: true}} />
         </figure>
-        <div className="content">
+        <Div className="content" css={this.state.style_box2}>
           {boxes2}
           <Elem green section>
             <p>
               I don't have to use <code>clear</code> in this case. Nice!
             </p>
           </Elem>
-        </div>
+        </Div>
         <p className="content">
           You have to do extra work for <a href="http://blog.mozilla.org/webdev/2009/02/20/cross-browser-inline-block/">IE6 and IE7 support</a> of{' '}
           <code>inline-block</code>. Sometimes people talk about{' '}

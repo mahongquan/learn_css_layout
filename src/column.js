@@ -1,16 +1,7 @@
 import React, { Component } from 'react';
 import Highlight from 'react-highlight';
-import Elem from './Elem';
-export default class column extends Component<Props> {
-  render() {
-    return (
-      <React.Fragment>
-        <h1 className="content">column</h1>
-        <p className="content">
-          There is a new set of CSS properties that let you easily make
-          multi-column text. Have a look:
-        </p>
-        <style jsx="true">{`
+import Elem,{Div} from './Elem';
+const css_str=`
           .three-column {
             padding: 1em;
             -moz-column-count: 3;
@@ -20,7 +11,17 @@ export default class column extends Component<Props> {
             column-count: 3;
             column-gap: 1em;
           }
-        `}</style>
+        `;
+export default class column extends Component<Props> {
+  render() {
+    return (
+      <React.Fragment>
+        <h1 className="content">column</h1>
+        <p className="content">
+          There is a new set of CSS properties that let you easily make
+          multi-column text. Have a look:
+        </p>
+
         <figure className="highlight">
           <Highlight>{`.three-column {
   padding: 1em;
@@ -32,8 +33,8 @@ export default class column extends Component<Props> {
   column-gap: 1em;
 }`}</Highlight>
         </figure>
-        <div className="content">
-          <Elem id="test" className="three-column ipsum">
+        <Div css={css_str} className="content">
+          <Elem className="three-column ipsum">
             <div>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
               imperdiet, nulla et dictum interdum, nisi lorem egestas odio,
@@ -49,7 +50,7 @@ export default class column extends Component<Props> {
               diam velit.
             </div>
           </Elem>
-        </div>
+        </Div>
         <p className="content">
           CSS columns are very new, so you need to use the prefixes, and it
           won&apos;t work <a href="http://caniuse.com/#search=column">through IE9 or in Opera Mini</a>. There

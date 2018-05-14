@@ -1,33 +1,33 @@
 import React, { Component } from 'react';
 import Highlight from 'react-highlight';
 import Elem,{A}from './Elem';
-import styled from 'styled-components';
-const Li = styled.li`
-          @media screen and (max-width: 599px) {
-              display: inline;
-          }
-`;
-
-        // <style jsx="true">{`
-        //   @media screen and (min-width: 600px) {
-        //     nav {
-        //       float: left;
-        //       width: 25%;
-        //     }
-        //     section {
-        //       margin-left: 25%;
-        //     }
-        //   }
-        // `}</style>
+import AceEditor from 'react-ace';
+import 'brace/mode/css';
+import 'brace/theme/github';
 export default class media_queries extends Component<Props> {
-  render() {
-    let css_nav=`@media screen and (min-width: 600px) {
+      constructor(){
+      super();
+      this.state= {
+        style_container:
+`@media screen and (min-width:600px) {
+  nav {
     float: left;
     width: 25%;
-  }`;
-    let css_section=`@media screen and (min-width: 600px) {
+  }
+  section {
     margin-left: 25%;
-  }`;
+  }
+}`,
+        mode:"css",
+      }
+    }
+    onChange=(newValue)=>{
+        this.setState({
+            style_container:newValue
+        });
+    }
+  render() {
+
     return (
       <React.Fragment>
         <h1 className="content">media queries</h1>
@@ -43,63 +43,44 @@ export default class media_queries extends Component<Props> {
         </p>
 <figure className="highlight">
 <AceEditor ref="editor"
-                    style={{width:"200px",height:"100px"}}
+                    style={{width:"400px",height:"200px"}}
                     mode={this.state.mode}
                     theme="github"
-                    value={this.state.style_box}
+                    value={this.state.style_container}
                     onChange={this.onChange}
                     name="UNIQUE_ID_OF_DIV"
                     editorProps={{$blockScrolling: true}}
                     />
 </figure>
-        <figure className="highlight">
-          <Highlight>{`
-@media screen and (min-width:600px) {
-  nav {
-    float: left;
-    width: 25%;
-  }
-  section {
-    margin-left: 25%;
-  }
-}
-@media screen and (max-width:599px) {
-  nav li {
-    display: inline;
-  }
-}
-`}</Highlight>
-        </figure>
-
-        <Elem className="container">
-          <Elem nav red css={css_nav}>
+        <Elem className="container" css={this.state.style_container}>
+          <Elem nav red >
             <ul>
-              <Li>
+              <li>
                 <A href="percent.html">Home</A>
-              </Li>
-              <Li>
+              </li>
+              <li>
                 <A href="percent.html">Taco Menu</A>
-              </Li>
-              <Li>
+              </li>
+              <li>
                 <A href="percent.html">Draft List</A>
-              </Li>
-              <Li>
+              </li>
+              <li>
                 <A href="percent.html">Hours</A>
-              </Li>
-              <Li>
+              </li>
+              <li>
                 <A href="percent.html">Directions</A>
-              </Li>
-              <Li>
+              </li>
+              <li>
                 <A href="percent.html">Contact</A>
-              </Li>
+              </li>
             </ul>
           </Elem>
-          <Elem section green css={css_section}>
+          <Elem section green >
             <p>
               Now when you resize your browser it&apos;s even cooler than ever!
             </p>
           </Elem>
-          <Elem section green className=" ipsum" css={css_section}>
+          <Elem section green className=" ipsum" >
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
               imperdiet, nulla et dictum interdum, nisi lorem egestas odio,
