@@ -30,6 +30,8 @@ export default class inline_block extends Component<Props> {
 }`,
 
         mode:"css",
+        displayAce:"none",
+        displayAce2:"none",
         after_box:"clear:left;"
       }
     }
@@ -82,19 +84,36 @@ export default class inline_block extends Component<Props> {
           <code>inline</code> elements but they can have a width and height.
           Let's look at examples of both approaches.
         </p>
-        <div className="content">
+        <div className="content" style={{position:"relative"}}>
           <h2>The Hard Way (using float)</h2>
+      
+          <div
+              style={{
+                display:"flex",
+                flexDirection:"column",
+                alignItems:"flex-end",
+                position:"absolute",
+                zIndex:100,
+                top:0,
+                right:0}}>
+              <button onClick={()=>{
+                if(this.state.displayAce=="none"){
+                  this.setState({displayAce:"block"})
+                }
+                else{
+                  this.setState({displayAce:"none"}) 
+                }
+              }}>edit box style</button>
+              <AceEditor ref="editor"
+                      style={{display:this.state.displayAce, width:"200px",height:"150px",border:"solid gray 5px"}}
+                      mode={this.state.mode}
+                      theme="github"
+                      value={this.state.style_box}
+                      onChange={this.onChange}
+                      name="UNIQUE_ID_OF_DIV"
+                      editorProps={{$blockScrolling: true}} />
+          </div>
         </div>
-        <figure className="highlight">
-            <AceEditor ref="editor"
-                    style={{width:"200px",height:"150px",border:"solid gray 5px"}}
-                    mode={this.state.mode}
-                    theme="github"
-                    value={this.state.style_box}
-                    onChange={this.onChange}
-                    name="UNIQUE_ID_OF_DIV"
-                    editorProps={{$blockScrolling: true}} />
-        </figure>
         <Div className="content" css={this.state.style_box}>
           {boxes}
           <Elem section green className="after-box">
@@ -104,23 +123,40 @@ export default class inline_block extends Component<Props> {
             </p>
           </Elem>
         </Div>
-        <div className="content">
+        <div className="content" style={{position:"relative"}}>
           <h2>The Easy Way (using inline-block)</h2>
           <p>
             You can achieve the same effect using the <code>inline-block</code>{' '}
             value of the <code>display</code> property.
           </p>
+        
+          <div
+                style={{
+                  display:"flex",
+                  flexDirection:"column",
+                  alignItems:"flex-end",
+                  position:"absolute",
+                  zIndex:100,
+                  top:0,
+                  right:0}}>
+                <button onClick={()=>{
+                  if(this.state.displayAce2=="none"){
+                    this.setState({displayAce2:"block"})
+                  }
+                  else{
+                    this.setState({displayAce2:"none"}) 
+                  }
+                }}>edit box2 style</button>
+              <AceEditor ref="editor"
+                      style={{display:this.state.displayAce2, width:"300px",height:"100px",border:"solid gray 5px"}}
+                      mode={this.state.mode}
+                      theme="github"
+                      value={this.state.style_box2}
+                      onChange={this.onChange2}
+                      name="UNIQUE_ID_OF_DIV"
+                      editorProps={{$blockScrolling: true}} />
+          </div>
         </div>
-        <figure className="highlight">
-            <AceEditor ref="editor"
-                    style={{width:"300px",height:"100px",border:"solid gray 5px"}}
-                    mode={this.state.mode}
-                    theme="github"
-                    value={this.state.style_box2}
-                    onChange={this.onChange2}
-                    name="UNIQUE_ID_OF_DIV"
-                    editorProps={{$blockScrolling: true}} />
-        </figure>
         <Div className="content" css={this.state.style_box2}>
           {boxes2}
           <Elem green section>

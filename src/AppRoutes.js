@@ -22,6 +22,7 @@ import percent from './percent';
 import position_example from './position_example';
 import position from './position';
 import toc from './toc';
+import styled,{ThemeProvider} from 'styled-components';
 import {
   Router,
   Redirect,
@@ -47,8 +48,10 @@ export default class Root extends Component<Props> {
     }
   }
   render() {
+    const theme={red:"#D64078",green:"#96C02E",orange:"#FDC72F"};
     return (
       <Router history={history}>
+       <ThemeProvider theme={theme}>
         <App>
           <Switch>
             <Route exact path="/about.html" component={about} />
@@ -84,6 +87,7 @@ export default class Root extends Component<Props> {
             <Redirect exact path="/" to="/index.html" />
           </Switch>
         </App>
+        </ThemeProvider>
       </Router>
     );
   }

@@ -4,6 +4,9 @@ import AceEditor from 'react-ace';
 import 'brace/mode/css';
 import 'brace/theme/github';
 export default class media_queries extends Component<Props> {
+   static defaultProps={
+    theme:{red:"#D64078",green:"#96C02E",orange:"#FDC72F"}
+  }
       constructor(){
       super();
       this.state= {
@@ -18,6 +21,7 @@ export default class media_queries extends Component<Props> {
   }
 }`,
         mode:"css",
+        displayAce:"none"
       }
     }
     onChange=(newValue)=>{
@@ -28,7 +32,7 @@ export default class media_queries extends Component<Props> {
   render() {
 
     return (
-      <React.Fragment>
+      <div style={{position:"relative"}}>
         <h1 className="content">media queries</h1>
         <p className="content">
           "Responsive Design" is the strategy of making a site that
@@ -40,19 +44,34 @@ export default class media_queries extends Component<Props> {
           take our layout that uses percent widths and have it display in one
           column when the browser is too small to fit the menu in the sidebar:
         </p>
-<figure className="highlight">
-<AceEditor ref="editor"
-                    style={{width:"400px",height:"200px"}}
-                    mode={this.state.mode}
-                    theme="github"
-                    value={this.state.style_container}
-                    onChange={this.onChange}
-                    name="UNIQUE_ID_OF_DIV"
-                    editorProps={{$blockScrolling: true}}
-                    />
-</figure>
+<div
+              style={{
+                display:"flex",
+                flexDirection:"column",
+                alignItems:"flex-end",
+                position:"absolute",
+                zIndex:100,
+                top:0,
+                right:0}}>
+              <button onClick={()=>{
+                if(this.state.displayAce=="none"){
+                  this.setState({displayAce:"block"})
+                }
+                else{
+                  this.setState({displayAce:"none"}) 
+                }
+              }}>edit media  style</button>
+              <AceEditor ref="editor"
+                      style={{display:this.state.displayAce, width:"400px",height:"200px",border:"solid gray 5px"}}
+                      mode={this.state.mode}
+                      theme="github"
+                      value={this.state.style_container}
+                      onChange={this.onChange}
+                      name="UNIQUE_ID_OF_DIV"
+                      editorProps={{$blockScrolling: true}} />
+          </div>        
         <Elem className="container" css={this.state.style_container}>
-          <Elem tag="nav" color="blue" >
+          <Elem tag="nav" color={this.props.theme.red} >
             <ul>
               <li>
                 <A href="percent.html">Home</A>
@@ -112,7 +131,7 @@ export default class media_queries extends Component<Props> {
           </p>
         </div>
        
-      </React.Fragment>
+      </div>
     );
   }
 }

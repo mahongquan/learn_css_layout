@@ -1,10 +1,25 @@
 import React, { Component } from 'react';
 import Highlight from 'react-highlight';
 import Elem from './Elem';
-export default class float_layout extends Component<Props> {
+import {withTheme} from 'styled-components';
+// console.log(ThemeProvider);
+
+// class E0 extends Component{
+//   static defaultProps={theme:{red:"red"}}
+//   render() {
+//     const {theme}=this.props;
+//     return(<div style={{backgroundColor:theme.red}}>hello works</div>);
+//     }
+// }
+// const E1=withTheme(E0);
+// const theme={red:"#D64078",green:"#96C02E",orange:"#FDC72F"};
+
+class float_layout extends Component<Props> {
   render() {
     return (
       <React.Fragment>
+        
+
         <h1 className="content">float layout example</h1>
         <p className="content">
           It&apos;s very common to do entire layouts using <code>float</code>.
@@ -22,7 +37,7 @@ section {
 }`}</Highlight>
         </figure>
         <Elem className="clearfix">
-          <Elem tag="nav" color="blue" style={{ float: "left",
+          <Elem tag="nav" color={this.props.theme.red} style={{ float: "left",
             width: "200px"}}>
             <ul>
               <li>
@@ -75,3 +90,4 @@ section {
     );
   }
 }
+export default  withTheme(float_layout);

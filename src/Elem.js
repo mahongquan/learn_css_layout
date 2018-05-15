@@ -48,6 +48,7 @@ export const LinkStyle = styled(Link)`
 `;
 export const LinkToc = styled(Link)`
          width: 15em;
+         margin: 0.5em;
             display: inline-block;
             text-decoration: none;
             text-align: center;
@@ -119,6 +120,9 @@ export const LinkNav2 =function(props){
   return <button style={{padding:"0 0 0 0",margin:"0 10px 0 10px"}}><LinkStyle to={props.to}>{props.children}</LinkStyle></button>
 }
 export const LinkNav = styled(Link)`
+ @media screen and (max-width: 404px) {
+    width: 40%;
+ }
            background-color: #d64078;
             color: white;
             border-radius: 0.3em;
@@ -195,11 +199,14 @@ export  class Div extends Component<Props> {
   }
 }
 export  class Tag extends Component<Props> {
+  static defaultProps={
+    name:"div"
+  }
   render() {
-    const {tag,css,children,...other}=this.props;
-    let Element = styled(tag)`${css}`;
+    const {name,css,children,...other}=this.props;
+    let Element = styled(name)`${css}`;
     return (
-      <Element {...other}>{this.props.children}</Element>
+      <Element {...other}>{children}</Element>
     );
   }
 }
