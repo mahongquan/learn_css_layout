@@ -37,88 +37,75 @@ export const About = styled.div`
             padding: 0 1rem;
 `;
 export const LinkStyle = styled(Link)`
-          :link {
-            color: #d64078;
-            text-decoration: none;
-          }
-          :hover {
-            text-decoration: none;
-            background-color: #c63b6f;
-          }
+&:link {
+  color: #d64078;
+  text-decoration: none;
+}
+&:hover {
+  text-decoration: none;
+  background-color: #c63b6f;
+}
 `;
 export const LinkToc = styled(Link)`
-         width: 15em;
-         margin: 0.5em;
-            display: inline-block;
-            text-decoration: none;
-            text-align: center;
-            padding: 0.5em;
-            color: white;
-            background-color: #d64078;
-            border: solid #b03060 1px;
-            border-bottom: solid #b03060 4px;
-            text-shadow: 0px 2px 0 #b03060;
-            border-radius: 0.3em;
-            position: relative;
-            -webkit-transition: all 0.1s ease-out; /* Safari 3.2+, Chrome */
-            -moz-transition: all 0.1s ease-out; /* Firefox 4-15 */
-            -o-transition: all 0.1s ease-out; /* Opera 10.5â12.00 */
-            transition: all 0.1s ease-out; /* Firefox 16+, Opera 12.50+ */
-          :link {
-            color: white;
-            text-decoration: none;
-          }
-          :hover {
-            text-decoration: none;
-            background-color: #c63b6f;
-          }
+width: 15em;
+margin: 0.5em;
+display: inline-block;
+text-decoration: none;
+text-align: center;
+padding: 0.5em;
+color: white;
+background-color: #d64078;
+border: solid #b03060 1px;
+border-bottom: solid #b03060 4px;
+text-shadow: 0px 2px 0 #b03060;
+border-radius: 0.3em;
+position: relative;
+-webkit-transition: all 0.1s ease-out; /* Safari 3.2+, Chrome */
+-moz-transition: all 0.1s ease-out; /* Firefox 4-15 */
+-o-transition: all 0.1s ease-out; /* Opera 10.5â12.00 */
+transition: all 0.1s ease-out; /* Firefox 16+, Opera 12.50+ */
+&:link {
+  color: white;
+  text-decoration: none;
+}
+&:hover {
+  text-decoration: none;
+  background-color: #c63b6f;
+}
 
-          :active {
-            border-bottom: solid #b03060 1px;
-            top: 4px;
-            -webkit-transition: all 0 ease-out; /* Safari 3.2+, Chrome */
-            -moz-transition: all 0 ease-out; /* Firefox 4-15 */
-            -o-transition: all 0 ease-out; /* Opera 10.5â12.00 */
-            transition: all 0 ease-out; /* Firefox 16+, Opera 12.50+ */
-          }
-          :before {
-            height: 5px;
-            width: 100%;
-            background: white;
-            position: absolute;
-            content: '';
-            top: -6px;
-            left: 0;
-          }
+&:active {
+  border-bottom: solid #b03060 1px;
+  top: 4px;
+  -webkit-transition: all 0 ease-out; /* Safari 3.2+, Chrome */
+  -moz-transition: all 0 ease-out; /* Firefox 4-15 */
+  -o-transition: all 0 ease-out; /* Opera 10.5â12.00 */
+  transition: all 0 ease-out; /* Firefox 16+, Opera 12.50+ */
+}
 `;
 export const NavWrapper = styled.div`
-            text-align: center;
-            padding: 1em 0;
-            clear: both;
+text-align: center;
+padding: 1em 0;
+clear: both;
 `;
 export const A = styled.a`
-        :link {
-            color: #d64078;
-            text-decoration: none;
-          }
-
-          :visited {
-            color: #d64078;
-          }
-
-          :hover {
-            text-decoration: underline;
-          }
-
-          :active {
-            background-color: black;
-            color: white;
-          }
-`;
-export const LinkNav2 =function(props){
-  console.log(arguments);
-  return <button style={{padding:"0 0 0 0",margin:"0 10px 0 10px"}}><LinkStyle to={props.to}>{props.children}</LinkStyle></button>
+&:link {
+    color: #d64078;
+    text-decoration: none;
 }
+
+&:visited {
+    color: #d64078;
+}
+
+&:hover {
+  text-decoration: underline;
+}
+
+&:active {
+  background-color: black;
+  color: white;
+}
+`;
 export const LinkNav = styled(Link)`
  @media screen and (max-width: 404px) {
     width: 40%;
@@ -139,31 +126,22 @@ export const LinkNav = styled(Link)`
             -moz-transition: all 0.1s ease-out; /* Firefox 4-15 */
             -o-transition: all 0.1s ease-out; /* Opera 10.5â12.00 */
             transition: all 0.1s ease-out; /* Firefox 16+, Opera 12.50+ */
-          :link {
+          &:link {
             color: white;
             text-decoration: none;
           }
 
-          :hover {
+          &:hover {
             background-color: #c63b6f;
           }
 
-          :active {
+          &:active {
             border-bottom: solid #b03060 1px;
             top: 4px;
             -webkit-transition: all 0 ease-out; /* Safari 3.2+, Chrome */
             -moz-transition: all 0 ease-out; /* Firefox 4-15 */
             -o-transition: all 0 ease-out; /* Opera 10.5â12.00 */
             transition: all 0 ease-out; /* Firefox 16+, Opera 12.50+ */
-          }
-          :before {
-            height: 5px;
-            width: 100%;
-            background: white;
-            position: absolute;
-            content: '';
-            top: -6px;
-            left: 0;
           }
 `;
 export const LinkPrev = LinkNav;//.extend`

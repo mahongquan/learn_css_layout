@@ -51,7 +51,7 @@ export default class clearfix extends Component<Props> {
         </figure>
         <p className="content">Now let's see what happens:</p>
         <div className="content">
-          <Elem style={{ overflow: 'hidden' }}>
+          <Elem style={{ overflow: 'auto' }}>
             <img alt="ilta" src="./images/ilta.png" />
             <p>Much better!</p>
           </Elem>

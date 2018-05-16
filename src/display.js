@@ -1,7 +1,24 @@
 import React, { Component } from 'react';
-import Elem from './Elem';
+import Elem,{Tag} from './Elem';
 import ElemInline from './ElemInline';
+import Ace from './Ace';
+const css=`
+display:none;
+//visibility:hidden;
+color:red;
+`;
 export default class display extends Component<Props> {
+    constructor(){
+      super();
+      this.state= {
+        css:css,
+      }
+    }
+    cssChange=(newValue)=>{
+        this.setState({
+            css:newValue
+        });
+    }
   render() {
     return (
       <React.Fragment>
@@ -38,7 +55,10 @@ export default class display extends Component<Props> {
             element is the most common inline element, since you use them for
             links.
           </p>
-          <h2>none</h2>
+          <div style={{position:"relative"}}>
+            <h2>none</h2><Ace css={this.state.css} cssChange={this.cssChange} />
+            <Tag css={this.state.css} id="idnone" >You found me!</Tag>
+          </div>
           <p>
             Another common display value is <code>none</code>. Some specialized
             elements such as <code>script</code> use this as their default. It
@@ -52,12 +72,7 @@ export default class display extends Component<Props> {
             will hide the element, but the element will still take up the space
             it would if it was fully visible.
           </p>
-          <style jsx="true">{`
-            #idnone {
-              display: none;
-            }
-          `}</style>
-          <div id="idnone">You found me!</div>
+          
           <h2>other display values</h2>
           <p>
             There are plenty of more exotic display values, such as{' '}

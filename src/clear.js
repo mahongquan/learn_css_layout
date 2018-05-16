@@ -19,11 +19,8 @@ export default class clear extends Component<Props> {
           }
         `}</style>
         <figure className="highlight">
-          <Highlight>{`
-  <div className="box">...</div>
-<section>...</section>
-
-`}</Highlight>
+          <Highlight>{`<div className="box">...</div>
+<section>...</section>`}</Highlight>
         </figure>
         <figure className="highlight">
           <Highlight>{`.box {
@@ -37,7 +34,7 @@ export default class clear extends Component<Props> {
           <Elem className="box">
             <p>I feel like I&apos;m floating!</p>
           </Elem>
-          <Elem section green>
+          <Elem tag="section" green>
             <p>
               In this case, the <code>section</code> element is actually after
               the <code>div</code>. However, since the <code>div</code> is
@@ -69,7 +66,7 @@ export default class clear extends Component<Props> {
           <Elem className="box">
             <p>I feel like I&apos;m floating!</p>
           </Elem>
-          <Elem section green className="after-box">
+          <Elem tag="section" green className="after-box">
             <p>
               Using <code>clear</code> we have now moved this section down below
               the floated <code>div</code>. You use the value <code>left</code>{' '}

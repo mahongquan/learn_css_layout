@@ -31,7 +31,7 @@ export default class percent extends Component<Props> {
   width: 50%;
 }`}</Highlight>
         </figure>
-        <Elem article green className="content clearfix">
+        <Elem tag="article" className="content clearfix">
           <img alt="ilta" src="images/ilta.png" />
           <p>
             You could even use <code>min-width</code> and <code>max-width</code>{' '}
@@ -57,7 +57,7 @@ section {
 }`}</Highlight>
         </figure>
         <Elem className="container">
-          <Elem nav red style={{ float: 'left', width: '25%' }}>
+          <Elem tag="nav" color="red" style={{ float: 'left', width: '25%' }}>
             <ul>
               <li>
                 <a href="percent.html">Home</a>
@@ -79,14 +79,14 @@ section {
               </li>
             </ul>
           </Elem>
-          <Elem section green style={{ marginLeft: '25%' }}>
+          <Elem tag="section" green style={{ marginLeft: '25%' }}>
             <p>
               When this layout is too narrow, the <code>nav</code> gets
               squished. Worse, you can&apos;t use <code>min-width</code> on the
               nav to fix it, because the right column wouldn&apos;t respect it.
             </p>
           </Elem>
-          <Elem section green className="ipsum" style={{ marginLeft: '25%' }}>
+          <Elem tag="section" green className="ipsum" style={{ marginLeft: '25%' }}>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
               imperdiet, nulla et dictum interdum, nisi lorem egestas odio,
