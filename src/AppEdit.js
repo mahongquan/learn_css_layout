@@ -9,93 +9,58 @@ import {
   LivePreview
 } from 'react-live'
 const css=`
-#id1{
-  border:"solid blue 2px";
-  background-color:"#aaa";
-  justify-content: "space-around";
-  flex-wrap:"wrap";
-  align-items: "flex-end";
-  display:"flex";
-  flex-direction:"row";
-  overflow:"hidden";
-  width:"300px";
-  height:"300px";
+#main{
+  border:solid blue 2px;
+  background-color:#aaa;
+  justify-content: space-around;
+  flex-wrap:wrap;
+  align-items: stretch;
+  display:flex;
+  flex-direction:row;
+  overflow:hidden;
+  width:300px;
+  height:600px;
 }
 .child{
   color:blue;
-  margin:"0px 60px 10px 60px";
-  padding:"20px 20px 20px 20px";
-  border:"solid green 3px";
+  margin:1px;
+  border:solid green 3px;
 }
+#main2{
+  border:solid orange 2px;
+  background-color:#aaa;
+  justify-content: space-around;
+  flex-wrap:wrap;
+  align-items: stretch;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+.child2{
+  color:blue;
+  margin:1px;
+  border:solid green 3px;
+}
+
 `;
 const jsx=`
-<div id="main" style={{
-  border:"solid blue 2px",
-  backgroundColor:"#aaa",
-  justifyContent: "space-around",
-  flexWrap:"wrap",
-  alignItems: "flex-end",
-  display:"flex",
-  flexDirection:"row",
-  overflow:"hidden",
-  width:"300px",
-  height:"300px"
-}}>
-    <div className="child"  style={{margin:"0px 60px 10px 60px",padding:"20px 20px 20px 20px",border:"solid green 3px"}}>--------</div>
-    <div className="child" style={{border:"solid green 3px"}}>dddddddc</div>
-    <div className="child" style={{border:"solid green 3px"}}>a</div>
-    <div className="child" style={{border:"solid green 3px"}}>bbbb</div>
-    <div className="child" style={{border:"solid green 3px"}}>dddddddc</div>
-    <div className="child" style={{border:"solid green 3px"}}>a</div>
-    <div className="child" style={{border:"solid green 3px"}}>bbbb</div>
-    <div className="child" style={{border:"solid green 3px"}}>dddddddc</div>
-    <div className="child" style={{border:"solid green 3px"}}>a</div>
-    <div className="child" style={{border:"solid green 3px"}}>bbbb</div>
-    <div className="child" style={{border:"solid green 3px"}}>dddddddc</div>
-    <div className="child" style={{border:"solid green 3px"}}>a</div>
-    <div className="child" style={{border:"solid green 3px"}}>bbbb</div>
-    <div className="child" style={{border:"solid green 3px"}}>dddddddc</div>
-    <div className="child" style={{border:"solid green 3px"}}>a</div>
-    <div className="child" style={{border:"solid green 3px"}}>bbbb</div>
-    <div className="child" style={{border:"solid green 3px"}}>dddddddc</div>
-    <div className="child" style={{border:"solid green 3px"}}>a</div>
-    <div className="child" style={{border:"solid green 3px"}}>bbbb</div>
-    <div className="child" style={{border:"solid green 3px"}}>dddddddc</div>
-    <div className="child" style={{border:"solid green 3px"}}>bbbb</div>
-    <div className="child" style={{border:"solid green 3px"}}>dddddddc</div>
-    <div className="child" style={{border:"solid green 3px"}}>a</div>
-    <div className="child" style={{border:"solid green 3px"}}>bbbb</div>
-    <div className="child" style={{border:"solid green 3px"}}>dddddddc</div>
-    <div className="child" style={{border:"solid green 3px"}}>a</div>
-    <div className="child" style={{border:"solid green 3px"}}>bbbb</div>
-    <div className="child" style={{border:"solid green 3px"}}>dddddddc</div>
-    <div className="child" style={{border:"solid green 3px"}}>a</div>
-    <div className="child" style={{border:"solid green 3px"}}>bbbb</div>
-    <div className="child" style={{border:"solid green 3px"}}>dddddddc</div>
-    <div className="child" style={{border:"solid green 3px"}}>a</div>
-    <div className="child" style={{border:"solid green 3px"}}>bbbb</div>
-    <div className="child" style={{border:"solid green 3px"}}>dddddddc</div>
-    <div className="child" style={{border:"solid green 3px"}}>a</div>
-    <div className="child" style={{border:"solid green 3px"}}>bbbb</div>
-    <div className="child" style={{border:"solid green 3px"}}>dddddddc</div>
-    <div className="child" style={{border:"solid green 3px"}}>a</div>
-    <div className="child" style={{border:"solid green 3px"}}>bbbb</div>
-    <div className="child" style={{border:"solid green 3px"}}>dddddddc</div>
-    <div className="child" style={{border:"solid green 3px"}}>a</div>
-    <div className="child" style={{border:"solid green 3px"}}>bbbb</div>
-    <div className="child" style={{border:"solid green 3px"}}>dddddddc</div>
-    <div className="child" style={{border:"solid green 3px"}}>a</div>
-    <div className="child" style={{border:"solid green 3px"}}>bbbb</div>
-    <div className="child" style={{border:"solid green 3px"}}>dddddddc</div>
-    <div className="child" style={{border:"solid green 3px"}}>a</div>
-    <div className="child" style={{border:"solid green 3px"}}>bbbb</div>
-    <div className="child" style={{border:"solid green 3px"}}>dddddddc</div>
-    <div className="child" style={{border:"solid green 3px"}}>a</div>
-    <div className="child" style={{border:"solid green 3px"}}>bbbb</div>
-    <div className="child" style={{border:"solid green 3px"}}>dddddddc</div>
-    <div className="child" style={{border:"solid green 3px"}}>a</div>
-    <div className="child" style={{border:"solid green 3px"}}>bbbb</div>
-    <div className="child" style={{border:"solid green 3px"}}>dddddddc</div>
+
+<div id="main" >
+    <div id="main2" className="child" >
+      <div className="child2" >dddddddc</div>
+      <div className="child2" ></div>
+      <div className="child2" >bbbb</div>
+      <div className="child2" >dddddddc</div>
+      <div className="child2" >a</div>
+    </div>
+    <div className="child" >dddddddc</div>
+    <div className="child" >a</div>
+    <div className="child" >bbbb</div>
+    <div className="child" >dddddddc</div>
+    <div className="child" >a</div>
+    <div className="child" >bbbb</div>
+    <div className="child" >dddddddc</div>
+
 </div>
 `;
 
@@ -105,6 +70,7 @@ class Root extends Component<Props> {
       this.state= {
         jsx:jsx,
         css:css,
+        displayLE:"none",
       }
     }
     cssChange=(newValue)=>{
@@ -122,7 +88,15 @@ class Root extends Component<Props> {
             <LivePreview />
           </Tag>
           <LiveError />
-          <LiveEditor />                  
+          <button onClick={()=>{
+              if(this.state.displayLE=="none"){
+                this.setState({displayLE:"block"})
+              }
+              else{
+                this.setState({displayLE:"none"}) 
+              }
+            }}>edit  jsx</button>
+          <LiveEditor style={{display:this.state.displayLE}}/>                  
         </LiveProvider>
         <div style={{minHeight:"100px"}}/>
       </div>
