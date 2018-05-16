@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Elem,{Tag,NavWrapper,LinkPrev,LinkStyle,A} from './Elem';
 import styled from 'styled-components';
 import Ace from './Ace';
+import AppFlex from './AppFlex';
 import {
   LiveProvider,
   LiveEditor,
@@ -10,6 +11,7 @@ import {
 } from 'react-live'
 const css=`
 #main{
+  margin:auto;
   border:solid blue 2px;
   background-color:#aaa;
   justify-content: space-around;
@@ -88,16 +90,23 @@ class Root extends Component<Props> {
             <LivePreview />
           </Tag>
           <LiveError />
-          <button onClick={()=>{
-              if(this.state.displayLE=="none"){
-                this.setState({displayLE:"block"})
-              }
-              else{
-                this.setState({displayLE:"none"}) 
-              }
-            }}>edit  jsx</button>
-          <LiveEditor style={{display:this.state.displayLE}}/>                  
+          <div style={{position:"absolute",left:0,top:0}}>
+            <button onClick={()=>{
+                if(this.state.displayLE=="none"){
+                  this.setState({displayLE:"block"})
+                }
+                else{
+                  this.setState({displayLE:"none"}) 
+                }
+              }}>edit  jsx</button>
+            <LiveEditor style={{
+              display:this.state.displayLE,
+              overflow:"auto",
+              width:"300px",
+              height:"300px"}}/>                  
+          </div> 
         </LiveProvider>
+        <AppFlex />
         <div style={{minHeight:"100px"}}/>
       </div>
     );

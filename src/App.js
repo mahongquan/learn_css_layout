@@ -247,11 +247,11 @@ class Root extends Component<Props> {
           </Link>
           <Link to="/toc.html">Table of Contents</Link>
         </Tag>
-        <Ace css={this.state.logo_style}
-                    cssChange={this.onChange_logo}/>
         <div id="container">{this.props.children}</div>
         {nav}
-        <div style={{minHeight:"100px"}}/>
+        <div style={{minHeight:"100px"}} />
+        <Ace css={this.state.logo_style}
+                    cssChange={this.onChange_logo}/>
       </div>
     );
   }

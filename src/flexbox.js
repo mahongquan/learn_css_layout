@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Highlight from 'react-highlight';
-import Elem  from './Elem';
+import Elem,{Tag}  from './Elem';
 import Ace from './Ace';
 const alignitems_options=["center","flex-start","flex-end","stretch","baseline","inherit","initial"];
 const justifycontent_options=["center","flex-start","flex-end","space-around","space-between"];
@@ -32,11 +32,73 @@ const css_fancy=`display: flex;
   flex: 2;
 }
 `;
-const css_va=`height: 300px;
-display: flex;
-align-items: center;
-justify-content: center;
+const css_va=`ul {
+    display:flex;
+    border: 1px solid red;
+    padding: 0;
+    list-style: none;
+    background-color: #e8e8e9;
+    align-items:center;
+    justify-content: center;
+    height:200px;
+}
+li {
+    background-color: #8cacea;
+    margin: 8px;
+    padding: 4px;
+    width:100px;
+     overflow:hidden;
+    :first-child
+    { 
+        line-height:1em;
+        font-size:3em;
+        height:100px;
+    }
+    :last-child
+    { 
+        line-height:1em;
+        font-size:2em;
+        height:200px;
+    }
+}
+
 `;
+const css=`
+ul {
+    display:flex;
+    border: 1px solid red;
+    padding: 0;
+    list-style: none;
+    flex-wrap:wrap;
+    background-color: #e8e8e9;
+    align-items: baseline;
+    justify-content: center;
+    height:500px;
+    align-content:center;
+}
+li {
+    background-color: #8cacea;
+    margin: 8px;
+    padding: 4px;
+    width:100px;
+     overflow:hidden;
+    :first-child
+    { 
+        line-height:1em;
+        font-size:3em;
+        height:100px;
+    }
+    :last-child
+    { 
+        line-height:1em;
+        font-size:2em;
+        height:200px;
+    }
+}
+
+`;
+   // align-items: ${this.state.alignitems};
+   //  justify-content: ${this.state.justifycontent};
 export default class flexbox extends Component<Props> {
   constructor(){
       super();
@@ -44,6 +106,7 @@ export default class flexbox extends Component<Props> {
         style:menu_style,
         css_fancy:css_fancy,
         css_va:css_va,
+        css:css,
         alignitems:"center",
         justifycontent:"center",
         mode:"css",
@@ -63,18 +126,6 @@ export default class flexbox extends Component<Props> {
     }
 
   render() {
-    var justifycontent_options2=justifycontent_options.map((one,key)=>{
-      return <option key={key} value={one}>{one}</option>;
-    })
-    var alignitems_options2=alignitems_options.map((one,key)=>{
-      return <option key={key} value={one}>{one}</option>;
-    })
-    var css=`height: 300px;
-display: flex;
-align-items: ${this.state.alignitems};
--webkit-align-items: ${this.state.alignitems};
-justify-content: ${this.state.justifycontent};
-`;
 
     return (
       <React.Fragment>
@@ -99,12 +150,9 @@ justify-content: ${this.state.justifycontent};
           There is a lot more you can do with flexbox; these are just a few
           examples to give you an idea:
         </p>
-        <div className="highlight" style={{position:"relative"}}>
+        <div style={{position:"relative"}}>
           <h2 className="content">Simple Layout using Flexbox</h2>
-          <Ace css={this.state.style} cssChange={(newValue)=>{
-            this.setState({style:newValue});
-          }} />
-        </div>
+          
         <Elem className="container" css={this.state.style}>
           <Elem tag="nav" color="#D64078">
             <ul>
@@ -186,13 +234,15 @@ justify-content: ${this.state.justifycontent};
             </Elem>
           </Elem>
         </Elem>
-        
-        <div className="highlight" style={{position:"relative"}}>
-          <h2 className="content">Fancy Layout using Flexbox</h2>
-          <Ace css={this.state.css_fancy} cssChange={(newValue)=>{
-            this.setState({css_fancy:newValue});
+        <Ace css={this.state.style} cssChange={(newValue)=>{
+            this.setState({style:newValue});
           }} />
         </div>
+
+        <div className="highlight" style={{position:"relative"}}>
+          <h2 className="content">Fancy Layout using Flexbox</h2>
+          
+       
         
         <Elem className="container"  css={this.state.css_fancy}>
           <Elem tag="section" color="green" className="initial">
@@ -211,54 +261,46 @@ justify-content: ${this.state.justifycontent};
             <p>I will fill up 2/3 of the remaining width.</p>
           </Elem>
         </Elem>
-        
+        <div style={{minHeight:"100px"}} />
+        <Ace css={this.state.css_fancy} cssChange={(newValue)=>{
+            this.setState({css_fancy:newValue});
+          }} />
+        </div>
         <div className="highlight" style={{position:"relative"}}>
           <h2 className="content">Centering using Flexbox</h2>
-          <Ace css={this.state.css_va} cssChange={(newValue)=>{
+          
+        <Elem className="vertical-container" css={this.state.css_va}>
+          <ul>
+                <li>i'm list 1</li>
+                <li>i'm list 2</li>
+                <li>i'm list 3</li>
+            </ul>
+        </Elem>
+
+        <Ace css={this.state.css_va} cssChange={(newValue)=>{
             this.setState({css_va:newValue});
           }} />
         </div>
-        <Elem className="vertical-container" css={this.state.css_va}>
-          <Elem tag="section" color="green" style={{width:"89px",height:"100px",overflow:"auto"}}>
-            <p>
-              Finally, it&apos;s easy to vertically center something in CSS!
-            </p>
-          </Elem>
-          <Elem tag="section" color="green"  style={{width:"100px",height:"160px",overflow:"auto"}}>
-            <p>
-              Finally, it&apos;s easy to vertically center something in CSS!
-            </p>
-          </Elem>
-          <Elem tag="section" color="green"   style={{width:"190px",height:"190px",overflow:"auto"}}>
-            <p>
-              Finally, it&apos;s easy to vertically center something in CSS!
-            </p>
-          </Elem>
-        </Elem>
-         <div className="highlight" style={{position:"relative"}}>
-          <h2 className="content">Flexbox Test</h2>
-          justify-content:<select onChange={this.justifycontentChange}>{justifycontent_options2}</select>
-          align-items:<select onChange={this.alignitemsChange}>{ alignitems_options2}</select>
-          
-        </div>
-        <Elem className="vertical-container" css={css}>
-          <Elem tag="section" color="green" style={{width:"89px",height:"100px",overflow:"auto"}}>
-            <p>
-              Finally, it&apos;s easy to vertically center something in CSS!
-            </p>
-          </Elem>
-          <Elem tag="section" color="green"  style={{width:"100px",height:"160px",overflow:"auto"}}>
-            <p>
-              Finally, it&apos;s easy to vertically center something in CSS!
-            </p>
-          </Elem>
-          <Elem tag="section" color="green"   style={{width:"190px",height:"190px",overflow:"auto"}}>
-            <p>
-              Finally, it&apos;s easy to vertically center something in CSS!
-            </p>
-          </Elem>
-        </Elem>
-
+      <div className="highlight" style={{position:"relative"}}>
+          <h2 className="content">align-items: baseline</h2>
+        <Tag css={this.state.css}>
+            <ul>
+                <li>i'm list 1</li>
+                <li>i'm list 2</li>
+                <li>i'm list 3</li>
+                <li>i'm list 1</li>
+                <li>i'm list 2</li>
+                <li>i'm list 3</li>
+                <li>i'm list 1</li>
+                <li>i'm list 2</li>
+                <li>i'm list 3</li>
+            </ul>
+        </Tag>
+        <Ace css={this.state.css} cssChange={(newValue)=>{
+            this.setState({css:newValue});
+          }} />
+        <div style={{minHeight:"150px"}}></div>
+      </div>
       </React.Fragment>
     );
   }

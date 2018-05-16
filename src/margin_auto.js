@@ -22,10 +22,8 @@ export default class margin_auto extends Component<Props> {
     return (
       <React.Fragment>
         
-        <div style={{position:"relative"}}>
-            <h1 className="content">margin: auto;</h1>
-            <Ace css={this.state.css} cssChange={this.cssChange} />
-        </div>
+       
+            
         <Elem id="main" css={this.state.css}>
           <p>
             Setting the <code>width</code> of a block-level element will prevent
@@ -42,7 +40,10 @@ export default class margin_auto extends Component<Props> {
             situation...
           </p>
         </Elem>
-
+         <div style={{position:"relative"}}>
+            <h1 className="content">margin: auto;</h1>
+<Ace css={this.state.css} cssChange={this.cssChange} />
+        </div>
       </React.Fragment>
     );
   }

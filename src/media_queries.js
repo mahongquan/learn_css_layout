@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import Elem,{A}from './Elem';
-import AceEditor from 'react-ace';
-import 'brace/mode/css';
-import 'brace/theme/github';
+import Elem,{A,Tag}from './Elem';
+import Ace from "./Ace"
 export default class media_queries extends Component<Props> {
    static defaultProps={
     theme:{red:"#D64078",green:"#96C02E",orange:"#FDC72F"}
@@ -10,18 +8,22 @@ export default class media_queries extends Component<Props> {
       constructor(){
       super();
       this.state= {
-        style_container:
-`@media screen and (min-width:600px) {
+        style_container:`
+#outer{
+    max-width:600px;
+    margin:auto;
+    overflow:auto;
+}
+@media screen and (min-width:600px) {
   nav {
     float: left;
-    width: 25%;
+    width: 28%;
   }
   section {
-    margin-left: 25%;
+    margin-left: 28%;
   }
-}`,
-        mode:"css",
-        displayAce:"none"
+}
+`,
       }
     }
     onChange=(newValue)=>{
@@ -32,7 +34,7 @@ export default class media_queries extends Component<Props> {
   render() {
 
     return (
-      <div style={{position:"relative"}}>
+      <div >
         <h1 className="content">media queries</h1>
         <p className="content">
           "Responsive Design" is the strategy of making a site that
@@ -44,53 +46,79 @@ export default class media_queries extends Component<Props> {
           take our layout that uses percent widths and have it display in one
           column when the browser is too small to fit the menu in the sidebar:
         </p>
-<div
-              style={{
-                display:"flex",
-                flexDirection:"column",
-                alignItems:"flex-end",
-                position:"absolute",
-                zIndex:100,
-                top:0,
-                right:0}}>
-              <button onClick={()=>{
-                if(this.state.displayAce=="none"){
-                  this.setState({displayAce:"block"})
-                }
-                else{
-                  this.setState({displayAce:"none"}) 
-                }
-              }}>edit media  style</button>
-              <AceEditor ref="editor"
-                      style={{display:this.state.displayAce, width:"400px",height:"200px",border:"solid gray 5px"}}
-                      mode={this.state.mode}
-                      theme="github"
-                      value={this.state.style_container}
-                      onChange={this.onChange}
-                      name="UNIQUE_ID_OF_DIV"
-                      editorProps={{$blockScrolling: true}} />
-          </div>        
-        <Elem className="container" css={this.state.style_container}>
-          <Elem tag="nav" color={this.props.theme.red} >
+        <div style={{position:"relative"}}>
+        
+      <Tag  css={this.state.style_container}>     
+        <Elem id="outer">
+          <Elem tag="nav"  color={this.props.theme.red} >
             <ul>
               <li>
-                <A href="percent.html">Home</A>
+                <A >Home</A>
               </li>
               <li>
-                <A href="percent.html">Taco Menu</A>
+                <A >Taco Menu</A>
               </li>
               <li>
-                <A href="percent.html">Draft List</A>
+                <A >Draft List</A>
               </li>
               <li>
-                <A href="percent.html">Hours</A>
+                <A >Hours</A>
               </li>
               <li>
-                <A href="percent.html">Directions</A>
+                <A >Directions</A>
               </li>
               <li>
-                <A href="percent.html">Contact</A>
+                <A >Contact</A>
               </li>
+              <li>
+                <A >Draft List</A>
+              </li>
+              <li>
+                <A >Hours</A>
+              </li>
+              <li>
+                <A >Directions</A>
+              </li>
+              <li>
+                <A >Contact</A>
+              </li>
+              <li>
+                <A >Contact</A>
+              </li>
+              <li>
+                <A >Draft List</A>
+              </li>
+              <li>
+                <A >Hours</A>
+              </li>
+              <li>
+                <A >Directions</A>
+              </li>
+              <li>
+                <A >Hours</A>
+              </li>
+              <li>
+                <A >Directions</A>
+              </li>
+              <li>
+                <A >Contact</A>
+              </li>
+              <li>
+                <A >Contact</A>
+              </li>
+              <li>
+                <A >Draft List</A>
+              </li>
+              <li>
+                <A >Hours</A>
+              </li>
+              <li>
+                <A >Directions</A>
+              </li>
+              <li>
+                <A >last</A>
+              </li>
+
             </ul>
           </Elem>
           <Elem tag="section" color="green" >
@@ -115,6 +143,10 @@ export default class media_queries extends Component<Props> {
             </p>
           </Elem>
         </Elem>
+      </Tag>
+      <Ace css={this.state.style_container}
+                      cssChange={this.onChange} />
+        </div>
         <p className="content">
           Tada! Now our layout looks great even on mobile browsers. Here are{' '}
           <A href="http://mediaqueri.es/">

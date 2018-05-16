@@ -19,7 +19,6 @@ export default class Root extends Component<Props> {
                 flexDirection:"column",
                 alignItems:"flex-end",
                 position:"absolute",
-                zIndex:101,
                 top:0,
                 right:0}}>
             <button onClick={()=>{
