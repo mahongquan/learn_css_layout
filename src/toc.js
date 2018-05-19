@@ -10,6 +10,8 @@ const Toc_style=`
     flex-direction:column;
     flex-wrap:wrap;
     align-items:center;
+    align-content:center;
+    justify-content:flex-start;
     @media screen and (min-width: 601px) {
        height: 650px; //two column
     }

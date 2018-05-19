@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Elem,{A,Tag}from './Elem';
-import Ace from "./Ace"
+import AceEditor from 'react-ace';
+import 'brace/mode/css';
+import 'brace/theme/github';
+
 export default class media_queries extends Component<Props> {
    static defaultProps={
     theme:{red:"#D64078",green:"#96C02E",orange:"#FDC72F"}
@@ -8,7 +11,7 @@ export default class media_queries extends Component<Props> {
       constructor(){
       super();
       this.state= {
-        style_container:`
+        css:`
 #outer{
     max-width:600px;
     margin:auto;
@@ -26,9 +29,9 @@ export default class media_queries extends Component<Props> {
 `,
       }
     }
-    onChange=(newValue)=>{
+    cssChange=(newValue)=>{
         this.setState({
-            style_container:newValue
+            css:newValue
         });
     }
   render() {
@@ -47,8 +50,17 @@ export default class media_queries extends Component<Props> {
           column when the browser is too small to fit the menu in the sidebar:
         </p>
         <div style={{position:"relative"}}>
-        
-      <Tag  css={this.state.style_container}>     
+        <AceEditor ref="editor"
+                    style={{  margin:"auto",maxWidth:"600px",height:"250px"
+                                ,border:"solid gray 5px"
+                              }}
+                    mode="css"
+                    theme="github"
+                    value={this.state.css}
+                    onChange={this.cssChange}
+                    name="UNIQUE_ID_OF_DIV"
+                    editorProps={{$blockScrolling: true}} /> 
+      <Tag  css={this.state.css}>     
         <Elem id="outer">
           <Elem tag="nav"  color={this.props.theme.red} >
             <ul>
@@ -144,8 +156,6 @@ export default class media_queries extends Component<Props> {
           </Elem>
         </Elem>
       </Tag>
-      <Ace css={this.state.style_container}
-                      cssChange={this.onChange} />
         </div>
         <p className="content">
           Tada! Now our layout looks great even on mobile browsers. Here are{' '}

@@ -12,6 +12,7 @@ export default class Root extends Component<Props> {
     }
    
     render=()=>{
+        var d=new Date();
         return(
         <div
             style={{
@@ -29,8 +30,7 @@ export default class Root extends Component<Props> {
                 this.setState({displayAce:"none"}) 
               }
             }}>edit  style</button>
-            <AceEditor ref="editor"
-                    style={{    display:this.state.displayAce
+            <AceEditor style={{    display:this.state.displayAce
                                 ,width:"300px",height:"300px"
                                 ,border:"solid gray 5px"
                               }}
@@ -38,7 +38,7 @@ export default class Root extends Component<Props> {
                     theme="github"
                     value={this.props.css}
                     onChange={this.props.cssChange}
-                    name="UNIQUE_ID_OF_DIV"
+                    name={""+d}
                     editorProps={{$blockScrolling: true}} />
         </div>);
     }

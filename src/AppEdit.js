@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Elem,{Tag,NavWrapper,LinkPrev,LinkStyle,A} from './Elem';
 import styled from 'styled-components';
 import Ace from './Ace';
-import AppFlex from './AppFlex';
 import {
   LiveProvider,
   LiveEditor,
@@ -14,55 +13,57 @@ const css=`
   margin:auto;
   border:solid blue 2px;
   background-color:#aaa;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap:wrap;
   align-items: stretch;
   display:flex;
-  flex-direction:row;
+  flex-direction:column;
   overflow:hidden;
-  width:300px;
-  height:600px;
+  width:100vw;
+  height:100vh;
 }
-.child{
-  color:blue;
+#header{
+  height:50px;
   margin:1px;
   border:solid green 3px;
 }
-#main2{
+#footer{
+  height:50px;
+  margin:1px;
+  border:solid green 3px;
+}
+#content{
   border:solid orange 2px;
   background-color:#aaa;
   justify-content: space-around;
   flex-wrap:wrap;
   align-items: stretch;
   display:flex;
-  flex-direction:column;
+  flex-direction:row;
   overflow:hidden;
+  flex:1;
 }
-.child2{
-  color:blue;
-  margin:1px;
-  border:solid green 3px;
+#sidebar{
+ width:200px;
+ border:solid orange 2px;
 }
+#body{
+    border:solid orange 2px;
+    flex:1;
+    
+}
+
 
 `;
-const jsx=`
-
-<div id="main" >
-    <div id="main2" className="child" >
-      <div className="child2" >dddddddc</div>
-      <div className="child2" ></div>
-      <div className="child2" >bbbb</div>
-      <div className="child2" >dddddddc</div>
-      <div className="child2" >a</div>
-    </div>
-    <div className="child" >dddddddc</div>
-    <div className="child" >a</div>
-    <div className="child" >bbbb</div>
-    <div className="child" >dddddddc</div>
-    <div className="child" >a</div>
-    <div className="child" >bbbb</div>
-    <div className="child" >dddddddc</div>
-
+const jsx=`<div id="main" >
+ <div id="header">
+   toolbar
+ </div>
+ <div id="content" >
+   <div id="sidebar">sitebar</div>      
+   <div id="body">body</div>
+ </div>
+ <div id="footer" >footer</div>
 </div>
 `;
 
@@ -106,8 +107,7 @@ class Root extends Component<Props> {
               height:"300px"}}/>                  
           </div> 
         </LiveProvider>
-        <AppFlex />
-        <div style={{minHeight:"100px"}}/>
+
       </div>
     );
   }

@@ -1,8 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './AppRoutes';
+//import App from './AppRoutes';
+import App from './AppTest';
 //import './css/style.css';
 import 'highlight.js/styles/dark.css';
-
+import "react-tabs/style/react-tabs.css" ;
+import "react-virtualized/styles.css" ;
+// import "./GridExample.css" ;
+import "./semantic-ui/semantic.css" ;
+import "storm-react-diagrams/dist/style.min.css" ;
+import "./demo.css" ;    
+// import "./grid.css" ; 
+// import "./react-resizable.css" ;
+// import "./header.css" ;
 //import ContextMenuExample from './ContextMenuExample';
 ReactDOM.render(<App />, document.getElementById('root'));
