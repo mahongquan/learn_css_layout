@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import Elem,{Tag,NavWrapper,LinkPrev,LinkStyle,A} from './Elem';
+import {Tag,NavWrapper,LinkPrev,A} from './Elem';
 import styled from 'styled-components';
 import AceEditor from 'react-ace';
 import 'brace/mode/css';
@@ -252,7 +252,7 @@ class Root extends Component<Props> {
                 top:0,
                 right:0}}>
             <button onClick={()=>{
-              if(this.state.displayAce=="none"){
+              if(this.state.displayAce==="none"){
                 this.setState({displayAce:"block"})
               }
               else{

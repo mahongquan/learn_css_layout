@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {LinkToc,Tag} from './Elem';
-import styled from 'styled-components';
 import AceEditor from 'react-ace';
 import 'brace/mode/css';
 import 'brace/theme/github';
@@ -45,7 +44,7 @@ export default class toc extends Component<Props> {
                 top:0,
                 right:0}}>
               <button onClick={()=>{
-                if(this.state.displayAce=="none"){
+                if(this.state.displayAce==="none"){
                   this.setState({displayAce:"block"})
                 }
                 else{

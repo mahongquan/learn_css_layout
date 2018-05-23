@@ -97,7 +97,7 @@ export default class inline_block extends Component<Props> {
                 top:0,
                 right:0}}>
               <button onClick={()=>{
-                if(this.state.displayAce=="none"){
+                if(this.state.displayAce==="none"){
                   this.setState({displayAce:"block"})
                 }
                 else{
@@ -140,7 +140,7 @@ export default class inline_block extends Component<Props> {
                   top:0,
                   right:0}}>
                 <button onClick={()=>{
-                  if(this.state.displayAce2=="none"){
+                  if(this.state.displayAce2==="none"){
                     this.setState({displayAce2:"block"})
                   }
                   else{
