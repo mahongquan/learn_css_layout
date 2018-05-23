@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import App from './AppRoutes';
-import App from './AppTest';
+import App from './AppRoutes';
+// import App from './AppTest';
 //import './css/style.css';
 import 'highlight.js/styles/dark.css';
 import "react-tabs/style/react-tabs.css" ;
