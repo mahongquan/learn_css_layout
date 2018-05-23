@@ -1,5 +1,11 @@
 //use with local babel-register
-import App from './AppRoutes';
+// import App from './AppRoutes';
+//import App from './AppEdit';
+//import App from './AppMain';
+// import App from './AppTest';
+import App from './paint';
+// import App from './AppRoutes';
+//import App from './AppRoutes';
 //import App from './AppEdit';
 //import App from './AppMain';
 // import App from './AppTest';

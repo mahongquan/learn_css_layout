@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Highlight from 'react-highlight';
+// import Highlight from 'react-highlight';
 import Elem from './Elem';
 import AceEditor from 'react-ace';
 import 'brace/mode/css';

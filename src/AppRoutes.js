@@ -22,7 +22,7 @@ import percent from './percent';
 import position_example from './position_example';
 import position from './position';
 import toc from './toc';
-import styled,{ThemeProvider} from 'styled-components';
+import {ThemeProvider} from 'styled-components';
 import {
   Router,
   Redirect,

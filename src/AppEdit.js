@@ -1,13 +1,36 @@
 import React, { Component } from 'react';
 import Elem,{Tag,NavWrapper,LinkPrev,LinkStyle,A} from './Elem';
 import styled from 'styled-components';
+<<<<<<< HEAD
+import AceEditor from 'react-ace';
+import 'brace/mode/jsx';
+import 'brace/theme/github';
+=======
 import Ace from './Ace';
+>>>>>>> refs/remotes/origin/master
 import {
   LiveProvider,
   LiveEditor,
   LiveError,
   LivePreview
 } from 'react-live'
+<<<<<<< HEAD
+
+const jsx=`
+<div style={{
+  justifyContent: "flex-start",
+  alignItems: "baseline",
+  display:"flex",
+  flexDirection:"row",
+  width:"300px",
+  height:"300px"
+}}>
+    <div style={{border:"solid green 3px"}}>a</div>
+    <div style={{border:"solid green 3px"}}>bbbb</div>
+    <div style={{border:"solid green 3px"}}>dddddddc</div>
+</div>
+`;
+=======
 const css=`
 #main{
   margin:auto;
@@ -67,11 +90,19 @@ const jsx=`<div id="main" >
 </div>
 `;
 
+>>>>>>> refs/remotes/origin/master
 class Root extends Component<Props> {
       constructor(){
       super();
       this.state= {
         jsx:jsx,
+<<<<<<< HEAD
+      }
+    }
+    jsxChange=(newValue)=>{
+        this.setState({
+            jsx:newValue
+=======
         css:css,
         displayLE:"none",
       }
@@ -79,11 +110,32 @@ class Root extends Component<Props> {
     cssChange=(newValue)=>{
         this.setState({
             css:newValue
+>>>>>>> refs/remotes/origin/master
         });
     }
   render() {
     // console.log(this.props);
     return (
+<<<<<<< HEAD
+      <div>
+      <LiveProvider code={this.state.jsx}>
+  <LiveEditor />
+  <LiveError />
+  <LivePreview />
+</LiveProvider>
+        <AceEditor ref="editor"
+                    style={{   height:"300px"
+                                ,border:"solid gray 5px"
+                              }}
+                    mode="jsx"
+                    theme="github"
+                    value={this.state.jsx}
+                    onChange={this.jsxChange}
+                    name="UNIQUE_ID_OF_DIV"
+                    editorProps={{$blockScrolling: true}} />
+
+        <div style={{minHeight:"100px"}}/>
+=======
       <div style={{position:"relative"}}>
         <Ace css={this.state.css} cssChange={this.cssChange} />
         <LiveProvider code={this.state.jsx}>
@@ -108,6 +160,7 @@ class Root extends Component<Props> {
           </div> 
         </LiveProvider>
 
+>>>>>>> refs/remotes/origin/master
       </div>
     );
   }
