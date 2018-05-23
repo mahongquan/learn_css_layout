@@ -15,11 +15,11 @@ export default class position extends Component<Props> {
         </p>
         <h2 className="content">static</h2>
         <figure className="highlight">
-          <Highlight>{`.static {
+          <Highlight>{`#static {
   position: static;
 }`}</Highlight>
         </figure>
-        <Elem className="static">
+        <div id="static" style={{position: 'static'}}>
           <p style={{ marginTop: '22px' }}>
             <code>static</code> is the default value. An element with{' '}
             <code>position: static;</code> is not positioned in any special way.
@@ -27,13 +27,13 @@ export default class position extends Component<Props> {
             element with its position set to anything else is said to be{' '}
             <em>positioned</em>.
           </p>
-        </Elem>
+        </div>
         <h2 className="content">relative</h2>
         <figure className="highlight">
-          <Highlight>{`.relative1 {
+          <Highlight>{`#relative1 {
   position: relative;
 }
-.relative2 {
+#relative2 {
   position: relative;
   top: -20px;
   left: 20px;
@@ -41,7 +41,7 @@ export default class position extends Component<Props> {
   width: 500px;
 }`}</Highlight>
         </figure>
-        <Elem id="relative1">
+        <Elem id="relative1" style={{position: 'relative'}}>
           <p style={{ marginTop: '22px' }}>
             <code>relative</code> behaves the same as <code>static</code> unless
             you add some extra properties.
@@ -93,7 +93,7 @@ export default class position extends Component<Props> {
           pay attention to it now. Here is the CSS that puts it there:
         </p>
         <figure className="highlight">
-          <Highlight>{`.fixed {
+          <Highlight>{`#fixed {
   position: fixed;
   bottom: 0;
   right: 0;
@@ -121,12 +121,12 @@ export default class position extends Component<Props> {
         </p>
         <p className="content">Here is a simple example:</p>
         <figure className="highlight">
-          <Highlight>{`.relative {
+          <Highlight>{`#relative {
   position: relative;
   width: 600px;
   height: 400px;
 }
-.absolute {
+#absolute {
   position: absolute;
   top: 120px;
   right: 0;

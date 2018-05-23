@@ -38,7 +38,7 @@ body {
         </figure>
         <Elem id="container1">
           <Elem
-            nav
+            tag="nav"
             red
             style={{
               position: 'absolute',
@@ -67,14 +67,14 @@ body {
               </li>
             </ul>
           </Elem>
-          <Elem section green style={{ marginLeft: '200px' }}>
+          <Elem tag="section" green style={{ marginLeft: '200px' }}>
             <p style={{ marginTop: '22px' }}>
               The <code>margin-left</code> style for <code>section</code>s makes
               sure there is room for the <code>nav</code>. Otherwise the
               absolute and static elements would overlap
             </p>
           </Elem>
-          <Elem section green className="ipsum" style={{ marginLeft: '200px' }}>
+          <Elem tag="section" green className="ipsum" style={{ marginLeft: '200px' }}>
             <p style={{ marginTop: '22px' }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
               imperdiet, nulla et dictum interdum, nisi lorem egestas odio,
@@ -90,13 +90,13 @@ body {
               diam velit.
             </p>
           </Elem>
-          <Elem section green style={{ marginLeft: '200px' }}>
+          <Elem tag="section" green style={{ marginLeft: '200px' }}>
             <p style={{ marginTop: '22px' }}>
               Notice what happens when you resize your browser. It works nicely!
             </p>
           </Elem>
           <Elem
-            footer
+            tag="footer"
             orange
             style={{
               position: 'fixed',

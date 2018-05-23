@@ -40,7 +40,7 @@ nav {
 }`}</Highlight>
         </figure>
         <Elem className="container">
-          <Elem nav red style={{
+          <Elem tag="nav" red style={{
             display: "inline-block",
             verticalAlign: "top",
             width: "25%"
@@ -66,14 +66,14 @@ nav {
               </li>
             </ul>
           </Elem>
-          <Elem red id="column" style={{
+          <Elem color="red" id="column" style={{
             display: "inline-block",
             verticalAlign: "top",
             width: "75%" }}>
-            <Elem green section>
+            <Elem green tag="section">
               <p>Tada!</p>
             </Elem>
-            <Elem green section className="ipsum">
+            <Elem green tag="section" className="ipsum">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Phasellus imperdiet, nulla et dictum interdum, nisi lorem

@@ -12,6 +12,10 @@ export default class Root extends Component<Props> {
     }
    
     render=()=>{
+<<<<<<< HEAD
+=======
+        var d=new Date();
+>>>>>>> refs/remotes/origin/master
         return(
         <div
             style={{
@@ -19,7 +23,10 @@ export default class Root extends Component<Props> {
                 flexDirection:"column",
                 alignItems:"flex-end",
                 position:"absolute",
+<<<<<<< HEAD
                 zIndex:101,
+=======
+>>>>>>> refs/remotes/origin/master
                 top:0,
                 right:0}}>
             <button onClick={()=>{
@@ -30,8 +37,12 @@ export default class Root extends Component<Props> {
                 this.setState({displayAce:"none"}) 
               }
             }}>edit  style</button>
+<<<<<<< HEAD
             <AceEditor ref="editor"
                     style={{    display:this.state.displayAce
+=======
+            <AceEditor style={{    display:this.state.displayAce
+>>>>>>> refs/remotes/origin/master
                                 ,width:"300px",height:"300px"
                                 ,border:"solid gray 5px"
                               }}
@@ -39,7 +50,11 @@ export default class Root extends Component<Props> {
                     theme="github"
                     value={this.props.css}
                     onChange={this.props.cssChange}
+<<<<<<< HEAD
                     name="UNIQUE_ID_OF_DIV"
+=======
+                    name={""+d}
+>>>>>>> refs/remotes/origin/master
                     editorProps={{$blockScrolling: true}} />
         </div>);
     }

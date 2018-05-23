@@ -1,11 +1,136 @@
 import React, { Component } from 'react';
 import Highlight from 'react-highlight';
-import Elem  from './Elem';
+import Elem,{Tag}  from './Elem';
+import Ace from './Ace';
+const alignitems_options=["center","flex-start","flex-end","stretch","baseline","inherit","initial"];
+const justifycontent_options=["center","flex-start","flex-end","space-around","space-between"];
+const menu_style=`height: 100vh;
+display: flex;
+>nav {
+  width: 200px;
+  overflow:auto;
+}
+.flex-column {
+  overflow:auto;
+  flex: 1;
+}
+`;
+const css_fancy=`display: flex;
+.initial {
+  flex: initial;
+  width: 200px;
+  min-width: 100px;
+}
+.none {
+  flex: none;
+  width: 200px;
+}
+.flex1 {
+  flex: 1;
+}
+.flex2 {
+  flex: 2;
+}
+`;
+const css_va=`ul {
+    display:flex;
+    border: 1px solid red;
+    padding: 0;
+    list-style: none;
+    background-color: #e8e8e9;
+    align-items:center;
+    justify-content: center;
+    height:200px;
+}
+li {
+    background-color: #8cacea;
+    margin: 8px;
+    padding: 4px;
+    width:100px;
+     overflow:hidden;
+    :first-child
+    { 
+        line-height:1em;
+        font-size:3em;
+        height:100px;
+    }
+    :last-child
+    { 
+        line-height:1em;
+        font-size:2em;
+        height:200px;
+    }
+}
+
+`;
+const css=`
+ul {
+    display:flex;
+    border: 1px solid red;
+    padding: 0;
+    list-style: none;
+    flex-wrap:wrap;
+    background-color: #e8e8e9;
+    align-items: baseline;
+    justify-content: center;
+    height:500px;
+    align-content:center;
+}
+li {
+    background-color: #8cacea;
+    margin: 8px;
+    padding: 4px;
+    width:100px;
+     overflow:hidden;
+    :first-child
+    { 
+        line-height:1em;
+        font-size:3em;
+        height:100px;
+    }
+    :last-child
+    { 
+        line-height:1em;
+        font-size:2em;
+        height:200px;
+    }
+}
+
+`;
+   // align-items: ${this.state.alignitems};
+   //  justify-content: ${this.state.justifycontent};
 export default class flexbox extends Component<Props> {
+  constructor(){
+      super();
+      this.state= {
+        style:menu_style,
+        css_fancy:css_fancy,
+        css_va:css_va,
+        css:css,
+        alignitems:"center",
+        justifycontent:"center",
+        mode:"css",
+        displayAce:"none",
+      }
+    }
+    onChange=(newValue)=>{
+        this.setState({
+            style_box:newValue
+        });
+    }
+     justifycontentChange=(e)=>{
+        this.setState({justifycontent:e.target.value});
+    }
+    alignitemsChange=(e)=>{
+        this.setState({alignitems:e.target.value});
+    }
+
   render() {
+
     return (
       <React.Fragment>
         <h1 className="content">flexbox</h1>
+        
         <p className="content">
           The new <code>flexbox</code> layout mode is poised to redefine how we
           do layouts in CSS. Unfortunately the specification has changed a lot
@@ -25,53 +150,65 @@ export default class flexbox extends Component<Props> {
           There is a lot more you can do with flexbox; these are just a few
           examples to give you an idea:
         </p>
-        <h2 className="content">Simple Layout using Flexbox</h2>
-        <style jsx="true">{`
-          .container {
-            display: -webkit-flex;
-            display: flex;
-          }
-          nav {
-            width: 200px;
-          }
-          .flex-column {
-            -webkit-flex: 1;
-            flex: 1;
-          }
-        `}</style>
-        <figure className="highlight">
-          <Highlight>{`.container {
-  display: -webkit-flex;
-  display: flex;
-}
-nav {
-  width: 200px;
-}
-.flex-column {
-  -webkit-flex: 1;
-          flex: 1;
-}`}</Highlight>
-        </figure>
-        <Elem className="container">
+        <div style={{position:"relative"}}>
+          <h2 className="content">Simple Layout using Flexbox</h2>
+          
+        <Elem className="container" css={this.state.style}>
           <Elem tag="nav" color="#D64078">
             <ul>
               <li>
-                <a href="flexbox.html">Home</a>
+                <a >Home</a>
               </li>
               <li>
-                <a href="flexbox.html">Taco Menu</a>
+                <a >Taco Menu</a>
               </li>
               <li>
-                <a href="flexbox.html">Draft List</a>
+                <a >Draft List</a>
               </li>
               <li>
-                <a href="flexbox.html">Hours</a>
+                <a >Hours</a>
               </li>
               <li>
-                <a href="flexbox.html">Directions</a>
+                <a >Directions</a>
               </li>
               <li>
-                <a href="flexbox.html">Contact</a>
+                <a >Contact</a>
+              </li>
+              <li>
+                <a >Home</a>
+              </li>
+              <li>
+                <a >Taco Menu</a>
+              </li>
+              <li>
+                <a >Draft List</a>
+              </li>
+              <li>
+                <a >Hours</a>
+              </li>
+              <li>
+                <a >Directions</a>
+              </li>
+              <li>
+                <a >Contact</a>
+              </li>
+              <li>
+                <a >Home</a>
+              </li>
+              <li>
+                <a >Taco Menu</a>
+              </li>
+              <li>
+                <a >Draft List</a>
+              </li>
+              <li>
+                <a >Hours</a>
+              </li>
+              <li>
+                <a >Directions</a>
+              </li>
+              <li>
+                <a >Contact</a>
               </li>
             </ul>
           </Elem>
@@ -97,54 +234,17 @@ nav {
             </Elem>
           </Elem>
         </Elem>
-        <h2 className="content">Fancy Layout using Flexbox</h2>
-        <style jsx="true">{`
-          .initial {
-            -webkit-flex: initial;
-            flex: initial;
-            width: 200px;
-            min-width: 100px;
-          }
-          .none {
-            -webkit-flex: none;
-            flex: none;
-            width: 200px;
-          }
-          .flex1 {
-            -webkit-flex: 1;
-            flex: 1;
-          }
-          .flex2 {
-            -webkit-flex: 2;
-            flex: 2;
-          }
-        `}</style>
-        <figure className="highlight">
-          <Highlight>{`.container {
-  display: -webkit-flex;
-  display: flex;
-}
-.initial {
-  -webkit-flex: initial;
-          flex: initial;
-  width: 200px;
-  min-width: 100px;
-}
-.none {
-  -webkit-flex: none;
-          flex: none;
-  width: 200px;
-}
-.flex1 {
-  -webkit-flex: 1;
-          flex: 1;
-}
-.flex2 {
-  -webkit-flex: 2;
-          flex: 2;
-}`}</Highlight>
-        </figure>
-        <Elem className="container">
+        <Ace css={this.state.style} cssChange={(newValue)=>{
+            this.setState({style:newValue});
+          }} />
+        </div>
+
+        <div className="highlight" style={{position:"relative"}}>
+          <h2 className="content">Fancy Layout using Flexbox</h2>
+          
+       
+        
+        <Elem className="container"  css={this.state.css_fancy}>
           <Elem tag="section" color="green" className="initial">
             <p>
               I will be 200px when there is room, and I will shrink down to
@@ -161,37 +261,46 @@ nav {
             <p>I will fill up 2/3 of the remaining width.</p>
           </Elem>
         </Elem>
-        <h2 className="content">Centering using Flexbox</h2>
-        <style jsx="true">{`
-          .vertical-container {
-            height: 300px;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-align-items: center;
-            align-items: center;
-            -webkit-justify-content: center;
-            justify-content: center;
-          }
-        `}</style>
-        <figure className="highlight">
-          <Highlight>{`.vertical-container {
-  height: 300px;
-  display: -webkit-flex;
-  display:         flex;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-}`}</Highlight>
-        </figure>
-        <Elem className="vertical-container">
-          <Elem tag="section" color="green">
-            <p>
-              Finally, it&apos;s easy to vertically center something in CSS!
-            </p>
-          </Elem>
+        <div style={{minHeight:"100px"}} />
+        <Ace css={this.state.css_fancy} cssChange={(newValue)=>{
+            this.setState({css_fancy:newValue});
+          }} />
+        </div>
+        <div className="highlight" style={{position:"relative"}}>
+          <h2 className="content">Centering using Flexbox</h2>
+          
+        <Elem className="vertical-container" css={this.state.css_va}>
+          <ul>
+                <li>i'm list 1</li>
+                <li>i'm list 2</li>
+                <li>i'm list 3</li>
+            </ul>
         </Elem>
 
+        <Ace css={this.state.css_va} cssChange={(newValue)=>{
+            this.setState({css_va:newValue});
+          }} />
+        </div>
+      <div className="highlight" style={{position:"relative"}}>
+          <h2 className="content">align-items: baseline</h2>
+        <Tag css={this.state.css}>
+            <ul>
+                <li>i'm list 1</li>
+                <li>i'm list 2</li>
+                <li>i'm list 3</li>
+                <li>i'm list 1</li>
+                <li>i'm list 2</li>
+                <li>i'm list 3</li>
+                <li>i'm list 1</li>
+                <li>i'm list 2</li>
+                <li>i'm list 3</li>
+            </ul>
+        </Tag>
+        <Ace css={this.state.css} cssChange={(newValue)=>{
+            this.setState({css:newValue});
+          }} />
+        <div style={{minHeight:"150px"}}></div>
+      </div>
       </React.Fragment>
     );
   }

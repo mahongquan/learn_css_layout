@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Elem,{A}from './Elem';
+import Elem,{A,Tag}from './Elem';
 import AceEditor from 'react-ace';
 import 'brace/mode/css';
 import 'brace/theme/github';
+
 export default class media_queries extends Component<Props> {
    static defaultProps={
     theme:{red:"#D64078",green:"#96C02E",orange:"#FDC72F"}
@@ -10,29 +11,33 @@ export default class media_queries extends Component<Props> {
       constructor(){
       super();
       this.state= {
-        style_container:
-`@media screen and (min-width:600px) {
+        css:`
+#outer{
+    max-width:600px;
+    margin:auto;
+    overflow:auto;
+}
+@media screen and (min-width:600px) {
   nav {
     float: left;
-    width: 25%;
+    width: 28%;
   }
   section {
-    margin-left: 25%;
+    margin-left: 28%;
   }
-}`,
-        mode:"css",
-        displayAce:"none"
+}
+`,
       }
     }
-    onChange=(newValue)=>{
+    cssChange=(newValue)=>{
         this.setState({
-            style_container:newValue
+            css:newValue
         });
     }
   render() {
 
     return (
-      <div style={{position:"relative"}}>
+      <div >
         <h1 className="content">media queries</h1>
         <p className="content">
           "Responsive Design" is the strategy of making a site that
@@ -44,6 +49,7 @@ export default class media_queries extends Component<Props> {
           take our layout that uses percent widths and have it display in one
           column when the browser is too small to fit the menu in the sidebar:
         </p>
+<<<<<<< HEAD
 <div
               style={{
                 display:"flex",
@@ -72,25 +78,90 @@ export default class media_queries extends Component<Props> {
           </div>        
         <Elem className="container" css={this.state.style_container}>
           <Elem tag="nav" color={this.props.theme.red} >
+=======
+        <div style={{position:"relative"}}>
+        <AceEditor ref="editor"
+                    style={{  margin:"auto",maxWidth:"600px",height:"250px"
+                                ,border:"solid gray 5px"
+                              }}
+                    mode="css"
+                    theme="github"
+                    value={this.state.css}
+                    onChange={this.cssChange}
+                    name="UNIQUE_ID_OF_DIV"
+                    editorProps={{$blockScrolling: true}} /> 
+      <Tag  css={this.state.css}>     
+        <Elem id="outer">
+          <Elem tag="nav"  color={this.props.theme.red} >
+>>>>>>> refs/remotes/origin/master
             <ul>
               <li>
-                <A href="percent.html">Home</A>
+                <A >Home</A>
               </li>
               <li>
-                <A href="percent.html">Taco Menu</A>
+                <A >Taco Menu</A>
               </li>
               <li>
-                <A href="percent.html">Draft List</A>
+                <A >Draft List</A>
               </li>
               <li>
-                <A href="percent.html">Hours</A>
+                <A >Hours</A>
               </li>
               <li>
-                <A href="percent.html">Directions</A>
+                <A >Directions</A>
               </li>
               <li>
-                <A href="percent.html">Contact</A>
+                <A >Contact</A>
               </li>
+              <li>
+                <A >Draft List</A>
+              </li>
+              <li>
+                <A >Hours</A>
+              </li>
+              <li>
+                <A >Directions</A>
+              </li>
+              <li>
+                <A >Contact</A>
+              </li>
+              <li>
+                <A >Contact</A>
+              </li>
+              <li>
+                <A >Draft List</A>
+              </li>
+              <li>
+                <A >Hours</A>
+              </li>
+              <li>
+                <A >Directions</A>
+              </li>
+              <li>
+                <A >Hours</A>
+              </li>
+              <li>
+                <A >Directions</A>
+              </li>
+              <li>
+                <A >Contact</A>
+              </li>
+              <li>
+                <A >Contact</A>
+              </li>
+              <li>
+                <A >Draft List</A>
+              </li>
+              <li>
+                <A >Hours</A>
+              </li>
+              <li>
+                <A >Directions</A>
+              </li>
+              <li>
+                <A >last</A>
+              </li>
+
             </ul>
           </Elem>
           <Elem tag="section" color="green" >
@@ -115,6 +186,8 @@ export default class media_queries extends Component<Props> {
             </p>
           </Elem>
         </Elem>
+      </Tag>
+        </div>
         <p className="content">
           Tada! Now our layout looks great even on mobile browsers. Here are{' '}
           <A href="http://mediaqueri.es/">

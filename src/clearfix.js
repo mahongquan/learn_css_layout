@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Highlight from 'react-highlight';
-import Elem from './Elem';
+import Elem,{A} from './Elem';
 export default class clearfix extends Component<Props> {
   render() {
     return (
@@ -27,6 +27,40 @@ export default class clearfix extends Component<Props> {
         </figure>
         <div className="content">
           <Elem>
+            <Elem tag="nav" style={{float:"left"}} color="red" >
+            <ul>
+              <li>
+                <A href="percent.html">Home</A>
+              </li>
+              <li>
+                <A href="percent.html">Taco Menu</A>
+              </li>
+              <li>
+                <A href="percent.html">Draft List</A>
+              </li>
+              <li>
+                <A href="percent.html">Hours</A>
+              </li>
+              <li>
+                <A href="percent.html">Directions</A>
+              </li>
+              <li>
+                <A href="percent.html">Contact</A>
+              </li>
+              <li>
+                <A href="percent.html">Draft List</A>
+              </li>
+              <li>
+                <A href="percent.html">Hours</A>
+              </li>
+              <li>
+                <A href="percent.html">Directions</A>
+              </li>
+              <li>
+                <A href="percent.html">Contact</A>
+              </li>
+            </ul>
+          </Elem>
             <img alt="ilta" src="./images/ilta.png" />
             <p>
               Uh oh... this image is taller than the element containing it, and
@@ -51,7 +85,53 @@ export default class clearfix extends Component<Props> {
         </figure>
         <p className="content">Now let's see what happens:</p>
         <div className="content">
-          <Elem style={{ overflow: 'hidden' }}>
+          <Elem style={{ overflow: 'auto' }}>
+            <Elem tag="nav" style={{float:"left"}} color="red" >
+            <ul>
+              <li>
+                <A href="percent.html">Home</A>
+              </li>
+              <li>
+                <A href="percent.html">Taco Menu</A>
+              </li>
+              <li>
+                <A href="percent.html">Draft List</A>
+              </li>
+              <li>
+                <A href="percent.html">Hours</A>
+              </li>
+              <li>
+                <A href="percent.html">Directions</A>
+              </li>
+              <li>
+                <A href="percent.html">Contact</A>
+              </li>
+              <li>
+                <A href="percent.html">Draft List</A>
+              </li>
+              <li>
+                <A href="percent.html">Hours</A>
+              </li>
+              <li>
+                <A href="percent.html">Directions</A>
+              </li>
+              <li>
+                <A href="percent.html">Contact</A>
+              </li>
+              <li>
+                <A href="percent.html">Draft List</A>
+              </li>
+              <li>
+                <A href="percent.html">Hours</A>
+              </li>
+              <li>
+                <A href="percent.html">Directions</A>
+              </li>
+              <li>
+                <A href="percent.html">Contact</A>
+              </li>
+            </ul>
+          </Elem>
             <img alt="ilta" src="./images/ilta.png" />
             <p>Much better!</p>
           </Elem>

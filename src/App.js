@@ -2,80 +2,85 @@ import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import {Tag,NavWrapper,LinkPrev,A} from './Elem';
 import styled from 'styled-components';
-import AceEditor from 'react-ace';
-import 'brace/mode/css';
-import 'brace/theme/github';
-const MenuA = styled(Link)`
-color: #8F8F8F;
-display: inline-block;
-padding: .5em 1em;
-text-shadow: 0 1px 0 #EDEDED;
-text-decoration: none;
-:hover {
-  background: rgb(220, 220, 220);
-}
-@media screen and (min-width: 601px) {
-    display: block;
-    padding: 0.2em 0;
-}
-`;
+import Ace from './Ace';
+// const MenuA = styled(Link)`
+// color: #8F8F8F;
+// display: inline-block;
+// padding: .5em 1em;
+// text-shadow: 0 1px 0 #EDEDED;
+// text-decoration: none;
+// &:hover {
+//   background: rgb(220, 220, 220);
+// }
+// @media screen and (min-width: 601px) {
+//     display: block;
+//     padding: 0.2em 0;
+// }
+// `;
 const menu_style=`
 background-color: whiteSmoke;
 text-align: center;
+>a{
+  color: #8F8F8F;
+  display: inline-block;
+  padding: .5em 1em;
+  text-shadow: 0 1px 0 #EDEDED;
+  text-decoration: none;
+  &:hover {
+    background: rgb(220, 220, 220);
+  }
+  @media screen and (min-width: 601px) {
+    display: block;
+    padding: 0.2em 0;
+  }
+}
 @media screen and (min-width: 601px) {
-    position: absolute;
-    top: -16px;
-    left: -20px;
-    width: 250px;
-    padding-top: 2em;
-    -webkit-transform-origin: 0 0;
-    -moz-transform-origin: 0 0;
-    -ms-transform-origin: 0 0;
-    -o-transform-origin: 0 0;
-    transform-origin: 0 0;
-    -webkit-transform: rotate(-35deg) translate(-92px, 22px); /* Safari 3.1+, Chrome */
-    -moz-transform: rotate(-35deg) translate(-92px, 22px); /* Firefox 3.5-15 */
-    -ms-transform: rotate(-35deg) translate(-92px, 22px); /* IE9+ */
-    -o-transform: rotate(-35deg) translate(-92px, 22px); /* Opera 10.5-12.00 */
-    transform: rotate(-35deg) translate(-92px, 22px); /* Firefox 16+, Opera 12.50+ */
+  position: absolute;
+  top: -16px;
+  left: -20px;
+  width: 250px;
+  padding-top: 2em;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: rotate(-35deg) translate(-92px, 22px); /* Safari 3.1+, Chrome */
+  -moz-transform: rotate(-35deg) translate(-92px, 22px); /* Firefox 3.5-15 */
+  -ms-transform: rotate(-35deg) translate(-92px, 22px); /* IE9+ */
+  -o-transform: rotate(-35deg) translate(-92px, 22px); /* Opera 10.5-12.00 */
+  transform: rotate(-35deg) translate(-92px, 22px); /* Firefox 16+, Opera 12.50+ */
 }
 `;
-const Logo = styled.div`
-            text-align: center;
-            background-color: #ededed;
-            padding: 1em 0;
+const logo_style=`
+text-align: center;
+background-color: #ededed;
+padding: 1em 0;
 
-          a {
-            text-decoration: none;
-            color: #414142;
-            position: relative;
-          }
-
-          a:active {
-            background: none;
-          }
-
-          img {
-            vertical-align: middle;
-          }
-
-          span {
-            vertical-align: middle;
-            font-size: 2em;
-            font-family: 'Bree Serif', serif;
-            margin-left: 0.2em;
-          }
-          @media screen and (max-width: 600px) {
-            img {
-              width: 15%;
-            }
-          }
-
-          @media screen and (max-width: 404px) {
-            span {
-              font-size: 1.5em;
-            }
-          }
+>a {
+  text-decoration: none;
+  color: #414142;
+  position: relative;
+  &:active {
+    background: none;
+  }
+  >span {
+      vertical-align: middle;
+      font-size: 2em;
+      font-family: 'Bree Serif', serif;
+      margin-left: 0.2em;
+      @media screen and (max-width: 404px) {
+        font-size: 1.5em;
+      }
+  }
+  >img {
+      vertical-align: middle;
+      
+      @media screen and (max-width: 600px) {
+            width: 15%;
+      }
+  }
+}
 `;
 const pages=["index.html","no-layout.html","display.html","margin-auto.html","max-width.html","box-model.html","box-sizing.html","position.html","position-example.html","float.html","clear.html","clearfix.html","float-layout.html","percent.html","media-queries.html","inline-block.html","inline-block-layout.html","column.html","flexbox.html","frameworks.html","about.html"]
 class Root extends Component<Props> {
@@ -83,13 +88,17 @@ class Root extends Component<Props> {
       super();
       this.state= {
         style_box:menu_style,
-        mode:"css",
-        displayAce:"none",
+        logo_style:logo_style,
       }
     }
     onChange=(newValue)=>{
         this.setState({
             style_box:newValue
+        });
+    }
+    onChange_logo=(newValue)=>{
+        this.setState({
+            logo_style:newValue
         });
     }
   getPrevNext=()=>{
@@ -117,22 +126,35 @@ class Root extends Component<Props> {
     return [prev,next,at]
   }
   render() {
-    console.log(this.props);
-    var arr1=this.getPrevNext();
-    let prev=arr1[0];
-    let next=arr1[1];
-    let i=arr1[2]+1;
-    if(prev){
-      prev=<LinkPrev to={prev}>Previous</LinkPrev>
-    }
-    if(next){
-      next=<LinkPrev to={next}>Next</LinkPrev>
-    }
-    let nav;
-    if(prev || next){
-      nav=<React.Fragment><NavWrapper>{prev}{next}</NavWrapper>
-      <footer>{i} / 21</footer></React.Fragment>
-    }
+    // console.log(this.props);
+    let visible_home,visible_toc;
+      if(this.props.history.location.pathname.indexOf("index.html")>=0){
+        visible_home="hidden"
+      }
+      else{
+        visible_home="visible" 
+      }
+      if(this.props.history.location.pathname.indexOf("toc.html")>=0){
+        visible_toc="hidden"
+      }
+      else{
+        visible_toc="visible" 
+      }
+      var arr1=this.getPrevNext();
+      let prev=arr1[0];
+      let next=arr1[1];
+      let i=arr1[2]+1;
+      if(prev){
+        prev=<LinkPrev to={prev}>Previous</LinkPrev>
+      }
+      if(next){
+        next=<LinkPrev to={next}>Next</LinkPrev>
+      }
+      let nav;
+      if(prev || next){
+        nav=<React.Fragment><NavWrapper>{prev}{next}</NavWrapper>
+        <footer>{i} / 21</footer></React.Fragment>
+      }
     return (
       <div>
         <style jsx="true">{`
@@ -190,13 +212,6 @@ class Root extends Component<Props> {
             margin: 1.2em 0;
             font-weight: normal;
           }
-
-         
-
-
-
-
-
           #container {
             padding: 1em;
             margin: 0 0 1em 0;
@@ -227,21 +242,20 @@ class Root extends Component<Props> {
           footer {
             text-align: center;
           }
-
-
         `}</style>
-        <Logo id="logo">
+        <Tag css={this.state.logo_style} id="logo">
           <A href="/">
             <img src="./images/logo.png" alt="logo" />
             <span>Learn CSS Layout</span>
           </A>
-        </Logo>
-        <Tag css={this.state.style_box}>
-          <MenuA style={{  marginRight: "1em"}} to="/">
-            Home
-          </MenuA>
-          <MenuA to="/toc.html">Table of Contents</MenuA>
         </Tag>
+        <Tag css={this.state.style_box}>
+          <Link style={{  marginRight: "1em",visibility:visible_home}} to="/">
+            Home
+          </Link>
+          <Link style={{  visibility:visible_toc}} to="/toc.html">Table of Contents</Link>
+        </Tag>
+<<<<<<< HEAD
         <div
             style={{
                 display:"flex",
@@ -271,9 +285,13 @@ class Root extends Component<Props> {
                     name="UNIQUE_ID_OF_DIV"
                     editorProps={{$blockScrolling: true}} />
         </div>
+=======
+>>>>>>> refs/remotes/origin/master
         <div id="container">{this.props.children}</div>
         {nav}
-        <div style={{minHeight:"100px"}}/>
+        <div style={{minHeight:"100px"}} />
+        <Ace css={this.state.logo_style}
+                    cssChange={this.onChange_logo}/>
       </div>
     );
   }
