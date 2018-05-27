@@ -181,6 +181,23 @@ class Root extends Component<Props> {
             -moz-box-sizing: border-box;
             box-sizing: border-box;
           }
+a:link {
+  color: #D64078;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #D64078;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  background-color: black;
+  color: white;
+}
 
           img {
             max-width: 100%;

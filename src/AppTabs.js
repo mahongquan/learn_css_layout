@@ -8,12 +8,14 @@ import AppContext from "./AppContext";
 import TableEx from "./AppV";
 import SS from "./SS";
 import Layout1 from "./Layout1";
+import SimpleNestedExample from "./AppSplit";
 
 class App extends React.Component{
   render() {
     return (
-      <Tabs>
+      <Tabs  style={{width:"100vw",height:"100vh",overflow:"auto"}}>
         <TabList>
+          <Tab>splitpane</Tab> 
           <Tab>ss1</Tab> 
           <Tab>Layout1</Tab> 
           <Tab>Semantic-ui</Tab>
@@ -23,6 +25,12 @@ class App extends React.Component{
           <Tab>Virtual Table Demo</Tab>
           <Tab>SS</Tab>
         </TabList>
+        <TabPanel>
+          <div style={{backgroundColor:"#eee",width:"100%",height:"100%"}}>
+          <SimpleNestedExample />
+          </div>
+          
+        </TabPanel>
         <TabPanel>
           <AppQuerySS />
           

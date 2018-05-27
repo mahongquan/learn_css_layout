@@ -1,9 +1,10 @@
 import React  from 'react';
-import AppTabs from './AppTabs';
+// import AppTabs from './AppTabs';
+import AppTabs from './AppSplit';
 class App extends React.Component{
   render() {
     return (
-      <div>
+      <div style={{width:"100vw",height:"100vh",overflow:"auto"}}>
       <AppTabs />
       </div>
     );
