@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import App from './App';
+// import App from './AppLayout';
+// import App from './AppSplit';
+
 import about from './about';
 import box_model from './box_model';
 import box_sizing from './box_sizing';

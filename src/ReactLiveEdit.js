@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Elem,{Tag,NavWrapper,LinkPrev,LinkStyle,A} from './Elem';
 import styled from 'styled-components';
 import Ace from './Ace';
-import AppFlex from './AppFlex';
 import {
   LiveProvider,
   LiveEditor,
@@ -12,7 +11,27 @@ import {
 const css=`
 #main{
   margin:auto;
-  border:solid blue 2px;
+  background-color:#eee;
+  justify-content: space-between;
+  flex-wrap:wrap;
+  align-items: stretch;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  width:100vw;
+  height:100vh;
+}
+#header{
+  height:50px;
+  margin:1px;
+  background-color:#bbb;
+}
+#footer{
+  height:50px;
+  margin:1px;
+  background-color:#ccc;
+}
+#content{
   background-color:#aaa;
   justify-content: space-around;
   flex-wrap:wrap;
@@ -20,49 +39,27 @@ const css=`
   display:flex;
   flex-direction:row;
   overflow:hidden;
-  width:300px;
-  height:600px;
+  flex:1;
 }
-.child{
-  color:blue;
-  margin:1px;
-  border:solid green 3px;
+#sidebar{
+  background-color:#999;
+  width:200px;
 }
-#main2{
-  border:solid orange 2px;
-  background-color:#aaa;
-  justify-content: space-around;
-  flex-wrap:wrap;
-  align-items: stretch;
-  display:flex;
-  flex-direction:column;
-  overflow:hidden;
+#mainbody{
+  background-color:#888;
+  margin:0 0 0 0;
+  flex:1;
 }
-.child2{
-  color:blue;
-  margin:1px;
-  border:solid green 3px;
-}
-
 `;
-const jsx=`
-
-<div id="main" >
-    <div id="main2" className="child" >
-      <div className="child2" >dddddddc</div>
-      <div className="child2" ></div>
-      <div className="child2" >bbbb</div>
-      <div className="child2" >dddddddc</div>
-      <div className="child2" >a</div>
-    </div>
-    <div className="child" >dddddddc</div>
-    <div className="child" >a</div>
-    <div className="child" >bbbb</div>
-    <div className="child" >dddddddc</div>
-    <div className="child" >a</div>
-    <div className="child" >bbbb</div>
-    <div className="child" >dddddddc</div>
-
+const jsx=`<div id="main" >
+ <div id="header">
+   toolbar
+ </div>
+ <div id="content" >
+   <div id="sidebar">sitebar</div>      
+   <div id="mainbody">body</div>
+ </div>
+ <div id="footer" >footer</div>
 </div>
 `;
 
@@ -83,7 +80,7 @@ class Root extends Component<Props> {
   render() {
     // console.log(this.props);
     return (
-      <div style={{position:"relative"}}>
+      <div style={{position:"relative",width:"100vw",height:"100vh",overflow:"hidden"}}>
         <Ace css={this.state.css} cssChange={this.cssChange} />
         <LiveProvider code={this.state.jsx}>
           <Tag css={this.state.css}>
@@ -106,8 +103,21 @@ class Root extends Component<Props> {
               height:"300px"}}/>                  
           </div> 
         </LiveProvider>
-        <AppFlex />
-        <div style={{minHeight:"100px"}}/>
+        <style jsx="true">
+        {`
+* {
+      box-sizing: border-box;
+    }
+    html {
+      font-size: 1rem;
+      overflow-wrap: break-word;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+    }           
+        `}
+        </style>
       </div>
     );
   }

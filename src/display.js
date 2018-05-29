@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Elem,{Tag} from './Elem';
 import ElemInline from './ElemInline';
-import Ace from './Ace';
+import AceEditor from 'react-ace';
+import 'brace/mode/css';
+import 'brace/theme/github';
 const css=`
 display:none;
 //visibility:hidden;
@@ -56,7 +58,17 @@ export default class display extends Component<Props> {
             links.
           </p>
           <div style={{position:"relative"}}>
-            <h2>none</h2><Ace css={this.state.css} cssChange={this.cssChange} />
+            <h2>none</h2>
+            <AceEditor ref="editor"
+                    style={{  margin:"auto",maxWidth:"600px",height:"100px"
+                                ,border:"solid gray 5px"
+                              }}
+                    mode="css"
+                    theme="github"
+                    value={this.state.css}
+                    onChange={this.cssChange}
+                    name="UNIQUE_ID_OF_DIV"
+                    editorProps={{$blockScrolling: true}} />
             <Tag css={this.state.css} id="idnone" >You found me!</Tag>
           </div>
           <p>

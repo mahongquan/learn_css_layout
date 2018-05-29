@@ -2,24 +2,7 @@ import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import Elem,{Tag,NavWrapper,LinkPrev,LinkStyle,A} from './Elem';
 import styled from 'styled-components';
-import AceEditor from 'react-ace';
 import Ace from './Ace';
-import 'brace/mode/css';
-import 'brace/theme/github';
-// const MenuA = styled(Link)`
-// color: #8F8F8F;
-// display: inline-block;
-// padding: .5em 1em;
-// text-shadow: 0 1px 0 #EDEDED;
-// text-decoration: none;
-// &:hover {
-//   background: rgb(220, 220, 220);
-// }
-// @media screen and (min-width: 601px) {
-//     display: block;
-//     padding: 0.2em 0;
-// }
-// `;
 const menu_style=`
 background-color: whiteSmoke;
 text-align: center;
@@ -92,8 +75,6 @@ class Root extends Component<Props> {
       this.state= {
         style_box:menu_style,
         logo_style:logo_style,
-        mode:"css",
-        displayAce:"none",
       }
     }
     onChange=(newValue)=>{
@@ -132,21 +113,34 @@ class Root extends Component<Props> {
   }
   render() {
     // console.log(this.props);
-    var arr1=this.getPrevNext();
-    let prev=arr1[0];
-    let next=arr1[1];
-    let i=arr1[2]+1;
-    if(prev){
-      prev=<LinkPrev to={prev}>Previous</LinkPrev>
-    }
-    if(next){
-      next=<LinkPrev to={next}>Next</LinkPrev>
-    }
-    let nav;
-    if(prev || next){
-      nav=<React.Fragment><NavWrapper>{prev}{next}</NavWrapper>
-      <footer>{i} / 21</footer></React.Fragment>
-    }
+    let visible_home,visible_toc;
+      if(this.props.history.location.pathname.indexOf("index.html")>=0){
+        visible_home="hidden"
+      }
+      else{
+        visible_home="visible" 
+      }
+      if(this.props.history.location.pathname.indexOf("toc.html")>=0){
+        visible_toc="hidden"
+      }
+      else{
+        visible_toc="visible" 
+      }
+      var arr1=this.getPrevNext();
+      let prev=arr1[0];
+      let next=arr1[1];
+      let i=arr1[2]+1;
+      if(prev){
+        prev=<LinkPrev to={prev}>Previous</LinkPrev>
+      }
+      if(next){
+        next=<LinkPrev to={next}>Next</LinkPrev>
+      }
+      let nav;
+      if(prev || next){
+        nav=<React.Fragment><NavWrapper>{prev}{next}</NavWrapper>
+        <footer>{i} / 21</footer></React.Fragment>
+      }
     return (
       <div>
         <style jsx="true">{`
@@ -173,7 +167,23 @@ class Root extends Component<Props> {
             -moz-box-sizing: border-box;
             box-sizing: border-box;
           }
+a:link {
+  color: #D64078;
+  text-decoration: none;
+}
 
+a:visited {
+  color: #D64078;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  background-color: black;
+  color: white;
+}
           img {
             max-width: 100%;
           }
@@ -242,10 +252,10 @@ class Root extends Component<Props> {
           </A>
         </Tag>
         <Tag css={this.state.style_box}>
-          <Link style={{  marginRight: "1em"}} to="/">
+          <Link style={{  marginRight: "1em",visibility:visible_home}} to="/">
             Home
           </Link>
-          <Link to="/toc.html">Table of Contents</Link>
+          <Link style={{  visibility:visible_toc}} to="/toc.html">Table of Contents</Link>
         </Tag>
         <div id="container">{this.props.children}</div>
         {nav}
