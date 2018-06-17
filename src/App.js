@@ -1,22 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import {Tag,NavWrapper,LinkPrev,A} from './Elem';
-// import styled from 'styled-components';
+import Elem,{Tag,NavWrapper,LinkPrev,LinkStyle,A} from './Elem';
+import styled from 'styled-components';
 import Ace from './Ace';
-// const MenuA = styled(Link)`
-// color: #8F8F8F;
-// display: inline-block;
-// padding: .5em 1em;
-// text-shadow: 0 1px 0 #EDEDED;
-// text-decoration: none;
-// &:hover {
-//   background: rgb(220, 220, 220);
-// }
-// @media screen and (min-width: 601px) {
-//     display: block;
-//     padding: 0.2em 0;
-// }
-// `;
 const menu_style=`
 background-color: whiteSmoke;
 text-align: center;
@@ -127,12 +113,14 @@ class Root extends Component<Props> {
   }
   render() {
     // console.log(this.props);
-    let visible_home,visible_toc;
+    let visible_home,visible_toc,disable_home;
       if(this.props.history.location.pathname.indexOf("index.html")>=0){
-        visible_home="hidden"
+        visible_home="hidden";
+        disable_home="";
       }
       else{
-        visible_home="visible" 
+        visible_home="visible";
+        disable_home="index.html";
       }
       if(this.props.history.location.pathname.indexOf("toc.html")>=0){
         visible_toc="hidden"
@@ -198,7 +186,6 @@ a:active {
   background-color: black;
   color: white;
 }
-
           img {
             max-width: 100%;
           }
@@ -261,10 +248,10 @@ a:active {
           }
         `}</style>
         <Tag css={this.state.logo_style} id="logo">
-          <A href="/">
+          <Link to={disable_home} >
             <img src="./images/logo.png" alt="logo" />
             <span>Learn CSS Layout</span>
-          </A>
+          </Link>
         </Tag>
         <Tag css={this.state.style_box}>
           <Link style={{  marginRight: "1em",visibility:visible_home}} to="/">

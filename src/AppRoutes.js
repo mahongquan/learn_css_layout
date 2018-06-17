@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import App from './App';
+// import App from './AppLayout';
+// import App from './AppSplit';
+
 import about from './about';
 import box_model from './box_model';
 import box_sizing from './box_sizing';
@@ -22,7 +25,7 @@ import percent from './percent';
 import position_example from './position_example';
 import position from './position';
 import toc from './toc';
-import {ThemeProvider} from 'styled-components';
+import styled,{ThemeProvider} from 'styled-components';
 import {
   Router,
   Redirect,

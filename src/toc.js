@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import {LinkToc,Tag} from './Elem';
+import {Tag} from './Elem';
+import {  Link } from 'react-router-dom';
+import styled from 'styled-components';
 import AceEditor from 'react-ace';
 import 'brace/mode/css';
 import 'brace/theme/github';
@@ -14,6 +16,42 @@ const Toc_style=`
     @media screen and (min-width: 601px) {
        height: 650px; //two column
     }
+a{    
+  width: 15em;
+  margin: 0.5em;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.5em;
+  color: white;
+  background-color: #d64078;
+  border: solid #b03060 1px;
+  border-bottom: solid #b03060 4px;
+  text-shadow: 0px 2px 0 #b03060;
+  border-radius: 0.3em;
+  position: relative;
+  -webkit-transition: all 0.1s ease-out; /* Safari 3.2+, Chrome */
+  -moz-transition: all 0.1s ease-out; /* Firefox 4-15 */
+  -o-transition: all 0.1s ease-out; /* Opera 10.5â12.00 */
+  transition: all 0.1s ease-out; /* Firefox 16+, Opera 12.50+ */
+  &:link {
+    color: white;
+    text-decoration: none;
+  }
+  &:hover {
+    text-decoration: none;
+    background-color: #c63b6f;
+  }
+
+  &:active {
+    border-bottom: solid #b03060 1px;
+    top: 4px;
+    -webkit-transition: all 0 ease-out; /* Safari 3.2+, Chrome */
+    -moz-transition: all 0 ease-out; /* Firefox 4-15 */
+    -o-transition: all 0 ease-out; /* Opera 10.5â12.00 */
+    transition: all 0 ease-out; /* Firefox 16+, Opera 12.50+ */
+  }   
+} 
 `;
 
 export default class toc extends Component<Props> {
@@ -36,69 +74,68 @@ export default class toc extends Component<Props> {
       <React.Fragment>
         <div className="content" style={{position:"relative"}}>
           <h1 className="content">Table of Contents</h1>
-
           <Tag css={this.state.style_box}>      
-                  <LinkToc to="no-layout.html">no layout</LinkToc>
-                  <LinkToc to="display.html">
+                  <Link to="no-layout.html">no layout</Link>
+                  <Link to="display.html">
                     the &quot;display&quot; property
-                  </LinkToc>
+                  </Link>
                 
                 
-                  <LinkToc to="margin-auto.html">margin: auto;</LinkToc>
+                  <Link to="margin-auto.html">margin: auto;</Link>
                 
                 
-                  <LinkToc to="max-width.html">max-width</LinkToc>
+                  <Link to="max-width.html">max-width</Link>
                 
                 
-                  <LinkToc to="box-model.html">the box model</LinkToc>
+                  <Link to="box-model.html">the box model</Link>
                 
                 
-                  <LinkToc to="box-sizing.html">box-sizing</LinkToc>
+                  <Link to="box-sizing.html">box-sizing</Link>
                 
                 
-                  <LinkToc to="position.html">position</LinkToc>
+                  <Link to="position.html">position</Link>
                 
                 
-                  <LinkToc to="position-example.html">position example</LinkToc>
+                  <Link to="position-example.html">position example</Link>
                 
                 
-                  <LinkToc to="float.html">float</LinkToc>
+                  <Link to="float.html">float</Link>
                 
                 
-                  <LinkToc to="clear.html">clear</LinkToc>
+                  <Link to="clear.html">clear</Link>
                 
                 
-                  <LinkToc to="clearfix.html">the clearfix hack</LinkToc>
+                  <Link to="clearfix.html">the clearfix hack</Link>
                 
                 
-                  <LinkToc to="float-layout.html">float layout example</LinkToc>
+                  <Link to="float-layout.html">float layout example</Link>
                 
                 
-                  <LinkToc to="percent.html">percent width</LinkToc>
+                  <Link to="percent.html">percent width</Link>
                 
                 
-                  <LinkToc to="media-queries.html">media queries</LinkToc>
+                  <Link to="media-queries.html">media queries</Link>
                 
                 
-                  <LinkToc to="inline-block.html">inline-block</LinkToc>
+                  <Link to="inline-block.html">inline-block</Link>
                 
                 
-                  <LinkToc to="inline-block-layout.html">inline-block layout</LinkToc>
+                  <Link to="inline-block-layout.html">inline-block layout</Link>
                 
                 
-                  <LinkToc to="column.html">column</LinkToc>
+                  <Link to="column.html">column</Link>
                 
                 
-                  <LinkToc to="flexbox.html">flexbox</LinkToc>
+                  <Link to="flexbox.html">flexbox</Link>
                 
                 
-                  <LinkToc to="frameworks.html">css frameworks</LinkToc>
+                  <Link to="frameworks.html">css frameworks</Link>
                 
                 
-                  <LinkToc to="about.html">about this site</LinkToc>
+                  <Link to="about.html">about this site</Link>
                 
           </Tag>
-                    <div
+          <div
               style={{
                 display:"flex",
                 flexDirection:"column",
@@ -107,7 +144,7 @@ export default class toc extends Component<Props> {
                 top:0,
                 right:0}}>
               <button onClick={()=>{
-                if(this.state.displayAce==="none"){
+                if(this.state.displayAce=="none"){
                   this.setState({displayAce:"block"})
                 }
                 else{

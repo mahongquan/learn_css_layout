@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-// import Highlight from 'react-highlight';
+import Highlight from 'react-highlight';
 import Elem,{Tag}  from './Elem';
 import Ace from './Ace';
-// const alignitems_options=["center","flex-start","flex-end","stretch","baseline","inherit","initial"];
-// const justifycontent_options=["center","flex-start","flex-end","space-around","space-between"];
+const alignitems_options=["center","flex-start","flex-end","stretch","baseline","inherit","initial"];
+const justifycontent_options=["center","flex-start","flex-end","space-around","space-between"];
 const menu_style=`height: 100vh;
 display: flex;
 >nav {

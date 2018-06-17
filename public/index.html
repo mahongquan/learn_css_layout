@@ -6,12 +6,15 @@
     <link rel="icon" type="image/png" href="%PUBLIC_URL%/images/logo.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <title>css layout</title>
-    <style>
-body{
-    margin:0 0 0 0;
-    padding:0 0 0 0;
-}       
-    </style>
+    <script> 
+      if(window.require){
+        window.myremote={
+          fs:require('fs'),
+          path:require("path"),
+          electron:require('electron'),
+        };
+      }
+    </script>
   </head>
   <body>
     <noscript>

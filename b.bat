@@ -1,1 +1,1 @@
-babel  --plugins mytransform src --out-dir lib
+babel  babel-plugin-transform-postcss/src --out-dir babel-plugin-transform-postcss/lib

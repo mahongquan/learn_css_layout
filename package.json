@@ -1,5 +1,5 @@
 {
-  "name": "electron-quick-start",
+  "name": "learn css layout",
   "version": "1.0.0",
   "homepage": ".",
   "description": "learn css layout",
@@ -31,8 +31,6 @@
     "react-scripts": "^1.1.4"
   },
   "dependencies": {
-    "react-split-pane": "^0.1.77",
-    "storm-react-diagrams": "^5.2.1",
     "styled-components": "^3.2.6"
   }
 }

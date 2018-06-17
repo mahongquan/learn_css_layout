@@ -35,6 +35,7 @@ export default class GridExample extends React.PureComponent {
 
   render() {
     const {
+      height,
       overscanColumnCount,
       overscanRowCount,
       rowHeight,
@@ -45,7 +46,9 @@ export default class GridExample extends React.PureComponent {
 
     return (
         <AutoSizer>
-          {({width,height}) => (
+          {({width,height}) => {
+            console.log(width +","+height);
+            return (
             <Grid
               cellRenderer={this._cellRenderer}
               className={"BodyGrid"}
@@ -61,7 +64,9 @@ export default class GridExample extends React.PureComponent {
               width={width}
               height={height}
             />
-          )}
+          )
+            }
+        }
         </AutoSizer>
     );
   }

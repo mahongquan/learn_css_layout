@@ -1,5 +1,8 @@
 import { transform } from 'babel-core';
 import * as babel from 'babel-core';
+import fs from 'fs';
+import path from 'path';
+import myImportCss from './myImportCss';
 var myplugin=function({ types: t }) {
   return {
     visitor: {
@@ -16,24 +19,35 @@ var myplugin=function({ types: t }) {
   };
 };
 var options={
-  plugins: [myplugin],
+  plugins: [myImportCss],
   babelrc:false,
   parserOpts: {
     "plugins": ["jsx", "flow"]
   }
 };
 function tFile(){
-    babel.transformFile("./src/position_example.js", options, function (err, result) {
+    babel.transformFile("./app.js", options, function (err, result) {
       //console.log(result); // => { code, map, ast }
       if(err){
         console.log(err);
       }
       else{
+         console.log("after transform");
          console.log(result.code);
+         console.log("finish");
       }
     });
 }
-// var result = babel.transform("a==='';", options);
+// babel.transform("import a from './app.css';", options,(err,result)=>{
+//      console.log("transform finish=======");
+//      if(err){
+//         console.log(err);
+//       }
+//       else{
+//          console.log(result.code);
+//       }
+// });
+// console.log("=============")
 // console.log(result.code);
 tFile();
 // console.log(result);

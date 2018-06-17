@@ -20,7 +20,7 @@ export default class position extends Component<Props> {
 }`}</Highlight>
         </figure>
         <div id="static" style={{position: 'static'}}>
-          <p style={{ marginTop: '22px' }}>
+          <p className="content" style={{ marginTop: '22px' }}>
             <code>static</code> is the default value. An element with{' '}
             <code>position: static;</code> is not positioned in any special way.
             A static element is said to be <em>not positioned</em> and an

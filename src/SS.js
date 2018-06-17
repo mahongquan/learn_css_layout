@@ -9,7 +9,7 @@ const LEFT_COLOR_TO = hexToRgb('#BC3959');
 const TOP_COLOR_FROM = hexToRgb('#000000');
 const TOP_COLOR_TO = hexToRgb('#333333');
 
-class GridExample extends React.PureComponent {
+export default class GridExample extends React.PureComponent {
   constructor(props, context) {
     super(props, context);
 
@@ -247,9 +247,4 @@ function mixColors(color1, color2, amount) {
   const b = Math.round(weight1 * color1.b + weight2 * color2.b);
 
   return {r, g, b};
-}
-export default class Me extends React.PureComponent {
-  render=()=>{
-    return(<GridExample />)
-  }
 }

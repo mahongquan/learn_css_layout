@@ -72,10 +72,7 @@ transition: all 0.1s ease-out; /* Firefox 16+, Opera 12.50+ */
   text-decoration: none;
   background-color: #c63b6f;
 }
-&:visited {
-  color: white;
-  text-decoration: none;
-}
+
 &:active {
   border-bottom: solid #b03060 1px;
   top: 4px;
@@ -137,10 +134,7 @@ export const LinkNav = styled(Link)`
           &:hover {
             background-color: #c63b6f;
           }
-&:visited {
-  color: white;
-  text-decoration: none;
-}
+
           &:active {
             border-bottom: solid #b03060 1px;
             top: 4px;
