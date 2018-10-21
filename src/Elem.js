@@ -200,11 +200,8 @@ export default class Elem extends Component<Props> {
       border: solid ${color} 3px;
       padding:0 0 0 0;
       margin:0 0 0 0;
-      position: relative;
+      position: relative;${css}
     `;
-    if(css){
-      Element=Element.extend`${css}`
-    }
     let idstr,cls_str;
     if (this.props.id) {
       idstr = `id="${this.props.id}"`;
