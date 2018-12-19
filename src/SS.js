@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AutoSizer,Grid, ScrollSync } from 'react-virtualized';
+import { AutoSizer, Grid, ScrollSync } from 'react-virtualized';
 import cn from 'classnames';
 // import styles from './ScrollSync.example.css';
 import scrollbarSize from 'dom-helpers/util/scrollbarSize';
@@ -57,26 +57,26 @@ export default class GridExample extends React.PureComponent {
             const leftBackgroundColor = mixColors(
               LEFT_COLOR_FROM,
               LEFT_COLOR_TO,
-              y,
+              y
             );
             const leftColor = '#ffffff';
             const topBackgroundColor = mixColors(
               TOP_COLOR_FROM,
               TOP_COLOR_TO,
-              x,
+              x
             );
             const topColor = '#ffffff';
             const middleBackgroundColor = mixColors(
               leftBackgroundColor,
               topBackgroundColor,
-              0.5,
+              0.5
             );
             const middleColor = '#ffffff';
 
             return (
-              <div className={"GridRow"}>
+              <div className={'GridRow'}>
                 <div
-                  className={"LeftSideGridContainer"}
+                  className={'LeftSideGridContainer'}
                   style={{
                     position: 'absolute',
                     left: 0,
@@ -85,10 +85,11 @@ export default class GridExample extends React.PureComponent {
                     backgroundColor: `rgb(${topBackgroundColor.r},${
                       topBackgroundColor.g
                     },${topBackgroundColor.b})`,
-                  }}>
+                  }}
+                >
                   <Grid
                     cellRenderer={this._renderLeftHeaderCell}
-                    className={"HeaderGrid"}
+                    className={'HeaderGrid'}
                     width={columnWidth}
                     height={rowHeight}
                     rowHeight={rowHeight}
@@ -98,7 +99,7 @@ export default class GridExample extends React.PureComponent {
                   />
                 </div>
                 <div
-                  className={"LeftSideGridContainer"}
+                  className={'LeftSideGridContainer'}
                   style={{
                     position: 'absolute',
                     left: 0,
@@ -107,14 +108,15 @@ export default class GridExample extends React.PureComponent {
                     backgroundColor: `rgb(${leftBackgroundColor.r},${
                       leftBackgroundColor.g
                     },${leftBackgroundColor.b})`,
-                  }}>
+                  }}
+                >
                   <Grid
                     overscanColumnCount={overscanColumnCount}
                     overscanRowCount={overscanRowCount}
                     cellRenderer={this._renderLeftSideCell}
                     columnWidth={columnWidth}
                     columnCount={1}
-                    className={"LeftSideGrid"}
+                    className={'LeftSideGrid'}
                     height={height - scrollbarSize()}
                     rowHeight={rowHeight}
                     rowCount={rowCount}
@@ -122,9 +124,9 @@ export default class GridExample extends React.PureComponent {
                     width={columnWidth}
                   />
                 </div>
-                <div className={"GridColumn"}>
+                <div className={'GridColumn'}>
                   <AutoSizer disableHeight>
-                    {({width}) => (
+                    {({ width }) => (
                       <div>
                         <div
                           style={{
@@ -134,9 +136,10 @@ export default class GridExample extends React.PureComponent {
                             color: topColor,
                             height: rowHeight,
                             width: width - scrollbarSize(),
-                          }}>
+                          }}
+                        >
                           <Grid
-                            className={"HeaderGrid"}
+                            className={'HeaderGrid'}
                             columnWidth={columnWidth}
                             columnCount={columnCount}
                             height={rowHeight}
@@ -156,9 +159,10 @@ export default class GridExample extends React.PureComponent {
                             color: middleColor,
                             height,
                             width,
-                          }}>
+                          }}
+                        >
                           <Grid
-                            className={"BodyGrid"}
+                            className={'BodyGrid'}
                             columnWidth={columnWidth}
                             columnCount={columnCount}
                             height={height}
@@ -183,36 +187,40 @@ export default class GridExample extends React.PureComponent {
     );
   }
 
-  _renderBodyCell({columnIndex, key, rowIndex, style}) {
+  _renderBodyCell({ columnIndex, key, rowIndex, style }) {
     if (columnIndex < 1) {
       return;
     }
 
-    return this._renderLeftSideCell({columnIndex, key, rowIndex, style});
+    return this._renderLeftSideCell({ columnIndex, key, rowIndex, style });
   }
 
-  _renderHeaderCell({columnIndex, key, rowIndex, style}) {
+  _renderHeaderCell({ columnIndex, key, rowIndex, style }) {
     if (columnIndex < 1) {
       return;
     }
 
-    return this._renderLeftHeaderCell({columnIndex, key, rowIndex, style});
+    return this._renderLeftHeaderCell({ columnIndex, key, rowIndex, style });
   }
 
-  _renderLeftHeaderCell({columnIndex, key, style}) {
+  _renderLeftHeaderCell({ columnIndex, key, style }) {
     return (
-      <div className={"headerCell"} key={key} style={style}>
+      <div className={'headerCell'} key={key} style={style}>
         {`C${columnIndex}`}
       </div>
     );
   }
 
-  _renderLeftSideCell({columnIndex, key, rowIndex, style}) {
+  _renderLeftSideCell({ columnIndex, key, rowIndex, style }) {
     const rowClass =
       rowIndex % 2 === 0
-        ? columnIndex % 2 === 0 ? "evenRow" : "oddRow"
-        : columnIndex % 2 !== 0 ? "evenRow" : "oddRow";
-    const classNames = cn(rowClass, "cell");
+        ? columnIndex % 2 === 0
+          ? 'evenRow'
+          : 'oddRow'
+        : columnIndex % 2 !== 0
+        ? 'evenRow'
+        : 'oddRow';
+    const classNames = cn(rowClass, 'cell');
 
     return (
       <div className={classNames} key={key} style={style}>
@@ -245,5 +253,5 @@ function mixColors(color1, color2, amount) {
   const g = Math.round(weight1 * color1.g + weight2 * color2.g);
   const b = Math.round(weight1 * color1.b + weight2 * color2.b);
 
-  return {r, g, b};
+  return { r, g, b };
 }

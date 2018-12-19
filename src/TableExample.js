@@ -1,17 +1,22 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 //import cn from 'classnames';
-import { AutoSizer, Column, Table,SortDirection,SortIndicator } from 'react-virtualized';
+import {
+  AutoSizer,
+  Column,
+  Table,
+  SortDirection,
+  SortIndicator,
+} from 'react-virtualized';
 // Sortable Table Example
 
 export default class GridExample extends React.PureComponent {
-
   constructor(props, context) {
     super(props, context);
 
     const sortBy = 'index';
     const sortDirection = SortDirection.ASC;
-    const sortedList = this._sortList({sortBy, sortDirection});
+    const sortedList = this._sortList({ sortBy, sortDirection });
 
     this.state = {
       disableHeader: false,
@@ -38,7 +43,7 @@ export default class GridExample extends React.PureComponent {
 
   render() {
     const {
-       disableHeader,
+      disableHeader,
       overscanRowCount,
       rowHeight,
       rowCount,
@@ -50,56 +55,57 @@ export default class GridExample extends React.PureComponent {
       scrollToIndex,
       hideIndexRow,
     } = this.state;
-    const height=this.props.size.height;
+    const height = this.props.size.height;
 
-    const rowGetter = ({index}) => this._getDatum(sortedList, index);
+    const rowGetter = ({ index }) => this._getDatum(sortedList, index);
     return (
-        <AutoSizer disableHeight>
-          {({width}) => (
-                          <Table
-                ref="Table"
-                disableHeader={disableHeader}
-                headerClassName={"headerColumn"}
-                headerHeight={headerHeight}
-                height={height}
-                noRowsRenderer={this._noRowsRenderer}
-                overscanRowCount={overscanRowCount}
-                rowClassName={this._rowClassName}
-                rowHeight={useDynamicRowHeight ? this._getRowHeight : rowHeight}
-                rowGetter={rowGetter}
-                rowCount={rowCount}
-                scrollToIndex={scrollToIndex}
-                sort={this._sort}
-                sortBy={sortBy}
-                sortDirection={sortDirection}
-                width={width}>
-                {!hideIndexRow && (
-                  <Column
-                    label="Index"
-                    cellDataGetter={({rowData}) => rowData.index}
-                    dataKey="index"
-                    disableSort={!this._isSortEnabled()}
-                    width={60}
-                  />
-                )}
-                <Column
-                  dataKey="name"
-                  disableSort={!this._isSortEnabled()}
-                  headerRenderer={this._headerRenderer}
-                  width={90}
-                />
-                <Column
-                  width={210}
-                  disableSort
-                  label="The description"
-                  dataKey="random"
-                  className={"exampleColumn"}
-                  cellRenderer={({cellData}) => cellData}
-                  flexGrow={1}
-                />
-              </Table>
-          )}
-        </AutoSizer>
+      <AutoSizer disableHeight>
+        {({ width }) => (
+          <Table
+            ref="Table"
+            disableHeader={disableHeader}
+            headerClassName={'headerColumn'}
+            headerHeight={headerHeight}
+            height={height}
+            noRowsRenderer={this._noRowsRenderer}
+            overscanRowCount={overscanRowCount}
+            rowClassName={this._rowClassName}
+            rowHeight={useDynamicRowHeight ? this._getRowHeight : rowHeight}
+            rowGetter={rowGetter}
+            rowCount={rowCount}
+            scrollToIndex={scrollToIndex}
+            sort={this._sort}
+            sortBy={sortBy}
+            sortDirection={sortDirection}
+            width={width}
+          >
+            {!hideIndexRow && (
+              <Column
+                label="Index"
+                cellDataGetter={({ rowData }) => rowData.index}
+                dataKey="index"
+                disableSort={!this._isSortEnabled()}
+                width={60}
+              />
+            )}
+            <Column
+              dataKey="name"
+              disableSort={!this._isSortEnabled()}
+              headerRenderer={this._headerRenderer}
+              width={90}
+            />
+            <Column
+              width={210}
+              disableSort
+              label="The description"
+              dataKey="random"
+              className={'exampleColumn'}
+              cellRenderer={({ cellData }) => cellData}
+              flexGrow={1}
+            />
+          </Table>
+        )}
+      </AutoSizer>
     );
   }
 
@@ -107,13 +113,13 @@ export default class GridExample extends React.PureComponent {
     return list.get(index % list.size);
   }
 
-  _getRowHeight({index}) {
-    const {list} = this.context;
+  _getRowHeight({ index }) {
+    const { list } = this.context;
 
     return this._getDatum(list, index).size;
   }
 
-  _headerRenderer({dataKey, sortBy, sortDirection}) {
+  _headerRenderer({ dataKey, sortBy, sortDirection }) {
     return (
       <div>
         Full Name
@@ -123,60 +129,60 @@ export default class GridExample extends React.PureComponent {
   }
 
   _isSortEnabled() {
-    const {list} = this.context;
-    const {rowCount} = this.state;
+    const { list } = this.context;
+    const { rowCount } = this.state;
 
     return rowCount <= list.size;
   }
 
   _noRowsRenderer() {
-    return <div className={"noRows"}>No rows</div>;
+    return <div className={'noRows'}>No rows</div>;
   }
 
   _onRowCountChange(event) {
     const rowCount = parseInt(event.target.value, 10) || 0;
 
-    this.setState({rowCount});
+    this.setState({ rowCount });
   }
 
   _onScrollToRowChange(event) {
-    const {rowCount} = this.state;
+    const { rowCount } = this.state;
     let scrollToIndex = Math.min(
       rowCount - 1,
-      parseInt(event.target.value, 10),
+      parseInt(event.target.value, 10)
     );
 
     if (isNaN(scrollToIndex)) {
       scrollToIndex = undefined;
     }
 
-    this.setState({scrollToIndex});
+    this.setState({ scrollToIndex });
   }
 
-  _rowClassName({index}) {
+  _rowClassName({ index }) {
     if (index < 0) {
-      return "headerRow";
+      return 'headerRow';
     } else {
-      return index % 2 === 0 ? "evenRow" : "oddRow";
+      return index % 2 === 0 ? 'evenRow' : 'oddRow';
     }
   }
 
-  _sort({sortBy, sortDirection}) {
-    const sortedList = this._sortList({sortBy, sortDirection});
+  _sort({ sortBy, sortDirection }) {
+    const sortedList = this._sortList({ sortBy, sortDirection });
 
-    this.setState({sortBy, sortDirection, sortedList});
+    this.setState({ sortBy, sortDirection, sortedList });
   }
 
-  _sortList({sortBy, sortDirection}) {
-    const {list} = this.context;
+  _sortList({ sortBy, sortDirection }) {
+    const { list } = this.context;
     // console.log("_sortList");
     // console.log(this.context);
     // console.log(list);
 
     return list
       .sortBy(item => item[sortBy])
-      .update(
-        list => (sortDirection === SortDirection.DESC ? list.reverse() : list),
+      .update(list =>
+        sortDirection === SortDirection.DESC ? list.reverse() : list
       );
   }
 
@@ -187,5 +193,5 @@ export default class GridExample extends React.PureComponent {
   }
 }
 GridExample.contextTypes = {
-  list: PropTypes.instanceOf(Object)
+  list: PropTypes.instanceOf(Object),
 };

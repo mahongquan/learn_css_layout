@@ -40,11 +40,15 @@ nav {
 }`}</Highlight>
         </figure>
         <Elem className="container">
-          <Elem tag="nav" red style={{
-            display: "inline-block",
-            verticalAlign: "top",
-            width: "25%"
-          }}>
+          <Elem
+            tag="nav"
+            red
+            style={{
+              display: 'inline-block',
+              verticalAlign: 'top',
+              width: '25%',
+            }}
+          >
             <ul>
               <li>
                 <a href="inline-block-layout.html">Home</a>
@@ -66,10 +70,15 @@ nav {
               </li>
             </ul>
           </Elem>
-          <Elem color="red" id="column" style={{
-            display: "inline-block",
-            verticalAlign: "top",
-            width: "75%" }}>
+          <Elem
+            color="red"
+            id="column"
+            style={{
+              display: 'inline-block',
+              verticalAlign: 'top',
+              width: '75%',
+            }}
+          >
             <Elem green tag="section">
               <p>Tada!</p>
             </Elem>
@@ -91,7 +100,6 @@ nav {
             </Elem>
           </Elem>
         </Elem>
-
       </React.Fragment>
     );
   }

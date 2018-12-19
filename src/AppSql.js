@@ -3,35 +3,36 @@ import { Provider } from 'react-redux';
 // import AppTest from './AppTest';
 import ServerManagementContainer from './containers/server-management2.jsx';
 import QueryBrowserContainer from './containers/query-browser2.jsx';
-import {Router,Redirect, Route,Switch} from 'react-router-dom'
+import { Router, Redirect, Route, Switch } from 'react-router-dom';
 import configureStore from './store/configure';
-import createHashHistory from "history/createHashHistory";
+import createHashHistory from 'history/createHashHistory';
 const history = createHashHistory({
-  hashType: "slash" // the default
-})
+  hashType: 'slash', // the default
+});
 const store = configureStore();
-class Routers extends Component{
-  render=()=>{
+class Routers extends Component {
+  render = () => {
     // console.log(this.props);
-    return(<Switch>
-                { 
-                  //<Route path="/test" component={AppTest} />
-                }
-                <Route path="/sql/manage" component={ServerManagementContainer} />
-                <Route path="/sql/server/:id" component={QueryBrowserContainer} />
-                <Redirect exact path="/"  to="/sql/manage" />
-              </Switch>);
-  }
+    return (
+      <Switch>
+        {
+          //<Route path="/test" component={AppTest} />
+        }
+        <Route path="/sql/manage" component={ServerManagementContainer} />
+        <Route path="/sql/server/:id" component={QueryBrowserContainer} />
+        <Redirect exact path="/" to="/sql/manage" />
+      </Switch>
+    );
+  };
 }
 export default class Root extends Component<Props> {
   render() {
     return (
       <Provider store={store}>
-        <Router  history={history}>
-            <Routers />
+        <Router history={history}>
+          <Routers />
         </Router>
       </Provider>
     );
   }
 }
-

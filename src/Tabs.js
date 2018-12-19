@@ -1,21 +1,21 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import AppQuery from "./AppQuery";
-import AppD from "./AppD";
+import AppQuery from './AppQuery';
+import AppD from './AppD';
 import AppSeman from './Seman_Test';
-import AppContext from "./AppContext";
-import TableEx from "./AppGridExample";
-import SS from "./SS";
-import Layout1 from "./MotionDemo";
+import AppContext from './AppContext';
+import TableEx from './AppGridExample';
+import SS from './SS';
+import Layout1 from './MotionDemo';
 
-class App extends React.Component{
+class App extends React.Component {
   render() {
     return (
       <Tabs>
         <TabList>
           <Tab>AceEditor & GridExample</Tab>
           <Tab>Semantic-ui</Tab>
-          <Tab>Motion Examples</Tab> 
+          <Tab>Motion Examples</Tab>
           <Tab>storm diagrams</Tab>
           <Tab>react context</Tab>
           <Tab>Virtual Table Demo</Tab>
@@ -23,7 +23,6 @@ class App extends React.Component{
         </TabList>
         <TabPanel>
           <AppQuery />
-          
         </TabPanel>
         <TabPanel>
           <AppSeman />

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import {A} from './Elem';
+import { A } from './Elem';
 import styled from 'styled-components';
 const Span = styled.span`
-            margin: 0 0.2em;
+  margin: 0 0.2em;
 `;
 const Trans = styled.div`
-            text-align: center;
-            max-width: 500px;
-            margin: 0 auto 1em;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto 1em;
 `;
 export default class TranLinks extends Component {
   render() {

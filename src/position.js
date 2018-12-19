@@ -19,7 +19,7 @@ export default class position extends Component {
   position: static;
 }`}</Highlight>
         </figure>
-        <div id="static" style={{position: 'static'}}>
+        <div id="static" style={{ position: 'static' }}>
           <p className="content" style={{ marginTop: '22px' }}>
             <code>static</code> is the default value. An element with{' '}
             <code>position: static;</code> is not positioned in any special way.
@@ -41,7 +41,7 @@ export default class position extends Component {
   width: 500px;
 }`}</Highlight>
         </figure>
-        <Elem id="relative1" style={{position: 'relative'}}>
+        <Elem id="relative1" style={{ position: 'relative' }}>
           <p style={{ marginTop: '22px' }}>
             <code>relative</code> behaves the same as <code>static</code> unless
             you add some extra properties.
@@ -107,7 +107,10 @@ export default class position extends Component {
         </p>
         <p className="content">
           Mobile browsers have surprisingly shaky support for fixed.{' '}
-          <a href="http://bradfrostweb.com/blog/mobile/fixed-position/">Learn more about the situation here</a>.
+          <a href="http://bradfrostweb.com/blog/mobile/fixed-position/">
+            Learn more about the situation here
+          </a>
+          .
         </p>
         <h2 className="content">absolute</h2>
         <p className="content">

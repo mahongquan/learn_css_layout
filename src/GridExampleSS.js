@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import cn from 'classnames';
-import { Grid,AutoSizer, } from 'react-virtualized';
+import { Grid, AutoSizer } from 'react-virtualized';
 export default class GridExample extends React.PureComponent {
   static contextTypes = {
     list: PropTypes.instanceOf(Object).isRequired,
@@ -45,38 +45,38 @@ export default class GridExample extends React.PureComponent {
     } = this.state;
 
     return (
-        <AutoSizer>
-          {({width,height}) => (
-            <Grid
-              cellRenderer={this._cellRenderer}
-              className={"BodyGrid"}
-              columnWidth={this._getColumnWidth}
-              columnCount={3}
-              height={height}
-              noContentRenderer={this._noContentRenderer}
-              overscanColumnCount={overscanColumnCount}
-              overscanRowCount={overscanRowCount}
-              rowHeight={useDynamicRowHeight ? this._getRowHeight : rowHeight}
-              rowCount={this.context.list.size}
-              scrollToColumn={scrollToColumn}
-              scrollToRow={scrollToRow}
-              width={width}
-              height={height}
-            />
-          )}
-        </AutoSizer>
+      <AutoSizer>
+        {({ width, height }) => (
+          <Grid
+            cellRenderer={this._cellRenderer}
+            className={'BodyGrid'}
+            columnWidth={this._getColumnWidth}
+            columnCount={3}
+            height={height}
+            noContentRenderer={this._noContentRenderer}
+            overscanColumnCount={overscanColumnCount}
+            overscanRowCount={overscanRowCount}
+            rowHeight={useDynamicRowHeight ? this._getRowHeight : rowHeight}
+            rowCount={this.context.list.size}
+            scrollToColumn={scrollToColumn}
+            scrollToRow={scrollToRow}
+            width={width}
+            height={height}
+          />
+        )}
+      </AutoSizer>
     );
   }
 
-  _cellRenderer({columnIndex, key, rowIndex, style}) {
+  _cellRenderer({ columnIndex, key, rowIndex, style }) {
     // if (columnIndex === 0) {
     //   return this._renderLeftSideCell({columnIndex, key, rowIndex, style});
     // } else {
-      return this._renderBodyCell({columnIndex, key, rowIndex, style});
+    return this._renderBodyCell({ columnIndex, key, rowIndex, style });
     // }
   }
 
-  _getColumnWidth({index}) {
+  _getColumnWidth({ index }) {
     switch (index) {
       case 0:
         return 50;
@@ -90,29 +90,29 @@ export default class GridExample extends React.PureComponent {
   }
 
   _getDatum(index) {
-    const {list} = this.context;
+    const { list } = this.context;
 
     return list.get(index % list.length);
   }
 
   _getRowClassName(row) {
-    return row % 2 === 0 ? "evenRow" : "oddRow";
+    return row % 2 === 0 ? 'evenRow' : 'oddRow';
   }
 
-  _getRowHeight({index}) {
+  _getRowHeight({ index }) {
     return this._getDatum(index).size;
   }
 
   _noContentRenderer() {
-    return <div className={"noCells"}>No cells</div>;
+    return <div className={'noCells'}>No cells</div>;
   }
 
-  _renderBodyCell({columnIndex, key, rowIndex, style}) {
+  _renderBodyCell({ columnIndex, key, rowIndex, style }) {
     //const rowClass = this._getRowClassName(rowIndex);
     //const datum = this._getDatum(rowIndex);
 
     let content;
-    const datum=this.context.list.get(rowIndex);
+    const datum = this.context.list.get(rowIndex);
     // console.log(datum)
     // console.log(columnIndex);
 
@@ -127,12 +127,13 @@ export default class GridExample extends React.PureComponent {
         content = datum.random;
         break;
       default:
-          content="";
+        content = '';
         break;
     }
 
-    const classNames = cn("rowClass", "cell", {
-      "centeredCell": columnIndex > 2,"headerCell": rowIndex ===0
+    const classNames = cn('rowClass', 'cell', {
+      centeredCell: columnIndex > 2,
+      headerCell: rowIndex === 0,
     });
     // console.log(rowClass);
     // console.log(styles.cell);
@@ -151,7 +152,9 @@ export default class GridExample extends React.PureComponent {
     // transition: background 0.1s ease;
 
     return (
-      <span className={classNames} style={style} key={key}>{content}</span>
+      <span className={classNames} style={style} key={key}>
+        {content}
+      </span>
     );
     // return (
     //   <Label basic key={key} >
@@ -160,10 +163,10 @@ export default class GridExample extends React.PureComponent {
     // );
   }
 
-  _renderLeftSideCell({key, rowIndex, style}) {
+  _renderLeftSideCell({ key, rowIndex, style }) {
     const datum = this._getDatum(rowIndex);
 
-    const classNames = cn("cell", "letterCell");
+    const classNames = cn('cell', 'letterCell');
 
     // Don't modify styles.
     // These are frozen by React now (as of 16.0.0).
@@ -173,7 +176,7 @@ export default class GridExample extends React.PureComponent {
       backgroundColor: datum.color,
     };
     console.log(datum);
-    
+
     return (
       <div className={classNames} key={key} style={style}>
         {datum.name.charAt(0)}
@@ -190,40 +193,40 @@ export default class GridExample extends React.PureComponent {
   _onColumnCountChange(event) {
     const columnCount = parseInt(event.target.value, 10) || 0;
 
-    this.setState({columnCount});
+    this.setState({ columnCount });
   }
 
   _onRowCountChange(event) {
     const rowCount = parseInt(event.target.value, 10) || 0;
 
-    this.setState({rowCount});
+    this.setState({ rowCount });
   }
 
   _onScrollToColumnChange(event) {
-    const {columnCount} = this.state;
+    const { columnCount } = this.state;
     let scrollToColumn = Math.min(
       columnCount - 1,
-      parseInt(event.target.value, 10),
+      parseInt(event.target.value, 10)
     );
 
     if (isNaN(scrollToColumn)) {
       scrollToColumn = undefined;
     }
 
-    this.setState({scrollToColumn});
+    this.setState({ scrollToColumn });
   }
 
   _onScrollToRowChange(event) {
-    const {rowCount} = this.state;
+    const { rowCount } = this.state;
     let scrollToRow = Math.min(rowCount - 1, parseInt(event.target.value, 10));
 
     if (isNaN(scrollToRow)) {
       scrollToRow = undefined;
     }
 
-    this.setState({scrollToRow});
+    this.setState({ scrollToRow });
   }
 }
 GridExample.contextTypes = {
-  list: PropTypes.instanceOf(Object)
+  list: PropTypes.instanceOf(Object),
 };

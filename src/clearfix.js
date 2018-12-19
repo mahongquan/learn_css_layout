@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Highlight from 'react-highlight';
-import Elem,{A} from './Elem';
+import Elem, { A } from './Elem';
 export default class clearfix extends Component {
   render() {
     return (
@@ -27,40 +27,40 @@ export default class clearfix extends Component {
         </figure>
         <div className="content">
           <Elem>
-            <Elem tag="nav" style={{float:"left"}} color="red" >
-            <ul>
-              <li>
-                <A href="percent.html">Home</A>
-              </li>
-              <li>
-                <A href="percent.html">Taco Menu</A>
-              </li>
-              <li>
-                <A href="percent.html">Draft List</A>
-              </li>
-              <li>
-                <A href="percent.html">Hours</A>
-              </li>
-              <li>
-                <A href="percent.html">Directions</A>
-              </li>
-              <li>
-                <A href="percent.html">Contact</A>
-              </li>
-              <li>
-                <A href="percent.html">Draft List</A>
-              </li>
-              <li>
-                <A href="percent.html">Hours</A>
-              </li>
-              <li>
-                <A href="percent.html">Directions</A>
-              </li>
-              <li>
-                <A href="percent.html">Contact</A>
-              </li>
-            </ul>
-          </Elem>
+            <Elem tag="nav" style={{ float: 'left' }} color="red">
+              <ul>
+                <li>
+                  <A href="percent.html">Home</A>
+                </li>
+                <li>
+                  <A href="percent.html">Taco Menu</A>
+                </li>
+                <li>
+                  <A href="percent.html">Draft List</A>
+                </li>
+                <li>
+                  <A href="percent.html">Hours</A>
+                </li>
+                <li>
+                  <A href="percent.html">Directions</A>
+                </li>
+                <li>
+                  <A href="percent.html">Contact</A>
+                </li>
+                <li>
+                  <A href="percent.html">Draft List</A>
+                </li>
+                <li>
+                  <A href="percent.html">Hours</A>
+                </li>
+                <li>
+                  <A href="percent.html">Directions</A>
+                </li>
+                <li>
+                  <A href="percent.html">Contact</A>
+                </li>
+              </ul>
+            </Elem>
             <img alt="ilta" src="./images/ilta.png" />
             <p>
               Uh oh... this image is taller than the element containing it, and
@@ -86,52 +86,52 @@ export default class clearfix extends Component {
         <p className="content">Now let's see what happens:</p>
         <div className="content">
           <Elem style={{ overflow: 'auto' }}>
-            <Elem tag="nav" style={{float:"left"}} color="red" >
-            <ul>
-              <li>
-                <A href="percent.html">Home</A>
-              </li>
-              <li>
-                <A href="percent.html">Taco Menu</A>
-              </li>
-              <li>
-                <A href="percent.html">Draft List</A>
-              </li>
-              <li>
-                <A href="percent.html">Hours</A>
-              </li>
-              <li>
-                <A href="percent.html">Directions</A>
-              </li>
-              <li>
-                <A href="percent.html">Contact</A>
-              </li>
-              <li>
-                <A href="percent.html">Draft List</A>
-              </li>
-              <li>
-                <A href="percent.html">Hours</A>
-              </li>
-              <li>
-                <A href="percent.html">Directions</A>
-              </li>
-              <li>
-                <A href="percent.html">Contact</A>
-              </li>
-              <li>
-                <A href="percent.html">Draft List</A>
-              </li>
-              <li>
-                <A href="percent.html">Hours</A>
-              </li>
-              <li>
-                <A href="percent.html">Directions</A>
-              </li>
-              <li>
-                <A href="percent.html">Contact</A>
-              </li>
-            </ul>
-          </Elem>
+            <Elem tag="nav" style={{ float: 'left' }} color="red">
+              <ul>
+                <li>
+                  <A href="percent.html">Home</A>
+                </li>
+                <li>
+                  <A href="percent.html">Taco Menu</A>
+                </li>
+                <li>
+                  <A href="percent.html">Draft List</A>
+                </li>
+                <li>
+                  <A href="percent.html">Hours</A>
+                </li>
+                <li>
+                  <A href="percent.html">Directions</A>
+                </li>
+                <li>
+                  <A href="percent.html">Contact</A>
+                </li>
+                <li>
+                  <A href="percent.html">Draft List</A>
+                </li>
+                <li>
+                  <A href="percent.html">Hours</A>
+                </li>
+                <li>
+                  <A href="percent.html">Directions</A>
+                </li>
+                <li>
+                  <A href="percent.html">Contact</A>
+                </li>
+                <li>
+                  <A href="percent.html">Draft List</A>
+                </li>
+                <li>
+                  <A href="percent.html">Hours</A>
+                </li>
+                <li>
+                  <A href="percent.html">Directions</A>
+                </li>
+                <li>
+                  <A href="percent.html">Contact</A>
+                </li>
+              </ul>
+            </Elem>
             <img alt="ilta" src="./images/ilta.png" />
             <p>Much better!</p>
           </Elem>
@@ -150,10 +150,12 @@ export default class clearfix extends Component {
         </figure>
         <p className="content">
           There are exotic browsers that may require extra attention.{' '}
-          <a href="http://stackoverflow.com/questions/211383/which-method-of-clearfix-is-best">The world of clearfixing is pretty scary</a>, but this
-          simple solution will work for the vast majority of browsers today.
+          <a href="http://stackoverflow.com/questions/211383/which-method-of-clearfix-is-best">
+            The world of clearfixing is pretty scary
+          </a>
+          , but this simple solution will work for the vast majority of browsers
+          today.
         </p>
-
       </React.Fragment>
     );
   }

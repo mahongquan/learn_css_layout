@@ -86,7 +86,12 @@ section {
               nav to fix it, because the right column wouldn&apos;t respect it.
             </p>
           </Elem>
-          <Elem tag="section" green className="ipsum" style={{ marginLeft: '25%' }}>
+          <Elem
+            tag="section"
+            green
+            className="ipsum"
+            style={{ marginLeft: '25%' }}
+          >
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
               imperdiet, nulla et dictum interdum, nisi lorem egestas odio,
@@ -103,7 +108,6 @@ section {
             </p>
           </Elem>
         </Elem>
-  
       </React.Fragment>
     );
   }

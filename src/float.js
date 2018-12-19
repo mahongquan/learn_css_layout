@@ -35,7 +35,6 @@ export default class float extends Component {
           non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo
           purus. Mauris quis diam velit.
         </p>
-
       </React.Fragment>
     );
   }

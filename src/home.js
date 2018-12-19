@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import TranLinks from './TranLinks';
-import {About} from './Elem';
+import { About } from './Elem';
 
 export default class index extends Component {
   render() {
     return (
       <React.Fragment>
-        <About >
+        <About>
           <p>
             This site teaches the CSS fundamentals that are used in any
             website&apos;s layout.
@@ -21,7 +21,7 @@ export default class index extends Component {
             project.
           </p>
         </About>
-      <TranLinks />
+        <TranLinks />
       </React.Fragment>
     );
   }

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Highlight from 'react-highlight';
-import Elem ,{Tag} from './Elem';
+import Elem, { Tag } from './Elem';
 import AceEditor from 'react-ace';
 import 'brace/mode/css';
 import 'brace/theme/github';
-const css=`.box {
+const css = `.box {
   float: left;
   width: 200px;
   height: 100px;
@@ -22,17 +22,17 @@ const css=`.box {
   /*clear:right;*/
 }`;
 export default class clear extends Component<Props> {
-    constructor(){
-      super();
-      this.state= {
-        css:css,
-      }
-    }
-    cssChange=(newValue)=>{
-        this.setState({
-            css:newValue
-        });
-    }
+  constructor() {
+    super();
+    this.state = {
+      css: css,
+    };
+  }
+  cssChange = newValue => {
+    this.setState({
+      css: newValue,
+    });
+  };
 
   render() {
     return (
@@ -54,30 +54,30 @@ export default class clear extends Component<Props> {
   margin: 1em;
 }`}</Highlight>
         </figure>
-      <Tag className="content" css={this.state.css}>
-        <div className="content">
-          <Elem className="box">
-            <p>I feel like I&apos;m floating!</p>
-          </Elem>
-          <Elem tag="section" green>
-            <p>
-              In this case, the <code>section</code> element is actually after
-              the <code>div</code>. However, since the <code>div</code> is
-              floated to the left, this is what happens: the text in the{' '}
-              <code>section</code> is floated around the <code>div</code> and
-              the <code>section</code> surrounds the whole thing. What if we
-              wanted the <code>section</code> to actually appear after the
-              floated element?
-            </p>
-          </Elem>
-        </div>
-        <figure className="highlight">
-          <Highlight>{`.after-box {
+        <Tag className="content" css={this.state.css}>
+          <div className="content">
+            <Elem className="box">
+              <p>I feel like I&apos;m floating!</p>
+            </Elem>
+            <Elem tag="section" green>
+              <p>
+                In this case, the <code>section</code> element is actually after
+                the <code>div</code>. However, since the <code>div</code> is
+                floated to the left, this is what happens: the text in the{' '}
+                <code>section</code> is floated around the <code>div</code> and
+                the <code>section</code> surrounds the whole thing. What if we
+                wanted the <code>section</code> to actually appear after the
+                floated element?
+              </p>
+            </Elem>
+          </div>
+          <figure className="highlight">
+            <Highlight>{`.after-box {
   clear: left;
 }
 `}</Highlight>
-        </figure>
-        <Elem className="box">
+          </figure>
+          <Elem className="box">
             <p>I feel like I&apos;m floating!</p>
           </Elem>
           <Elem tag="section" green className="after-box">
@@ -90,34 +90,37 @@ export default class clear extends Component<Props> {
           </Elem>
           <h2 className="content">both</h2>
           <p>
-              Try clear{' '}
-              <code>right</code> and <code>both</code>.
-            </p>
-        
+            Try clear <code>right</code> and <code>both</code>.
+          </p>
+
           <Elem className="box">
             <p>I&apos;m floating left!</p>
           </Elem>
           <Elem className="box2">
             <p>I&apos;m floating right!</p>
           </Elem>
-          <p>I'm normal paragraph  after float.</p>
+          <p>I'm normal paragraph after float.</p>
           <Elem tag="section" green className="after-box">
-            <p>I'm box after float.            
-            </p>
+            <p>I'm box after float.</p>
           </Elem>
         </Tag>
-{
-    // AceEditor can't use inside Tag, why?
-}
-<AceEditor  style={{  margin:"auto",maxWidth:"600px",height:"250px"
-                                ,border:"solid gray 5px"
-                              }}
-                    mode="css"
-                    theme="github"
-                    value={this.state.css}
-                    onChange={this.cssChange}
-                    name="clear_editor"
-                    editorProps={{$blockScrolling: true}} />
+        {
+          // AceEditor can't use inside Tag, why?
+        }
+        <AceEditor
+          style={{
+            margin: 'auto',
+            maxWidth: '600px',
+            height: '250px',
+            border: 'solid gray 5px',
+          }}
+          mode="css"
+          theme="github"
+          value={this.state.css}
+          onChange={this.cssChange}
+          name="clear_editor"
+          editorProps={{ $blockScrolling: true }}
+        />
       </React.Fragment>
     );
   }

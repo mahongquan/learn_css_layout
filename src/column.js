@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Highlight from 'react-highlight';
-import Elem,{Div} from './Elem';
-const css_str=`
+import Elem, { Div } from './Elem';
+const css_str = `
           .three-column {
             padding: 1em;
             -moz-column-count: 3;
@@ -53,12 +53,16 @@ export default class column extends Component {
         </Div>
         <p className="content">
           CSS columns are very new, so you need to use the prefixes, and it
-          won&apos;t work <a href="http://caniuse.com/#search=column">through IE9 or in Opera Mini</a>. There
-          are some more column-related properties, so{' '}
-          <a href="http://www.quirksmode.org/css/multicolumn.html">click here to read more</a>. Otherwise, off to the next
-          topic.
+          won&apos;t work{' '}
+          <a href="http://caniuse.com/#search=column">
+            through IE9 or in Opera Mini
+          </a>
+          . There are some more column-related properties, so{' '}
+          <a href="http://www.quirksmode.org/css/multicolumn.html">
+            click here to read more
+          </a>
+          . Otherwise, off to the next topic.
         </p>
-
       </React.Fragment>
     );
   }

@@ -7,7 +7,7 @@ import {
   ContentBoxHeader,
   ContentBoxParagraph,
 } from '../demo/ContentBox';
-import {LabeledInput, InputRow} from '../demo/LabeledInput';
+import { LabeledInput, InputRow } from '../demo/LabeledInput';
 import AutoSizer from '../AutoSizer';
 import Column from './Column';
 import Table from './Table';
@@ -25,7 +25,7 @@ export default class TableExample extends React.PureComponent {
 
     const sortBy = 'index';
     const sortDirection = SortDirection.ASC;
-    const sortedList = this._sortList({sortBy, sortDirection});
+    const sortedList = this._sortList({ sortBy, sortDirection });
 
     this.state = {
       disableHeader: false,
@@ -67,7 +67,7 @@ export default class TableExample extends React.PureComponent {
       useDynamicRowHeight,
     } = this.state;
 
-    const rowGetter = ({index}) => this._getDatum(sortedList, index);
+    const rowGetter = ({ index }) => this._getDatum(sortedList, index);
 
     return (
       <ContentBox>
@@ -106,7 +106,7 @@ export default class TableExample extends React.PureComponent {
               className={styles.checkbox}
               type="checkbox"
               onChange={event =>
-                this.setState({hideIndexRow: event.target.checked})
+                this.setState({ hideIndexRow: event.target.checked })
               }
             />
             Hide index?
@@ -119,7 +119,7 @@ export default class TableExample extends React.PureComponent {
               className={styles.checkbox}
               type="checkbox"
               onChange={event =>
-                this.setState({disableHeader: event.target.checked})
+                this.setState({ disableHeader: event.target.checked })
               }
             />
             Hide header?
@@ -144,7 +144,7 @@ export default class TableExample extends React.PureComponent {
             label="List height"
             name="height"
             onChange={event =>
-              this.setState({height: parseInt(event.target.value, 10) || 1})
+              this.setState({ height: parseInt(event.target.value, 10) || 1 })
             }
             value={height}
           />
@@ -183,7 +183,7 @@ export default class TableExample extends React.PureComponent {
 
         <div>
           <AutoSizer disableHeight>
-            {({width}) => (
+            {({ width }) => (
               <Table
                 ref="Table"
                 disableHeader={disableHeader}
@@ -200,11 +200,12 @@ export default class TableExample extends React.PureComponent {
                 sort={this._sort}
                 sortBy={sortBy}
                 sortDirection={sortDirection}
-                width={width}>
+                width={width}
+              >
                 {!hideIndexRow && (
                   <Column
                     label="Index"
-                    cellDataGetter={({rowData}) => rowData.index}
+                    cellDataGetter={({ rowData }) => rowData.index}
                     dataKey="index"
                     disableSort={!this._isSortEnabled()}
                     width={60}
@@ -222,7 +223,7 @@ export default class TableExample extends React.PureComponent {
                   label="The description label is really long so that it will be truncated"
                   dataKey="random"
                   className={styles.exampleColumn}
-                  cellRenderer={({cellData}) => cellData}
+                  cellRenderer={({ cellData }) => cellData}
                   flexGrow={1}
                 />
               </Table>
@@ -237,13 +238,13 @@ export default class TableExample extends React.PureComponent {
     return list.get(index % list.size);
   }
 
-  _getRowHeight({index}) {
-    const {list} = this.context;
+  _getRowHeight({ index }) {
+    const { list } = this.context;
 
     return this._getDatum(list, index).size;
   }
 
-  _headerRenderer({dataKey, sortBy, sortDirection}) {
+  _headerRenderer({ dataKey, sortBy, sortDirection }) {
     return (
       <div>
         Full Name
@@ -253,8 +254,8 @@ export default class TableExample extends React.PureComponent {
   }
 
   _isSortEnabled() {
-    const {list} = this.context;
-    const {rowCount} = this.state;
+    const { list } = this.context;
+    const { rowCount } = this.state;
 
     return rowCount <= list.size;
   }
@@ -266,24 +267,24 @@ export default class TableExample extends React.PureComponent {
   _onRowCountChange(event) {
     const rowCount = parseInt(event.target.value, 10) || 0;
 
-    this.setState({rowCount});
+    this.setState({ rowCount });
   }
 
   _onScrollToRowChange(event) {
-    const {rowCount} = this.state;
+    const { rowCount } = this.state;
     let scrollToIndex = Math.min(
       rowCount - 1,
-      parseInt(event.target.value, 10),
+      parseInt(event.target.value, 10)
     );
 
     if (isNaN(scrollToIndex)) {
       scrollToIndex = undefined;
     }
 
-    this.setState({scrollToIndex});
+    this.setState({ scrollToIndex });
   }
 
-  _rowClassName({index}) {
+  _rowClassName({ index }) {
     if (index < 0) {
       return styles.headerRow;
     } else {
@@ -291,19 +292,19 @@ export default class TableExample extends React.PureComponent {
     }
   }
 
-  _sort({sortBy, sortDirection}) {
-    const sortedList = this._sortList({sortBy, sortDirection});
+  _sort({ sortBy, sortDirection }) {
+    const sortedList = this._sortList({ sortBy, sortDirection });
 
-    this.setState({sortBy, sortDirection, sortedList});
+    this.setState({ sortBy, sortDirection, sortedList });
   }
 
-  _sortList({sortBy, sortDirection}) {
-    const {list} = this.context;
+  _sortList({ sortBy, sortDirection }) {
+    const { list } = this.context;
 
     return list
       .sortBy(item => item[sortBy])
-      .update(
-        list => (sortDirection === SortDirection.DESC ? list.reverse() : list),
+      .update(list =>
+        sortDirection === SortDirection.DESC ? list.reverse() : list
       );
   }
 

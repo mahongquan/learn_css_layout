@@ -8,12 +8,12 @@ import TableExample from './GridExampleQuery';
 // import {generateRandomList} from './demo/utils';
 
 // const list = Immutable.List(generateRandomList());
-class App extends React.Component{
-  state={isScrollingCustomElement:false,loaded:false}
+class App extends React.Component {
+  state = { isScrollingCustomElement: false, loaded: false };
   componentDidMount() {
     this.loadData();
   }
-  loadData=()=>{
+  loadData = () => {
     // const {sqlectron} = window.myremote;
     // var serverConfig={client:sqlectron.db.CLIENTS[3].key}
     // var db=sqlectron.db.createServer(serverConfig);
@@ -26,21 +26,18 @@ class App extends React.Component{
     //     this.setState({loaded:true});
     //   });
     // });
-  }
+  };
   // getChildContext() {
   //   return {list:list};//[["a"],["b"],["c"]]};
   // }
   render() {
     let table;
-    if(this.state.loaded){
-      table=<TableExample list={this.list[0]} size={{width:1000,height:600}} />;
+    if (this.state.loaded) {
+      table = (
+        <TableExample list={this.list[0]} size={{ width: 1000, height: 600 }} />
+      );
     }
-    return (
-      <div>
-           {table}
-      </div>
-
-    );
+    return <div>{table}</div>;
   }
 }
 export default App;

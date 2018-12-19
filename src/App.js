@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import Elem,{Tag,NavWrapper,LinkPrev,LinkStyle,A} from './Elem';
+import Elem, { Tag, NavWrapper, LinkPrev, LinkStyle, A } from './Elem';
 import styled from 'styled-components';
 import Ace from './Ace';
-const menu_style=`
+const menu_style = `
 background-color: whiteSmoke;
 text-align: center;
 >a{
@@ -38,7 +38,7 @@ text-align: center;
   transform: rotate(-35deg) translate(-92px, 22px); /* Firefox 16+, Opera 12.50+ */
 }
 `;
-const logo_style=`
+const logo_style = `
 text-align: center;
 background-color: #ededed;
 padding: 1em 0;
@@ -68,81 +68,106 @@ padding: 1em 0;
   }
 }
 `;
-const pages=["index.html","no-layout.html","display.html","margin-auto.html","max-width.html","box-model.html","box-sizing.html","position.html","position-example.html","float.html","clear.html","clearfix.html","float-layout.html","percent.html","media-queries.html","inline-block.html","inline-block-layout.html","column.html","flexbox.html","frameworks.html","about.html"]
-class Root extends Component{
-      constructor(){
-      super();
-      this.state= {
-        style_box:menu_style,
-        logo_style:logo_style,
+const pages = [
+  'index.html',
+  'no-layout.html',
+  'display.html',
+  'margin-auto.html',
+  'max-width.html',
+  'box-model.html',
+  'box-sizing.html',
+  'position.html',
+  'position-example.html',
+  'float.html',
+  'clear.html',
+  'clearfix.html',
+  'float-layout.html',
+  'percent.html',
+  'media-queries.html',
+  'inline-block.html',
+  'inline-block-layout.html',
+  'column.html',
+  'flexbox.html',
+  'frameworks.html',
+  'about.html',
+];
+class Root extends Component {
+  constructor() {
+    super();
+    this.state = {
+      style_box: menu_style,
+      logo_style: logo_style,
+    };
+  }
+  onChange = newValue => {
+    this.setState({
+      style_box: newValue,
+    });
+  };
+  onChange_logo = newValue => {
+    this.setState({
+      logo_style: newValue,
+    });
+  };
+  getPrevNext = () => {
+    let prev, next, at;
+    for (var i = 0; i < pages.length; i++) {
+      if (this.props.history.location.pathname.indexOf(pages[i]) >= 0) {
+        prev = i - 1;
+        next = i + 1;
+        if (prev >= 0) {
+          prev = pages[prev];
+        } else {
+          prev = undefined;
+        }
+        if (next < pages.length) {
+          next = pages[next];
+        } else {
+          next = undefined;
+        }
+        at = i;
+        break;
       }
     }
-    onChange=(newValue)=>{
-        this.setState({
-            style_box:newValue
-        });
-    }
-    onChange_logo=(newValue)=>{
-        this.setState({
-            logo_style:newValue
-        });
-    }
-  getPrevNext=()=>{
-    let prev,next,at;
-    for(var i=0;i<pages.length;i++){
-       if(this.props.history.location.pathname.indexOf(pages[i])>=0){
-         prev=i-1;
-         next=i+1;
-         if(prev>=0){
-            prev=pages[prev];
-         }
-         else{
-            prev=undefined;
-         }
-         if(next<pages.length){
-            next=pages[next];
-         }
-         else{
-            next=undefined;
-         }
-         at=i;
-         break;
-       }
-    }
-    return [prev,next,at]
-  }
+    return [prev, next, at];
+  };
   render() {
     // console.log(this.props);
-    let visible_home,visible_toc,disable_home;
-      if(this.props.history.location.pathname.indexOf("index.html")>=0){
-        visible_home="hidden";
-        disable_home="";
-      }
-      else{
-        visible_home="visible";
-        disable_home="index.html";
-      }
-      if(this.props.history.location.pathname.indexOf("toc.html")>=0){
-        visible_toc="hidden"
-      }
-      else{
-        visible_toc="visible" 
-      }
-      var arr1=this.getPrevNext();
-      let prev=arr1[0];
-      let next=arr1[1];
-      let i=arr1[2]+1;
-      if(prev){
-        prev=<LinkPrev to={prev}>Previous</LinkPrev>
-      }
-      if(next){
-        next=<LinkPrev to={next}>Next</LinkPrev>
-      }
-      let nav;
-      if(prev || next){
-        nav=<React.Fragment><NavWrapper>{prev}{next}</NavWrapper>
-        <footer>{i} / 21</footer></React.Fragment>
-      }
+    let visible_home, visible_toc, disable_home;
+    if (this.props.history.location.pathname.indexOf('index.html') >= 0) {
+      visible_home = 'hidden';
+      disable_home = '';
+    } else {
+      visible_home = 'visible';
+      disable_home = 'index.html';
+    }
+    if (this.props.history.location.pathname.indexOf('toc.html') >= 0) {
+      visible_toc = 'hidden';
+    } else {
+      visible_toc = 'visible';
+    }
+    var arr1 = this.getPrevNext();
+    let prev = arr1[0];
+    let next = arr1[1];
+    let i = arr1[2] + 1;
+    if (prev) {
+      prev = <LinkPrev to={prev}>Previous</LinkPrev>;
+    }
+    if (next) {
+      next = <LinkPrev to={next}>Next</LinkPrev>;
+    }
+    let nav;
+    if (prev || next) {
+      nav = (
+        <React.Fragment>
+          <NavWrapper>
+            {prev}
+            {next}
+          </NavWrapper>
+          <footer>{i} / 21</footer>
+        </React.Fragment>
+      );
+    }
     return (
       <div>
         <style jsx="true">{`
@@ -152,7 +177,7 @@ class Root extends Component{
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             -webkit-font-variant-ligatures: none;
-                    font-variant-ligatures: none;
+            font-variant-ligatures: none;
           }
           body {
             margin: 0;
@@ -169,23 +194,23 @@ class Root extends Component{
             -moz-box-sizing: border-box;
             box-sizing: border-box;
           }
-a:link {
-  color: #D64078;
-  text-decoration: none;
-}
+          a:link {
+            color: #d64078;
+            text-decoration: none;
+          }
 
-a:visited {
-  color: #D64078;
-}
+          a:visited {
+            color: #d64078;
+          }
 
-a:hover {
-  text-decoration: underline;
-}
+          a:hover {
+            text-decoration: underline;
+          }
 
-a:active {
-  background-color: black;
-  color: white;
-}
+          a:active {
+            background-color: black;
+            color: white;
+          }
           img {
             max-width: 100%;
           }
@@ -248,22 +273,23 @@ a:active {
           }
         `}</style>
         <Tag css={this.state.logo_style} id="logo">
-          <Link to={disable_home} >
+          <Link to={disable_home}>
             <img src="./images/logo.png" alt="logo" />
             <span>Learn CSS Layout</span>
           </Link>
         </Tag>
         <Tag css={this.state.style_box}>
-          <Link style={{  marginRight: "1em",visibility:visible_home}} to="/">
+          <Link style={{ marginRight: '1em', visibility: visible_home }} to="/">
             Home
           </Link>
-          <Link style={{  visibility:visible_toc}} to="/toc.html">Table of Contents</Link>
+          <Link style={{ visibility: visible_toc }} to="/toc.html">
+            Table of Contents
+          </Link>
         </Tag>
         <div id="container">{this.props.children}</div>
         {nav}
-        <div style={{minHeight:"100px"}} />
-        <Ace css={this.state.logo_style}
-                    cssChange={this.onChange_logo}/>
+        <div style={{ minHeight: '100px' }} />
+        <Ace css={this.state.logo_style} cssChange={this.onChange_logo} />
       </div>
     );
   }

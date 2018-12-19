@@ -15,12 +15,10 @@ import Elem from './Elem';
 // const theme={red:"#D64078",green:"#96C02E",orange:"#FDC72F"};
 
 export default class float_layout extends Component {
-  static defaultProps={theme:{red:"red"}}
+  static defaultProps = { theme: { red: 'red' } };
   render() {
     return (
       <React.Fragment>
-        
-
         <h1 className="content">float layout example</h1>
         <p className="content">
           It&apos;s very common to do entire layouts using <code>float</code>.
@@ -38,8 +36,11 @@ section {
 }`}</Highlight>
         </figure>
         <Elem className="clearfix">
-          <Elem tag="nav" color={this.props.theme.red} style={{ float: "left",
-            width: "200px"}}>
+          <Elem
+            tag="nav"
+            color={this.props.theme.red}
+            style={{ float: 'left', width: '200px' }}
+          >
             <ul>
               <li>
                 <a href="float-layout.html">Home</a>
@@ -61,7 +62,7 @@ section {
               </li>
             </ul>
           </Elem>
-          <Elem tag="section"  style={{marginLeft:"200px"}}>
+          <Elem tag="section" style={{ marginLeft: '200px' }}>
             <p>
               This example works just like the last one. Notice we put a{' '}
               <code>clearfix</code> on the container. It&apos;s not needed in
@@ -69,7 +70,7 @@ section {
               than the non-floated content.
             </p>
           </Elem>
-          <Elem tag="section"  className="ipsum"  style={{marginLeft:"200px"}}>
+          <Elem tag="section" className="ipsum" style={{ marginLeft: '200px' }}>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
               imperdiet, nulla et dictum interdum, nisi lorem egestas odio,
@@ -86,7 +87,14 @@ section {
             </p>
           </Elem>
         </Elem>
-        <span style={{display:"block",height:0,clear:"both",visibility:"hidden"}} />
+        <span
+          style={{
+            display: 'block',
+            height: 0,
+            clear: 'both',
+            visibility: 'hidden',
+          }}
+        />
       </React.Fragment>
     );
   }

@@ -27,11 +27,12 @@ export default class max_width extends Component {
           </p>
           <p>
             By the way, <code>max-width</code> is{' '}
-            <a href="http://caniuse.com/#search=max-width">supported by all major browsers</a> including IE7+ so
-            you shouldn&apos;t be afraid of using it.
+            <a href="http://caniuse.com/#search=max-width">
+              supported by all major browsers
+            </a>{' '}
+            including IE7+ so you shouldn&apos;t be afraid of using it.
           </p>
         </Elem>
-
       </React.Fragment>
     );
   }
