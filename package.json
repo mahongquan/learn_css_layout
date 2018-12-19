@@ -1,5 +1,5 @@
 {
-  "name": "learn css layout",
+  "name": "learn_css_layout",
   "version": "1.0.0",
   "homepage": ".",
   "description": "learn css layout",
@@ -22,7 +22,6 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "~1.8.4",
     "prettier": "1.12.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
@@ -31,6 +30,8 @@
     "react-scripts": "^1.1.4"
   },
   "dependencies": {
+    "brace": "^0.11.1",
+    "react-ace": "^6.2.0",
     "styled-components": "^3.2.6"
   }
 }

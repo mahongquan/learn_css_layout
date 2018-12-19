@@ -34,7 +34,7 @@ class App extends React.Component{
       ,overflow:"auto"
       ,backgroundColor:"#777"
         }}>
-      <ResizableBox  style={{width:"100%",height:this.state.rh}} onResizeStop={(e, data) =>{
+      <ResizableBox style={{width:"100%",height:this.state.rh}} onResizeStop={(e, data) =>{
         let w,h;
         w=data.size.width;
         h=data.size.height;

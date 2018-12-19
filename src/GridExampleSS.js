@@ -46,15 +46,13 @@ export default class GridExample extends React.PureComponent {
 
     return (
         <AutoSizer>
-          {({width,height}) => {
-            console.log(width +","+height);
-            return (
-            <div>
+          {({width,height}) => (
             <Grid
               cellRenderer={this._cellRenderer}
               className={"BodyGrid"}
               columnWidth={this._getColumnWidth}
               columnCount={3}
+              height={height}
               noContentRenderer={this._noContentRenderer}
               overscanColumnCount={overscanColumnCount}
               overscanRowCount={overscanRowCount}
@@ -63,124 +61,9 @@ export default class GridExample extends React.PureComponent {
               scrollToColumn={scrollToColumn}
               scrollToRow={scrollToRow}
               width={width}
-              height={height}>
-            </Grid>
-                          <style jsx="true">{`
-.GridRow {
-  margin-top: 15px;
-  display: flex;
-  flex-direction: row;
-}
-.GridColumn {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-}
-.LeftSideGridContainer {
-  flex: 0 0 75px;
-  z-index: 10;
-}
-
-.LeftSideGrid {
-  overflow: hidden !important;
-}
-.HeaderGrid {
-  width: 100%;
-  overflow: hidden !important;
-}
-.BodyGrid {
-  width: 100%;
-}
-
-.evenRow {
-}
-.oddRow {
-  background-color: rgba(0, 0, 0, .1);
-}
-
-.cell,
-.headerCell,
-.leftCell {
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 .5em;
-}
-.headerCell,
-.leftCell {
-  font-weight: bold;
-}
-
-.LeftSideGridContainer {
-  flex: 0 0 50px;
-}
-
-.BodyGrid {
-  width: 100%;
-  border: 1px solid #e0e0e0;
-}
-
-.evenRow,
-.oddRow {
-  border-bottom: 1px solid #e0e0e0;
-}
-.oddRow {
-  background-color: #fafafa;
-}
-
-.cell,
-.headerCell {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 .5em;
-}
-.cell {
-  border-right: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
-}
-.headerCell {
-  font-weight: bold;
-  border-right: 1px solid #e0e0e0;
-}
-.centeredCell {
-  align-items: center;
-  text-align: center;
-}
-
-.letterCell {
-  font-size: 1.5em;
-  color: #fff;
-  text-align: center;
-}
-
-.noCells {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1em;
-  color: #bdbdbd;
-}                
-                `}
-              </style>
-            </div>
               height={height}
             />
-          )
-            }
-        }
+          )}
         </AutoSizer>
     );
   }
@@ -251,11 +134,6 @@ export default class GridExample extends React.PureComponent {
     const classNames = cn("rowClass", "cell", {
       "centeredCell": columnIndex > 2,"headerCell": rowIndex ===0
     });
-<<<<<<< HEAD
-
-    return (
-      <span  className={classNames} style={{...style,overflow:"hidden"}} key={key}>{content}</span>
-=======
     // console.log(rowClass);
     // console.log(styles.cell);
     // console.log(styles.centeredCell);
@@ -274,7 +152,6 @@ export default class GridExample extends React.PureComponent {
 
     return (
       <span className={classNames} style={style} key={key}>{content}</span>
->>>>>>> 7619665f5e5c67a54d2384645830b8124c25d7d2
     );
     // return (
     //   <Label basic key={key} >

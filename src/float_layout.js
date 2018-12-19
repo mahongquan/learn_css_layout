@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Highlight from 'react-highlight';
 import Elem from './Elem';
-import {withTheme} from 'styled-components';
+// import {withTheme} from 'styled-components';
 // console.log(ThemeProvider);
 
 // class E0 extends Component{
@@ -14,7 +14,8 @@ import {withTheme} from 'styled-components';
 // const E1=withTheme(E0);
 // const theme={red:"#D64078",green:"#96C02E",orange:"#FDC72F"};
 
-class float_layout extends Component {
+export default class float_layout extends Component {
+  static defaultProps={theme:{red:"red"}}
   render() {
     return (
       <React.Fragment>
@@ -90,4 +91,4 @@ section {
     );
   }
 }
-export default  withTheme(float_layout);
+// export default  withTheme(float_layout);

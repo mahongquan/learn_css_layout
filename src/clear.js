@@ -21,7 +21,7 @@ const css=`.box {
   /*clear: left;*/
   /*clear:right;*/
 }`;
-export default class clear extends Component {
+export default class clear extends Component<Props> {
     constructor(){
       super();
       this.state= {

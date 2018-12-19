@@ -8,10 +8,25 @@ import {
   LiveError,
   LivePreview
 } from 'react-live'
+const jsx=`
+<div style={{
+  justifyContent: "flex-start",
+  alignItems: "baseline",
+  display:"flex",
+  flexDirection:"row",
+  width:"300px",
+  height:"300px"
+}}>
+    <div style={{border:"solid green 3px"}}>a</div>
+    <div style={{border:"solid green 3px"}}>bbbb</div>
+    <div style={{border:"solid green 3px"}}>dddddddc</div>
+</div>
+`;
 const css=`
 #main{
   margin:auto;
-  background-color:#eee;
+  border:solid blue 2px;
+  background-color:#aaa;
   justify-content: space-between;
   flex-wrap:wrap;
   align-items: stretch;
@@ -32,6 +47,7 @@ const css=`
   background-color:#ccc;
 }
 #content{
+  border:solid green 3px;
   background-color:#aaa;
   justify-content: space-around;
   flex-wrap:wrap;
@@ -49,7 +65,15 @@ const css=`
   background-color:#888;
   margin:0 0 0 0;
   flex:1;
+ width:200px;
+ border:solid orange 2px;
 }
+#body{
+    border:solid orange 2px;
+    flex:1;
+    
+}
+
 `;
 const jsx=`<div id="main" >
  <div id="header">
@@ -57,7 +81,10 @@ const jsx=`<div id="main" >
  </div>
  <div id="content" >
    <div id="sidebar">sitebar</div>      
+<<<<<<< HEAD:src/ReactLiveEdit.js
    <div id="mainbody">body</div>
+   <div id="body">body</div>
+>>>>>>> 7619665f5e5c67a54d2384645830b8124c25d7d2:src/AppEdit.js
  </div>
  <div id="footer" >footer</div>
 </div>
@@ -68,6 +95,11 @@ class Root extends Component<Props> {
       super();
       this.state= {
         jsx:jsx,
+      }
+    }
+    jsxChange=(newValue)=>{
+        this.setState({
+            jsx:newValue,
         css:css,
         displayLE:"none",
       }
@@ -81,6 +113,25 @@ class Root extends Component<Props> {
     // console.log(this.props);
     return (
       <div style={{position:"relative",width:"100vw",height:"100vh",overflow:"hidden"}}>
+      <div>
+      <LiveProvider code={this.state.jsx}>
+  <LiveEditor />
+  <LiveError />
+  <LivePreview />
+</LiveProvider>
+        <AceEditor ref="editor"
+                    style={{   height:"300px"
+                                ,border:"solid gray 5px"
+                              }}
+                    mode="jsx"
+                    theme="github"
+                    value={this.state.jsx}
+                    onChange={this.jsxChange}
+                    name="UNIQUE_ID_OF_DIV"
+                    editorProps={{$blockScrolling: true}} />
+
+        <div style={{minHeight:"100px"}}/>
+      <div style={{position:"relative"}}>
         <Ace css={this.state.css} cssChange={this.cssChange} />
         <LiveProvider code={this.state.jsx}>
           <Tag css={this.state.css}>
