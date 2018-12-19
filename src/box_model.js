@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Highlight from 'react-highlight';
 import Elem from './Elem';
-export default class box_model extends Component<Props> {
+export default class box_model extends Component {
   render() {
     return (
       <React.Fragment>

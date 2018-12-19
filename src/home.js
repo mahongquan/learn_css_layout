@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TranLinks from './TranLinks';
 import {About} from './Elem';
 
-export default class index extends Component<Props> {
+export default class index extends Component {
   render() {
     return (
       <React.Fragment>

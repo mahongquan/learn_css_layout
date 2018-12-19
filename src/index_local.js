@@ -19,43 +19,36 @@ function link(where,module_name) {
 }
 function getWhere(){
   let path=window.require('electron').ipcRenderer.sendSync('getpath');
-  let where;
-  if(path==="."){
-     where=".."; 
-  }
-  else{
-    where="../.."
-  }
-  return where;
+  return path;
 }
-let module_name;
 let where=getWhere();
-let App;
-module_name="./Htmleditor";  
-// module_name="./Tabs";
+console.log(where);
+let module_name="./Home_new";  
+// let module_name="./AppRoutes";  
+// let module_name="./Tabs";
 // module_name="./FlexHelp";
-// module_name="./AppRoutesLayout";  
+// let module_name="./AppRoutesLayout";  
 // module_name="./AppRoutes"; 
-// module_name="./ReactLiveEdit"; 
-//AppRoutesSplit
+// let module_name="./ReactLiveEdit"; 
+// let module_name="./AppRoutesSplit";
+// let module_name="./MotionDemo";
+// let module_name="./MotionDemo2";
+// if(module_name==="./AppRoutesSplit"
+// 	|| module_name==="./AppRoutes" 
+// 	|| module_name==="./AppRoutesLayout")
+// {
+//    link(where,"node_modules/highlight.js/styles/dark.css");
+// }
+// else if (module_name==="./Tabs"){
+//     link(where,"node_modules/react-tabs/style/react-tabs.css");
+//     link(where,"node_modules/storm-react-diagrams/dist/style.min.css");
+//     link(where,"node_modules/react-virtualized/styles.css");
 
-if(module_name==="./AppRoutesSplit" 
-	|| module_name==="./AppRoutes" 
-	|| module_name==="./AppRoutesLayout")
-{
-   link(where,"node_modules/highlight.js/styles/dark.css");
-}
-else if (module_name==="./Tabs"){
-    link(where,"node_modules/react-tabs/style/react-tabs.css");
-    link(where,"node_modules/storm-react-diagrams/dist/style.min.css");
-    link(where,"node_modules/react-virtualized/styles.css");
-
-    link("./","semantic-ui/semantic.css");
-    link("./","demo.css");
-    link("./","react-resizable.css");
-}
+//     link("./","semantic-ui/semantic.css");
+//     link("./","react-resizable.css");
+// }
 
 
-App=require(module_name).default;
+let App=require(module_name).default;
 ReactDOM.render(<App />, document.getElementById('root'));
 

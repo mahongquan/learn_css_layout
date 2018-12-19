@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Highlight from 'react-highlight';
 import Elem,{A} from './Elem';
-export default class clearfix extends Component<Props> {
+export default class clearfix extends Component {
   render() {
     return (
       <React.Fragment>

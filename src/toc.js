@@ -54,7 +54,7 @@ a{
 } 
 `;
 
-export default class toc extends Component<Props> {
+export default class toc extends Component {
       constructor(){
       super();
       this.state= {
@@ -74,31 +74,6 @@ export default class toc extends Component<Props> {
       <React.Fragment>
         <div className="content" style={{position:"relative"}}>
           <h1 className="content">Table of Contents</h1>
-          <div
-              style={{
-                display:"flex",
-                flexDirection:"column",
-                alignItems:"flex-end",
-                position:"absolute",
-                top:0,
-                right:0}}>
-              <button onClick={()=>{
-                if(this.state.displayAce=="none"){
-                  this.setState({displayAce:"block"})
-                }
-                else{
-                  this.setState({displayAce:"none"}) 
-                }
-              }}>edit style</button>
-              <AceEditor ref="editor"
-                      style={{display:this.state.displayAce, width:"350px",height:"250px",border:"solid gray 5px"}}
-                      mode={this.state.mode}
-                      theme="github"
-                      value={this.state.style_box}
-                      onChange={this.onChange}
-                      name="UNIQUE_ID_OF_DIV"
-                      editorProps={{$blockScrolling: true}} />
-          </div>
           <Tag css={this.state.style_box}>      
                   <Link to="no-layout.html">no layout</Link>
                   <Link to="display.html">
@@ -160,6 +135,31 @@ export default class toc extends Component<Props> {
                   <Link to="about.html">about this site</Link>
                 
           </Tag>
+          <div
+              style={{
+                display:"flex",
+                flexDirection:"column",
+                alignItems:"flex-end",
+                position:"absolute",
+                top:0,
+                right:0}}>
+              <button onClick={()=>{
+                if(this.state.displayAce=="none"){
+                  this.setState({displayAce:"block"})
+                }
+                else{
+                  this.setState({displayAce:"none"}) 
+                }
+              }}>edit style</button>
+              <AceEditor ref="editor"
+                      style={{display:this.state.displayAce, width:"350px",height:"250px",border:"solid gray 5px"}}
+                      mode={this.state.mode}
+                      theme="github"
+                      value={this.state.style_box}
+                      onChange={this.onChange}
+                      name="UNIQUE_ID_OF_DIV"
+                      editorProps={{$blockScrolling: true}} />
+          </div>
         </div>
       </React.Fragment>
     );

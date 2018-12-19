@@ -28,13 +28,13 @@ class App extends React.Component{
   render() {
 
     return (
-      <div style={{height:"700px"
+      <div style={{height:"90vh"
       ,display:"flex"
       ,flexDirection:"column"
       ,overflow:"auto"
       ,backgroundColor:"#777"
         }}>
-      <ResizableBox style={{width:"100%",height:this.state.rh}} onResizeStop={(e, data) =>{
+      <ResizableBox  style={{width:"100%",height:this.state.rh}} onResizeStop={(e, data) =>{
         let w,h;
         w=data.size.width;
         h=data.size.height;

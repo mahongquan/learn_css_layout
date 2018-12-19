@@ -34,7 +34,7 @@ arrowLeft :{
   borderRight:"10px solid #000", 
 }
 }
-export default class Triangle extends Component<Props> {
+export default class Triangle extends Component {
 
   render() {
   	const direction=this.props.direction;

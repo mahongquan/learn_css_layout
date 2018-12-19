@@ -25,7 +25,7 @@ let mainWindow;
 
 
 ipcMain.on('getpath', (event, arg) => {
-    event.returnValue = process.argv[1];
+    event.returnValue = __dirname;
 })
 
 const createWindow = () => {

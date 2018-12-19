@@ -9,7 +9,7 @@ display:none;
 //visibility:hidden;
 color:red;
 `;
-export default class display extends Component<Props> {
+export default class display extends Component {
     constructor(){
       super();
       this.state= {

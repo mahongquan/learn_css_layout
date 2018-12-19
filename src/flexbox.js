@@ -99,7 +99,7 @@ li {
 `;
    // align-items: ${this.state.alignitems};
    //  justify-content: ${this.state.justifycontent};
-export default class flexbox extends Component<Props> {
+export default class flexbox extends Component {
   constructor(){
       super();
       this.state= {

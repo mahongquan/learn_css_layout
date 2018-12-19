@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import AceEditor from 'react-ace';
 import 'brace/mode/css';
 import 'brace/theme/github';
-export default class Root extends Component<Props> {
+export default class Root extends Component {
      constructor(){
       super();
       this.state= {

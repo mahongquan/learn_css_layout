@@ -6,7 +6,7 @@ import AppSeman from './Seman_Test';
 import AppContext from "./AppContext";
 import TableEx from "./AppGridExample";
 import SS from "./SS";
-import Layout1 from "./Layout1";
+import Layout1 from "./MotionDemo";
 
 class App extends React.Component{
   render() {
@@ -15,7 +15,7 @@ class App extends React.Component{
         <TabList>
           <Tab>AceEditor & GridExample</Tab>
           <Tab>Semantic-ui</Tab>
-          <Tab>Layout1</Tab> 
+          <Tab>Motion Examples</Tab> 
           <Tab>storm diagrams</Tab>
           <Tab>react context</Tab>
           <Tab>Virtual Table Demo</Tab>

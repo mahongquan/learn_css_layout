@@ -26,8 +26,8 @@ const getStylesFromStylesheet = function(stylesheetPath: string, file: any,
     const requiringFile = file.opts.filename;
     const cssFile = resolve(dirname(requiringFile), stylesheetPath);
     // const data = JSON.stringify({ cssFile, config });
-    link(cssFile);
-    // const source =   fs.readFileSync(cssFile, 'utf8');
+    // link(cssFile);
+    const source =   fs.readFileSync(cssFile, 'utf8');
     // const extractModules = (_, resultTokens: any) => {
     //   console.log("extractModules=====================");
     //   // console.log(arguments);

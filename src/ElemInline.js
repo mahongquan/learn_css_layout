@@ -6,7 +6,7 @@ const Label = styled.span`
   color: #414142;
   line-height: 1em;
 `;
-export default class ElemInline extends Component<Props> {
+export default class ElemInline extends Component {
   render() {
     return (
       <span

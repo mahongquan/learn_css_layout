@@ -33,7 +33,7 @@ const Toc_style=`
     justify-content:flex-start;
 `;
 
-export default class toc extends Component<Props> {
+export default class toc extends Component {
       constructor(){
       super();
       this.state= {

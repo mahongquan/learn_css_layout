@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Highlight from 'react-highlight';
-export default class float extends Component<Props> {
+export default class float extends Component {
   render() {
     return (
       <React.Fragment>

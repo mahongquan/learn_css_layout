@@ -69,7 +69,7 @@ padding: 1em 0;
 }
 `;
 const pages=["index.html","no-layout.html","display.html","margin-auto.html","max-width.html","box-model.html","box-sizing.html","position.html","position-example.html","float.html","clear.html","clearfix.html","float-layout.html","percent.html","media-queries.html","inline-block.html","inline-block-layout.html","column.html","flexbox.html","frameworks.html","about.html"]
-class Root extends Component<Props> {
+class Root extends Component{
       constructor(){
       super();
       this.state= {
@@ -113,12 +113,14 @@ class Root extends Component<Props> {
   }
   render() {
     // console.log(this.props);
-    let visible_home,visible_toc;
+    let visible_home,visible_toc,disable_home;
       if(this.props.history.location.pathname.indexOf("index.html")>=0){
-        visible_home="hidden"
+        visible_home="hidden";
+        disable_home="";
       }
       else{
-        visible_home="visible" 
+        visible_home="visible";
+        disable_home="index.html";
       }
       if(this.props.history.location.pathname.indexOf("toc.html")>=0){
         visible_toc="hidden"
@@ -246,10 +248,10 @@ a:active {
           }
         `}</style>
         <Tag css={this.state.logo_style} id="logo">
-          <A href="/">
+          <Link to={disable_home} >
             <img src="./images/logo.png" alt="logo" />
             <span>Learn CSS Layout</span>
-          </A>
+          </Link>
         </Tag>
         <Tag css={this.state.style_box}>
           <Link style={{  marginRight: "1em",visibility:visible_home}} to="/">

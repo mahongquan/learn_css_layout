@@ -9,7 +9,7 @@ const Trans = styled.div`
             max-width: 500px;
             margin: 0 auto 1em;
 `;
-export default class TranLinks extends Component<Props> {
+export default class TranLinks extends Component {
   render() {
     return (
       <Trans>

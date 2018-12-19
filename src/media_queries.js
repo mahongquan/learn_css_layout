@@ -4,7 +4,7 @@ import AceEditor from 'react-ace';
 import 'brace/mode/css';
 import 'brace/theme/github';
 
-export default class media_queries extends Component<Props> {
+export default class media_queries extends Component {
    static defaultProps={
     theme:{red:"#D64078",green:"#96C02E",orange:"#FDC72F"}
   }

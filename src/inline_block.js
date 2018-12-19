@@ -3,7 +3,7 @@ import Elem,{Div} from './Elem';
 import AceEditor from 'react-ace';
 import 'brace/mode/css';
 import 'brace/theme/github';
-export default class inline_block extends Component<Props> {
+export default class inline_block extends Component {
     constructor(){
       super();
       this.arr1=[];

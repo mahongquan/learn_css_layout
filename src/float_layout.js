@@ -14,7 +14,7 @@ import {withTheme} from 'styled-components';
 // const E1=withTheme(E0);
 // const theme={red:"#D64078",green:"#96C02E",orange:"#FDC72F"};
 
-class float_layout extends Component<Props> {
+class float_layout extends Component {
   render() {
     return (
       <React.Fragment>

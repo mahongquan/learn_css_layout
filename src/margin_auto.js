@@ -8,7 +8,7 @@ const css=`
 width: 600px;
 margin: 0 auto;
 `;
-export default class margin_auto extends Component<Props> {
+export default class margin_auto extends Component {
     constructor(){
       super();
       this.state= {

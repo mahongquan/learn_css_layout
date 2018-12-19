@@ -12,7 +12,7 @@ const css_str=`
             column-gap: 1em;
           }
         `;
-export default class column extends Component<Props> {
+export default class column extends Component {
   render() {
     return (
       <React.Fragment>

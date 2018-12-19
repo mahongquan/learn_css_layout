@@ -4,7 +4,11 @@ import * as SRD from "storm-react-diagrams"
 // import './demo.css';
 
 // 1) setup the diagram engine
-var engine = new SRD.DiagramEngine();
+
+class App extends React.Component{
+  constructor(){
+  	super();
+  	var engine = new SRD.DiagramEngine();
 engine.installDefaultFactories();
 
 // 2) setup the diagram model
@@ -39,13 +43,12 @@ model.addAll(node1, node2, link1,node3,link2);
 
 // 7) load model into engine
 engine.setDiagramModel(model);
-class App extends React.Component{
-
+	this.engine=engine;
+  }
   render() {
-    console.log(engine);
     return (
       <div>
-      <SRD.DiagramWidget className="srd-demo-canvas" diagramEngine={engine} />
+      <SRD.DiagramWidget className="srd-demo-canvas" diagramEngine={this.engine} />
       </div>
     );
   }

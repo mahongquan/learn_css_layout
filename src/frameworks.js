@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-export default class frameworks extends Component<Props> {
+export default class frameworks extends Component {
   render() {
     return (
       <React.Fragment>

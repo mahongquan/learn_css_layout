@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class no_layout extends Component<Props> {
+export default class no_layout extends Component {
   render() {
     return (
       <React.Fragment>
