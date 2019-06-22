@@ -27,7 +27,7 @@ import position from './position';
 import toc from './toc';
 import styled, { ThemeProvider } from 'styled-components';
 import { Router, Redirect, Route, Switch } from 'react-router-dom';
-import createHashHistory from 'history/createHashHistory';
+var createHashHistory=require("history").createHashHistory;
 const history = createHashHistory({
   hashType: 'slash', // the default
 });
