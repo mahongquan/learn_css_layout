@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
-import Elem, { Tag } from './Elem';
+import Elem, {A, Tag } from './Elem';
 import Ace from './Ace';
-const alignitems_options = [
-  'center',
-  'flex-start',
-  'flex-end',
-  'stretch',
-  'baseline',
-  'inherit',
-  'initial',
-];
-const justifycontent_options = [
-  'center',
-  'flex-start',
-  'flex-end',
-  'space-around',
-  'space-between',
-];
+// const alignitems_options = [
+//   'center',
+//   'flex-start',
+//   'flex-end',
+//   'stretch',
+//   'baseline',
+//   'inherit',
+//   'initial',
+// ];
+// const justifycontent_options = [
+//   'center',
+//   'flex-start',
+//   'flex-end',
+//   'space-around',
+//   'space-between',
+// ];
 const menu_style = `height: 100vh;
 display: flex;
 >nav {
@@ -179,58 +179,58 @@ export default class flexbox extends Component {
             <Elem tag="nav" color="#D64078">
               <ul>
                 <li>
-                  <a>Home</a>
+                  <A>Home</A>
                 </li>
                 <li>
-                  <a>Taco Menu</a>
+                  <A>Taco Menu</A>
                 </li>
                 <li>
-                  <a>Draft List</a>
+                  <A>Draft List</A>
                 </li>
                 <li>
-                  <a>Hours</a>
+                  <A>Hours</A>
                 </li>
                 <li>
-                  <a>Directions</a>
+                  <A>Directions</A>
                 </li>
                 <li>
-                  <a>Contact</a>
+                  <A>Contact</A>
                 </li>
                 <li>
-                  <a>Home</a>
+                  <A>Home</A>
                 </li>
                 <li>
-                  <a>Taco Menu</a>
+                  <A>Taco Menu</A>
                 </li>
                 <li>
-                  <a>Draft List</a>
+                  <A>Draft List</A>
                 </li>
                 <li>
-                  <a>Hours</a>
+                  <A>Hours</A>
                 </li>
                 <li>
-                  <a>Directions</a>
+                  <A>Directions</A>
                 </li>
                 <li>
-                  <a>Contact</a>
+                  <A>Contact</A>
                 </li>
                 <li>
-                  <a>Home</a>
+                  <A>Home</A>
                 </li>
                 <li>
-                  <a>Taco Menu</a>
+                  <A>Taco Menu</A>
                 </li>
                 <li>
-                  <a>Draft List</a>
+                  <A>Draft List</A>
                 </li>
                 <li>
-                  <a>Hours</a>
+                  <A>Hours</A>
                 </li>
                 <li>
-                  <a>Directions</a>
+                  <A>Directions</A>
                 </li>
                 <li>
-                  <a>Contact</a>
+                  <A>Contact</A>
                 </li>
               </ul>
             </Elem>

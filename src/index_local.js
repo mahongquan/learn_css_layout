@@ -23,8 +23,8 @@ function getWhere() {
 }
 let where = getWhere();
 console.log(where);
-let module_name = './Home_new';
-// let module_name="./AppRoutes";
+// let module_name = './Home_new';
+let module_name="./AppRoutes";
 // let module_name="./Tabs";
 // module_name="./FlexHelp";
 // let module_name="./AppRoutesLayout";
