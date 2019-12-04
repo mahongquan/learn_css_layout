@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import Elem, { Tag, NavWrapper, LinkPrev, LinkStyle, A } from './Elem';
-import styled from 'styled-components';
+import { Tag, NavWrapper, LinkPrev } from './Elem';
 import Ace from './Ace';
 const menu_style = `
 background-color: whiteSmoke;

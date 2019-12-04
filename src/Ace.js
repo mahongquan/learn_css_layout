@@ -26,7 +26,7 @@ export default class Root extends Component {
       >
         <button
           onClick={() => {
-            if (this.state.displayAce == 'none') {
+            if (this.state.displayAce === 'none') {
               this.setState({ displayAce: 'block' });
             } else {
               this.setState({ displayAce: 'none' });

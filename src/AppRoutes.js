@@ -25,16 +25,13 @@ import percent from './percent';
 import position_example from './position_example';
 import position from './position';
 import toc from './toc';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import { Router, Redirect, Route, Switch } from 'react-router-dom';
-import createHashHistory from 'history/createHashHistory';
+let createHashHistory =require('history').createHashHistory;
 const history = createHashHistory({
   hashType: 'slash', // the default
 });
 export default class Root extends Component<Props> {
-  constructor() {
-    super();
-  }
   render() {
     const theme = { red: '#D64078', green: '#96C02E', orange: '#FDC72F' };
     return (

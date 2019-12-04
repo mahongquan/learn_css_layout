@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Highlight from 'react-highlight';
 import Elem, { Tag } from './Elem';
 import Ace from './Ace';
 const alignitems_options = [

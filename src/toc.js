@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Tag } from './Elem';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 import AceEditor from 'react-ace';
 import 'brace/mode/css';
 import 'brace/theme/github';
@@ -126,7 +125,7 @@ export default class toc extends Component {
           >
             <button
               onClick={() => {
-                if (this.state.displayAce == 'none') {
+                if (this.state.displayAce === 'none') {
                   this.setState({ displayAce: 'block' });
                 } else {
                   this.setState({ displayAce: 'none' });
