@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-export default class no_layout extends Component {
-  render() {
+export default function No_layout(){
     return (
       <React.Fragment>
         <h1 className="content">no layout</h1>
@@ -20,5 +19,4 @@ export default class no_layout extends Component {
         </p>
       </React.Fragment>
     );
-  }
 }

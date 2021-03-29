@@ -22,7 +22,7 @@ import percent from './percent';
 import position_example from './position_example';
 import position from './position';
 import toc from './toc';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from '@emotion/styled'
 import { Router, Redirect, Route, Switch } from 'react-router-dom';
 import createHashHistory from 'history/createHashHistory';
 let ipcRenderer;
@@ -32,7 +32,7 @@ if (window.require) {
 const history = createHashHistory({
   hashType: 'slash', // the default
 });
-export default class Root extends Component<Props> {
+export default class Root extends Componentchat {
   constructor() {
     super();
     if (ipcRenderer) {
@@ -46,7 +46,6 @@ export default class Root extends Component<Props> {
     const theme = { red: '#D64078', green: '#96C02E', orange: '#FDC72F' };
     return (
       <Router history={history}>
-        <ThemeProvider theme={theme}>
           <App>
             <Switch>
               <Route exact path="/about.html" component={about} />
@@ -83,10 +82,9 @@ export default class Root extends Component<Props> {
               />
               <Route exact path="/position.html" component={position} />
               <Route exact path="/toc.html" component={toc} />
-              <Redirect exact path="/" to="/index.html" />
+              <Route component={index} />
             </Switch>
           </App>
-        </ThemeProvider>
       </Router>
     );
   }

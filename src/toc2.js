@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Tag } from './Elem';
-import styled from 'styled-components';
+import styled from '@emotion/styled'
 import AceEditor from 'react-ace';
 import 'brace/mode/css';
 import 'brace/theme/github';
-import { Link } from 'react-router-dom';
-const LinkToc = styled(Link)`
+// import { Link } from 'react-router-dom';
+const LinkToc = styled.a`
   &:link {
     color: #d64078;
     text-decoration: none;

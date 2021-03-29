@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import TranLinks from './TranLinks';
 import { About } from './Elem';
 
-export default class index extends Component {
-  render() {
+export default function Index(){
     return (
       <React.Fragment>
         <About>
@@ -24,5 +23,4 @@ export default class index extends Component {
         <TranLinks />
       </React.Fragment>
     );
-  }
 }

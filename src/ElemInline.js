@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled'
 const Label = styled.span`
   position: static;
   background-color: #6ac5ac;

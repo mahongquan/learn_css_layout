@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled'
 import { Link } from 'react-router-dom';
 export const Example = styled.div`
   /* all declarations will be prefixed */
@@ -222,3 +222,47 @@ export default class Elem extends Component {
     );
   }
 }
+export const LinkNav2 = styled.a`
+  @media screen and (max-width: 404px) {
+    width: 40%;
+  }
+  background-color: #d64078;
+  color: white;
+  border-radius: 0.3em;
+  padding: 0.2em 0;
+  position: relative;
+  margin: 1em 1.5em 1em 1em;
+  width: 10em;
+  display: inline-block;
+  text-decoration: none;
+  border: solid #b03060 1px;
+  border-bottom: solid #b03060 4px;
+  text-shadow: 0px 2px 0 #b03060;
+  -webkit-transition: all 0.1s ease-out; /* Safari 3.2+, Chrome */
+  -moz-transition: all 0.1s ease-out; /* Firefox 4-15 */
+  -o-transition: all 0.1s ease-out; /* Opera 10.5â12.00 */
+  transition: all 0.1s ease-out; /* Firefox 16+, Opera 12.50+ */
+  &:link {
+    color: white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: #c63b6f;
+  }
+
+  &:active {
+    border-bottom: solid #b03060 1px;
+    top: 4px;
+    -webkit-transition: all 0 ease-out; /* Safari 3.2+, Chrome */
+    -moz-transition: all 0 ease-out; /* Firefox 4-15 */
+    -o-transition: all 0 ease-out; /* Opera 10.5â12.00 */
+    transition: all 0 ease-out; /* Firefox 16+, Opera 12.50+ */
+  }
+`;
+export const LinkPrev2 = LinkNav2; //.extend`
+//  margin-left: 2em;
+//  margin-right:2em;
+//  width: 10em;
+// `;
+export const LinkNext2 = LinkPrev2;

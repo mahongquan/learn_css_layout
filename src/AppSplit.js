@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { ResizableBox } from 'react-resizable';
 import Triangle from './Triangle';
-import { withRouter, Link } from 'react-router-dom';
-import Elem, { Tag, NavWrapper, LinkPrev, LinkStyle, A } from './Elem';
-import styled from 'styled-components';
+// import {  Link } from 'react-router-dom';
+import Elem, { Tag, NavWrapper, LinkPrev2, LinkStyle, A } from './Elem';
+import styled from '@emotion/styled'
 import Ace from './Ace';
 import Toc from './toc2';
 import SplitPane from 'react-split-pane';
@@ -38,30 +38,8 @@ padding: 1em 0;
   }
 }
 `;
-const pages = [
-  'index.html',
-  'no-layout.html',
-  'display.html',
-  'margin-auto.html',
-  'max-width.html',
-  'box-model.html',
-  'box-sizing.html',
-  'position.html',
-  'position-example.html',
-  'float.html',
-  'clear.html',
-  'clearfix.html',
-  'float-layout.html',
-  'percent.html',
-  'media-queries.html',
-  'inline-block.html',
-  'inline-block-layout.html',
-  'column.html',
-  'flexbox.html',
-  'frameworks.html',
-  'about.html',
-];
-class Root extends Component<Props> {
+
+class Root extends Component{
   constructor() {
     super();
     this.state = {
@@ -75,49 +53,45 @@ class Root extends Component<Props> {
     });
   };
   getPrevNext = () => {
-    let prev, next, at;
-    for (var i = 0; i < pages.length; i++) {
-      if (this.props.history.location.pathname.indexOf(pages[i]) >= 0) {
-        prev = i - 1;
-        next = i + 1;
+    let prev, next
+    let at=this.props.at;
+        prev = at - 1;
+        next = at + 1;
         if (prev >= 0) {
-          prev = pages[prev];
+          prev = true;
         } else {
           prev = undefined;
         }
-        if (next < pages.length) {
-          next = pages[next];
+        if (next < this.props.length) {
+          next = true;
         } else {
           next = undefined;
         }
-        at = i;
-        break;
-      }
-    }
     return [prev, next, at];
   };
   render() {
-    // console.log(this.props);
+    console.log(this.props);
     let visible_home, visible_toc;
-    if (this.props.history.location.pathname.indexOf('index.html') >= 0) {
-      visible_home = 'hidden';
-    } else {
-      visible_home = 'visible';
-    }
-    if (this.props.history.location.pathname.indexOf('toc.html') >= 0) {
+    // if (this.props.at>= 0) {
+    //   visible_home = 'hidden';
+    // } else {
+    //   visible_home = 'visible';
+    // }
+    if (this.props.at >= 0) {
       visible_toc = 'hidden';
     } else {
       visible_toc = 'visible';
     }
     var arr1 = this.getPrevNext();
+    console.log(arr1);
     let prev = arr1[0];
     let next = arr1[1];
     let i = arr1[2] + 1;
     if (prev) {
-      prev = <LinkPrev to={prev}>Previous</LinkPrev>;
+      prev = <LinkPrev2 onClick={this.props.click_prev}>Previous</LinkPrev2>;
     }
     if (next) {
-      next = <LinkPrev to={next}>Next</LinkPrev>;
+      next = <LinkPrev2 onClick={this.props.click_next}>Next</LinkPrev2>;
     }
     let nav;
     if (prev || next) {
@@ -127,7 +101,7 @@ class Root extends Component<Props> {
             {prev}
             {next}
           </NavWrapper>
-          <footer>{i} / 21</footer>
+          <footer>{i} / 22</footer>
         </React.Fragment>
       );
     }
@@ -265,7 +239,9 @@ class QueryBrowserContainer extends Component {
           pane2Style={{ overflow: 'auto' }}
         >
           <Toc />
-          <Root history={this.props.history}>{this.props.children}</Root>
+          <Root at={this.props.at} length={this.props.length} click_next={this.props.click_next} 
+            click_prev={this.props.click_prev}
+           history={this.props.history}>{this.props.children}</Root>
         </SplitPane>
         <style jsx="true">{`
           .Resizer {
@@ -323,4 +299,4 @@ class QueryBrowserContainer extends Component {
   }
 }
 
-export default withRouter(QueryBrowserContainer);
+export default QueryBrowserContainer;

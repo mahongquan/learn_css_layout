@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import Elem, { Tag, NavWrapper, LinkPrev, LinkStyle, A } from './Elem';
-import styled from 'styled-components';
+import styled from '@emotion/styled'
 import Ace from './Ace';
 const menu_style = `
 background-color: whiteSmoke;
@@ -69,27 +69,27 @@ padding: 1em 0;
 }
 `;
 const pages = [
-  'index.html',
-  'no-layout.html',
-  'display.html',
-  'margin-auto.html',
-  'max-width.html',
-  'box-model.html',
-  'box-sizing.html',
-  'position.html',
-  'position-example.html',
-  'float.html',
-  'clear.html',
-  'clearfix.html',
-  'float-layout.html',
-  'percent.html',
-  'media-queries.html',
-  'inline-block.html',
-  'inline-block-layout.html',
-  'column.html',
-  'flexbox.html',
-  'frameworks.html',
-  'about.html',
+  '/index.html',
+  '/no-layout.html',
+  '/display.html',
+  '/margin-auto.html',
+  '/max-width.html',
+  '/box-model.html',
+  '/box-sizing.html',
+  '/position.html',
+  '/position-example.html',
+  '/float.html',
+  '/clear.html',
+  '/clearfix.html',
+  '/float-layout.html',
+  '/percent.html',
+  '/media-queries.html',
+  '/inline-block.html',
+  '/inline-block-layout.html',
+  '/column.html',
+  '/flexbox.html',
+  '/frameworks.html',
+  '/about.html',
 ];
 class Root extends Component {
   constructor() {
@@ -112,6 +112,9 @@ class Root extends Component {
   getPrevNext = () => {
     let prev, next, at;
     for (var i = 0; i < pages.length; i++) {
+      // console.log(this.props.history.location.pathname);
+      // console.log(pages[i]);
+      // console.log(this.props.history.location.pathname.indexOf(pages[i]));
       if (this.props.history.location.pathname.indexOf(pages[i]) >= 0) {
         prev = i - 1;
         next = i + 1;
@@ -129,10 +132,12 @@ class Root extends Component {
         break;
       }
     }
+    console.log(prev,next,at);
     return [prev, next, at];
   };
   render() {
-    // console.log(this.props);
+    console.log("CSS layout app");
+    console.log(this.props);
     let visible_home, visible_toc, disable_home;
     if (this.props.history.location.pathname.indexOf('index.html') >= 0) {
       visible_home = 'hidden';

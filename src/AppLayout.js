@@ -3,10 +3,10 @@ import { ResizableBox } from 'react-resizable';
 import Triangle from './Triangle';
 import { withRouter, Link } from 'react-router-dom';
 import Elem, { Tag, NavWrapper, LinkPrev, LinkStyle, A } from './Elem';
-import styled from 'styled-components';
+import styled from '@emotion/styled'
 import Ace from './Ace';
 import Toc from './toc2';
-
+import Home from "./Home"
 const logo_style = `
 text-align: center;
 background-color: #ededed;
@@ -60,7 +60,7 @@ const pages = [
   'frameworks.html',
   'about.html',
 ];
-class Root extends Component<Props> {
+class Root extends Component{
   constructor() {
     super();
     this.state = {
@@ -75,39 +75,39 @@ class Root extends Component<Props> {
   };
   getPrevNext = () => {
     let prev, next, at;
-    for (var i = 0; i < pages.length; i++) {
-      if (this.props.history.location.pathname.indexOf(pages[i]) >= 0) {
-        prev = i - 1;
-        next = i + 1;
-        if (prev >= 0) {
-          prev = pages[prev];
-        } else {
-          prev = undefined;
-        }
-        if (next < pages.length) {
-          next = pages[next];
-        } else {
-          next = undefined;
-        }
-        at = i;
-        break;
-      }
-    }
+    // for (var i = 0; i < pages.length; i++) {
+    //   if (this.props.history.location.pathname.indexOf(pages[i]) >= 0) {
+    //     prev = i - 1;
+    //     next = i + 1;
+    //     if (prev >= 0) {
+    //       prev = pages[prev];
+    //     } else {
+    //       prev = undefined;
+    //     }
+    //     if (next < pages.length) {
+    //       next = pages[next];
+    //     } else {
+    //       next = undefined;
+    //     }
+    //     at = i;
+    //     break;
+    //   }
+    // }
     return [prev, next, at];
   };
   render() {
     // console.log(this.props);
     let visible_home, visible_toc;
-    if (this.props.history.location.pathname.indexOf('index.html') >= 0) {
-      visible_home = 'hidden';
-    } else {
-      visible_home = 'visible';
-    }
-    if (this.props.history.location.pathname.indexOf('toc.html') >= 0) {
-      visible_toc = 'hidden';
-    } else {
-      visible_toc = 'visible';
-    }
+    // if (this.props.history.location.pathname.indexOf('index.html') >= 0) {
+    //   visible_home = 'hidden';
+    // } else {
+    //   visible_home = 'visible';
+    // }
+    // if (this.props.history.location.pathname.indexOf('toc.html') >= 0) {
+    //   visible_toc = 'hidden';
+    // } else {
+    //   visible_toc = 'visible';
+    // }
     var arr1 = this.getPrevNext();
     let prev = arr1[0];
     let next = arr1[1];
@@ -526,4 +526,7 @@ class QueryBrowserContainer extends Component {
   }
 }
 
-export default withRouter(QueryBrowserContainer);
+export default function(){
+  return(<QueryBrowserContainer><Home /></QueryBrowserContainer>)
+}
+

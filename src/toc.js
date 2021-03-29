@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { Tag } from './Elem';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import styled from '@emotion/styled'
 import AceEditor from 'react-ace';
 import 'brace/mode/css';
 import 'brace/theme/github';
-
 const Toc_style = `
     display:flex;
     flex-direction:column;
@@ -53,28 +52,22 @@ a{
   }   
 } 
 `;
-
-export default class toc extends Component {
-  constructor() {
-    super();
-    this.state = {
-      style_box: Toc_style,
-      mode: 'css',
-      displayAce: 'none',
-    };
-  }
-  onChange = newValue => {
-    this.setState({
+export default function Toc(){
+  const onChange = newValue => {
+    setState({
       style_box: newValue,
     });
   };
-
-  render() {
+  const [state,setState]=React.useState({
+      style_box: Toc_style,
+      mode: 'css',
+      displayAce: 'none',
+    });
     return (
       <React.Fragment>
         <div className="content" style={{ position: 'relative' }}>
           <h1 className="content">Table of Contents</h1>
-          <Tag css={this.state.style_box}>
+          <Tag css={state.style_box}>
             <Link to="no-layout.html">no layout</Link>
             <Link to="display.html">the &quot;display&quot; property</Link>
 
@@ -126,27 +119,27 @@ export default class toc extends Component {
           >
             <button
               onClick={() => {
-                if (this.state.displayAce == 'none') {
-                  this.setState({ displayAce: 'block' });
+                if (state.displayAce == 'none') {
+                  setState({ displayAce: 'block' });
                 } else {
-                  this.setState({ displayAce: 'none' });
+                  setState({ displayAce: 'none' });
                 }
               }}
             >
               edit style
             </button>
             <AceEditor
-              ref="editor"
+             
               style={{
-                display: this.state.displayAce,
+                display: state.displayAce,
                 width: '350px',
                 height: '250px',
                 border: 'solid gray 5px',
               }}
-              mode={this.state.mode}
+              mode={state.mode}
               theme="github"
-              value={this.state.style_box}
-              onChange={this.onChange}
+              value={ state.style_box    }
+              onChange={                onChange              }
               name="UNIQUE_ID_OF_DIV"
               editorProps={{ $blockScrolling: true }}
             />
@@ -154,5 +147,4 @@ export default class toc extends Component {
         </div>
       </React.Fragment>
     );
-  }
 }

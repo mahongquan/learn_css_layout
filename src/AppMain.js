@@ -57,7 +57,7 @@ const css = `
   background-color:#aaa;
 }
 `;
-class Split extends Component<Props> {
+class Split extends Componentchat {
   constructor() {
     super();
   }
@@ -90,7 +90,7 @@ class Split extends Component<Props> {
     return <div onMouseDown={this.onMouseDown} id="split" />;
   };
 }
-class Root extends Component<Props> {
+class Root extends Componentchat {
   constructor() {
     super();
     this.state = {

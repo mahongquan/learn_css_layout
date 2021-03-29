@@ -58,7 +58,7 @@ const jsx = `<div id="main" >
 </div>
 `;
 
-class Root extends Component<Props> {
+export default class Root extends Componentchat {
   constructor() {
     super();
     this.state = {

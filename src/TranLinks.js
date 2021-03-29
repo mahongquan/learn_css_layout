@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { A } from './Elem';
-import styled from 'styled-components';
+import styled from '@emotion/styled'
 const Span = styled.span`
   margin: 0 0.2em;
 `;
