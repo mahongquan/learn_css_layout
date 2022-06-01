@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Elem, { Tag, NavWrapper, LinkPrev, LinkStyle, A } from './Elem';
 import styled from '@emotion/styled'
 import Ace from './Ace';
@@ -299,4 +299,4 @@ class Root extends Component {
     );
   }
 }
-export default withRouter(Root);
+export default Root;

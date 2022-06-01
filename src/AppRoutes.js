@@ -26,7 +26,7 @@ import position_example from './position_example';
 import position from './position';
 import toc from './toc';
 import styled from '@emotion/styled'
-import {  Router, Redirect, Route, Switch } from 'react-router-dom';
+import { HashRouter ,BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 let createHistory= require("history").createMemoryHistory;
 const history = createHistory();
 export default class Root extends Component{
@@ -36,43 +36,37 @@ export default class Root extends Component{
   render() {
     const theme = { red: '#D64078', green: '#96C02E', orange: '#FDC72F' };
     return (
-      <Router history={history}>
-          <App>
-            <Switch>
-              <Route exact path="/about.html" component={about} />
-              <Route exact path="/box-model.html" component={box_model} />
-              <Route exact path="/box-sizing.html" component={box_sizing} />
-              <Route exact path="/clear.html" component={clear} />
-              <Route exact path="/clearfix.html" component={clearfix} />
-              <Route exact path="/column.html" component={column} />
-              <Route exact path="/display.html" component={display} />
-              <Route exact path="/flexbox.html" component={flexbox} />
-              <Route exact path="/float-layout.html" component={float_layout} />
-              <Route exact path="/float.html" component={float} />
-              <Route exact path="/frameworks.html" component={frameworks} />
-              <Route exact path="/index.html" component={index} />
-              <Route exact path="/inline-block-layout.html" component={inline_block_layout} />
-              <Route exact path="/inline-block.html" component={inline_block} />
-              <Route exact path="/margin-auto.html" component={margin_auto} />
-              <Route exact path="/max-width.html" component={max_width} />
-              <Route
-                exact
-                path="/media-queries.html"
-                component={media_queries}
-              />
-              <Route exact path="/no-layout.html" component={no_layout} />
-              <Route exact path="/percent.html" component={percent} />
-              <Route
-                exact
-                path="/position-example.html"
-                component={position_example}
-              />
-              <Route exact path="/position.html" component={position} />
-              <Route exact path="/toc.html" component={toc} />
-              <Route  component={index} />
-            </Switch>
-          </App>
-      </Router>
+      <HashRouter history={history}>
+          
+            <Routes>
+            <App>
+              <Route path="/about.html" element={<about />} />
+              <Route path="/box-model.html" element={<box_model />} />
+              <Route path="/box-sizing.html" element={<box_sizing />} />
+              <Route path="/clear.html" element={<clear />} />
+              <Route path="/clearfix.html" element={<clearfix />} />
+              <Route path="/column.html" element={<column />} />
+              <Route path="/display.html" element={<display />} />
+              <Route path="/flexbox.html" element={<flexbox />} />
+              <Route path="/float-layout.html" element={<float_layout />} />
+              <Route path="/float.html" element={<float />} />
+              <Route path="/frameworks.html" element={<frameworks />} />
+              <Route path="/index.html" element={<index />} />
+              <Route path="/inline-block-layout.html" element={<inline_block_layout />} />
+              <Route path="/inline-block.html" element={<inline_block />} />
+              <Route path="/margin-auto.html" element={<margin_auto />} />
+              <Route path="/max-width.html" element={<max_width />} />
+              <Route path="/media-queries.html" element={<media_queries />}/>
+              <Route path="/no-layout.html" element={<no_layout />} />
+              <Route path="/percent.html" element={<percent />} />
+              <Route path="/position-example.html" element={<position_example />}/>
+              <Route path="/position.html" element={<position />} />
+              <Route path="/toc.html" element={<toc />} />
+              <Route path="/" element={<index />} />
+              </App>
+            </Routes>
+          
+      </HashRouter>
     );
   }
 }
