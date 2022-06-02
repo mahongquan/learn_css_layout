@@ -30,7 +30,7 @@
     "react-scripts": "latest",
     "brace": "latest",
     "react-ace": "latest",
-    "styled-components": "latest"
+    "@emotion/styled": "latest"
   },
   "browserslist": {
     "production": [

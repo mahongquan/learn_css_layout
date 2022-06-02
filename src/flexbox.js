@@ -62,7 +62,7 @@ li {
     padding: 4px;
     width:100px;
      overflow:hidden;
-    :first-child
+    :first-of-type
     { 
         line-height:1em;
         font-size:3em;
@@ -96,7 +96,7 @@ li {
     padding: 4px;
     width:100px;
      overflow:hidden;
-    :first-child
+    :first-of-type
     { 
         line-height:1em;
         font-size:3em;
