@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import {useNavigate,Link,useLocation} from 'react-router-dom'
 import Elem, { Tag, NavWrapper, LinkPrev, LinkStyle, A } from './Elem';
 import styled from '@emotion/styled'
 import Ace from './Ace';
@@ -91,31 +92,30 @@ const pages = [
   '/frameworks.html',
   '/about.html',
 ];
-class Root extends Component {
-  constructor() {
-    super();
-    this.state = {
-      style_box: menu_style,
-      logo_style: logo_style,
-    };
-  }
-  onChange = newValue => {
-    this.setState({
+export default function Root(props){
+  const [state,setState] = React.useState({
+    style_box: menu_style,
+    logo_style: logo_style,
+  });
+  const location=useLocation();
+  console.log(props,location)
+  const onChange = newValue => {
+    setState({
       style_box: newValue,
     });
   };
-  onChange_logo = newValue => {
-    this.setState({
+  const onChange_logo = newValue => {
+    setState({
       logo_style: newValue,
     });
   };
-  getPrevNext = () => {
+  const getPrevNext = (pathname) => {
     let prev, next, at;
     for (var i = 0; i < pages.length; i++) {
-      // console.log(this.props.history.location.pathname);
+      // console.log(props.history.location.pathname);
       // console.log(pages[i]);
-      // console.log(this.props.history.location.pathname.indexOf(pages[i]));
-      if (this.props.history.location.pathname.indexOf(pages[i]) >= 0) {
+      // console.log(props.history.location.pathname.indexOf(pages[i]));
+      if (pathname.indexOf(pages[i]) >= 0) {
         prev = i - 1;
         next = i + 1;
         if (prev >= 0) {
@@ -135,23 +135,26 @@ class Root extends Component {
     console.log(prev,next,at);
     return [prev, next, at];
   };
-  render() {
     console.log("CSS layout app");
-    console.log(this.props);
+    console.log(props);
+    let pathname=location.pathname;
+    if(location.pathname==="/"){
+      pathname="/index.html"
+    }
     let visible_home, visible_toc, disable_home;
-    if (this.props.history.location.pathname.indexOf('index.html') >= 0) {
+    if (pathname.indexOf('/index.html') >= 0) {
       visible_home = 'hidden';
       disable_home = '';
     } else {
       visible_home = 'visible';
       disable_home = 'index.html';
     }
-    if (this.props.history.location.pathname.indexOf('toc.html') >= 0) {
+    if (pathname.indexOf('/toc.html') >= 0) {
       visible_toc = 'hidden';
     } else {
       visible_toc = 'visible';
     }
-    var arr1 = this.getPrevNext();
+    var arr1 = getPrevNext(pathname);
     let prev = arr1[0];
     let next = arr1[1];
     let i = arr1[2] + 1;
@@ -277,13 +280,13 @@ class Root extends Component {
             text-align: center;
           }
         `}</style>
-        <Tag css={this.state.logo_style} id="logo">
+        <Tag css={state.logo_style} id="logo">
           <Link to={disable_home}>
             <img src="./images/logo.png" alt="logo" />
             <span>Learn CSS Layout</span>
           </Link>
         </Tag>
-        <Tag css={this.state.style_box}>
+        <Tag css={state.style_box}>
           <Link style={{ marginRight: '1em', visibility: visible_home }} to="/">
             Home
           </Link>
@@ -291,12 +294,11 @@ class Root extends Component {
             Table of Contents
           </Link>
         </Tag>
-        <div id="container">{this.props.children}</div>
+        <div id="container">{props.children}</div>
         {nav}
         <div style={{ minHeight: '100px' }} />
-        <Ace css={this.state.logo_style} cssChange={this.onChange_logo} />
+        <Ace css={state.logo_style} cssChange={onChange_logo} />
       </div>
     );
-  }
 }
-export default Root;
+// export default Root;
